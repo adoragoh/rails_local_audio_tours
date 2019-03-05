@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_050914) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.string "audio"
     t.index ["tour_id"], name: "index_tracks_on_tour_id"
   end
 
