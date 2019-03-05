@@ -1,7 +1,12 @@
-class TourPolicy < ApplicationPolicy
+class FavouritePolicy < ApplicationPolicy
+  class Scope < Scope
+    def resolve
+      scope.all
+    end
+  end
 
   def new?
-    # By returning true we allow our users to create a tour
+    # By returning true we allow our users to create a favorite
     true
   end
 
@@ -15,7 +20,7 @@ class TourPolicy < ApplicationPolicy
 
   def edit?
     # Instead of current_user we have -> user
-    # Instead of tour we have -> record
+    # Instead of restaurant we have -> record
     user_is_owner?
   end
 
@@ -31,11 +36,5 @@ class TourPolicy < ApplicationPolicy
 
   def user_is_owner?
     record.user == user || user.admin
-  end
-
-  class Scope < Scope
-    def resolve
-      scope.all
-    end
   end
 end

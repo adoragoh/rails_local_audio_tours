@@ -1,7 +1,7 @@
-class TourPolicy < ApplicationPolicy
+class TrackPolicy < ApplicationPolicy
 
   def new?
-    # By returning true we allow our users to create a tour
+    # By returning true we allow our users to create a track
     true
   end
 
