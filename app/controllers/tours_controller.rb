@@ -43,7 +43,7 @@ class ToursController < ApplicationController
     #   @booking = current_user.bookings.where(tour_id: params[:id]).first
     # end
 
-    authorize @booking
+    authorize @favourite
   end
 
   def new
@@ -84,6 +84,6 @@ class ToursController < ApplicationController
   end
 
   def tour_params
-    params.require(:tour).permit(:title, :start_location, :description, :user_id, :duration, :category, :language)
+    params.require(:tour).permit(:id, :title, :start_location, :description, :user_id, :duration, :category, :language)
   end
 end
