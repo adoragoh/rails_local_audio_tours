@@ -27,13 +27,13 @@ class ToursController < ApplicationController
   end
 
   def show
-    #set_tour method called
-    #authorize @tour
+    set_tour
+    # set_tour method called
+
     # @marker = [{
     #   lng: @tour.longitude,
     #   lat: @tour.latitude,
     # }]
-    # @booking = Booking.new
 
     # if current_user != nil
     #   @booked = current_user.booked_tours.include?(@tour)
@@ -43,7 +43,7 @@ class ToursController < ApplicationController
     #   @booking = current_user.bookings.where(tour_id: params[:id]).first
     # end
 
-    authorize @favourite
+    # authorize @favourite
   end
 
   def new

@@ -3,7 +3,8 @@ class Tour < ApplicationRecord
   has_many :tracks
   has_many :photos
 
-  #Use this in the methods --> authorize @tour
+  geocoded_by :start_location
+  after_validation :geocode, if: :will_save_change_to_start_location?
 
   def index
     @tours = policy_scope(Tour)
