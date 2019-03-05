@@ -182,4 +182,6 @@ Tour.create!(tours_array)
 #   # tour.save
 # end
 
+
+
 puts "Many awesome tours added to your database!"
