@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_023120) do
+ActiveRecord::Schema.define(version: 2019_03_05_031112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favourites", force: :cascade do |t|
+    t.bigint "tour_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tour_id"], name: "index_favourites_on_tour_id"
+    t.index ["user_id"], name: "index_favourites_on_user_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.bigint "tour_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tour_id"], name: "index_photos_on_tour_id"
+  end
 
   create_table "tours", force: :cascade do |t|
     t.string "title"
@@ -26,6 +42,18 @@ ActiveRecord::Schema.define(version: 2019_03_05_023120) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_tours_on_user_id"
+  end
+
+  create_table "tracks", force: :cascade do |t|
+    t.string "url"
+    t.string "location"
+    t.bigint "tour_id"
+    t.text "description"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "photo"
+    t.index ["tour_id"], name: "index_tracks_on_tour_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,5 +72,9 @@ ActiveRecord::Schema.define(version: 2019_03_05_023120) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "favourites", "tours"
+  add_foreign_key "favourites", "users"
+  add_foreign_key "photos", "tours"
   add_foreign_key "tours", "users"
+  add_foreign_key "tracks", "tours"
 end

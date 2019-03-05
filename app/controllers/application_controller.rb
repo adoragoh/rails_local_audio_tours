@@ -19,3 +19,6 @@ class ApplicationController < ActionController::Base
   end
 
 end
+
+# MODELS TO MAKE:
+# rails g model review tour:references content:text rating:integer user:references
