@@ -1,57 +1,12 @@
 
 
-
-<div class="container">
-
-  <div class="col">
-  <% @tours.each do |tour| %>
-    <div class="card-container">
-      <div class="overlay"></div>
-      <div class="overlay"></div>
-      <div class="overlay"></div>
-      <div class="overlay"></div>
-      <div class="card">
-        <h4><%= tour.title %></h4>
-        <span class"chev">&rsaquo;</span>
-      </div>
-    </div>
-  <% end %>
-
-
-
-
-
-  </div>
-
-  <div class="col">
 <% @tours.each do |tour| %>
-    <div class="card-container">
-      <div class="overlay"></div>
-      <div class="overlay"></div>
-      <div class="overlay"></div>
-      <div class="overlay"></div>
-      <div class="card">
-        <h4><%= tour.title %></h4>
-        <span class"chev">&rsaquo;</span>
-      </div>
-    </div>
-<% end %>
-
-
-  <div class="col">
-<% @tours.each do |tour| %>
-    <div class="card-container">
-      <div class="overlay"></div>
-      <div class="overlay"></div>
-      <div class="overlay"></div>
-      <div class="overlay"></div>
-      <div class="card">
-        <h4><%= tour.title %></h4>
-        <span class"chev">&rsaquo;</span>
-      </div>
-    </div>
-<% end %>
-
+<div class="card mb-3" style="margin:20px;">
+  <img class="card-img-top" src="https://res.cloudinary.com/aircamp/image/upload/c_fill,h_400,w_800/q_auto/v1/production/app_campsite_uploads/gg3ihbyiyarsz1d1tnna"  alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title style="text-align: center;><%= tour.title %></h5>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
   </div>
-
 </div>
+<%end%>

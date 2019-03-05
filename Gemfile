@@ -12,6 +12,7 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.2'
 gem 'redis'
+gem 'bootstrap', '~> 4.3.1'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
@@ -20,6 +21,7 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'jquery-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
