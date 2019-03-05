@@ -4,7 +4,7 @@ class AudioUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
   include Cloudinary::CarrierWave
 
-  {
-    "resource_type" => "video"
-  }
+  # {
+  #   "resource_type" => "video"
+  # }
 end
