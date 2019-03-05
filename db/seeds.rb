@@ -20,7 +20,7 @@ users_array = [
   },
   {
   email: "adora@lat.com",
-  password: "123456"
+  password: "password"
   },
   {
   email: "alex@lat.com",

@@ -19,9 +19,9 @@ class FavouritesController < ApplicationController
     @favourite = Favourite.new(favourite_params)
     authorize @favourite
     @favourite.user = current_user
-    @favourite.save
+    @favourite.tour = @tour
     if @favourite.save
-      redirect_to favourite_path(@favourite)
+      redirect_to profile_path(just_favourited: "true")
     else
       render :new
     end
@@ -37,7 +37,7 @@ class FavouritesController < ApplicationController
 
   def destroy
     @favourite.destroy
-    redirect_to profile_path(just_favourites: "true")
+    redirect_to profile_path(just_favourited: "true")
   end
 
   private
@@ -45,6 +45,11 @@ class FavouritesController < ApplicationController
   def set_favourite
     @favourite = Favourite.find(params[:id])
     authorize @favourite
+  end
+
+  def set_tour
+    @tour = Tour.find(params[:tour_id])
+    authorize @tour
   end
 
   def favourite_params
