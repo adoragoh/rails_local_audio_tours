@@ -73,7 +73,7 @@ class ToursController < ApplicationController
 
   def destroy
     @tour.destroy
-    redirect_to profile_path(just_tours: "true")
+    redirect_to profile_path(just_created_tour: "true")
   end
 
   private

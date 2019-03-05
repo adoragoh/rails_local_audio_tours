@@ -20,7 +20,7 @@ users_array = [
   },
   {
   email: "adora@lat.com",
-  password: "123456"
+  password: "password"
   },
   {
   email: "alex@lat.com",
@@ -171,17 +171,52 @@ Tour.create!(tours_array)
 
 # TODO: add photos to seeds
 
-# tours = Tour.all
+tours = Tour.all
 
-# tours.each do |tour|
-#   p = Photo.new
-#   tour.photo = p
-#   # p.remote_photo_url = "https://source.unsplash.com/1600x900/?#{tour.title}"
-#   # p.save
-#   # tour.photo = p
-#   # tour.save
-# end
+tours.each do |tour|
+  photo = Photo.new
+  photo.remote_photo_url = "https://source.unsplash.com/1600x900/?#{tour.title}"
+  # "https://res.cloudinary.com/dm25xqrrj/video/upload/v1551761977/samples/David_s_Dream.mp3"
+  photo.tour = tour
+  photo.save
+  # p.remote_photo_url = "https://source.unsplash.com/1600x900/?#{tour.title}"
+  # p.save
+  # tour.photo = p
+  # tour.save
+end
 
 
 
 puts "Many awesome tours added to your database!"
+
+tracks_array = [
+  {
+    title: "Port Melbourne",
+    location: "Port Melbourne",
+    tour: Tour.first
+  },
+  {
+    title: "Docklands",
+    location: "Docklands",
+    tour: Tour.first
+  },
+  {
+    title: "Yarra River",
+    location: "Yarra River",
+    tour: Tour.first
+  }
+]
+
+puts "Adding 3 audio tracks to our first tour..."
+
+Track.create!(tracks_array)
+
+tracks = Track.all
+
+tracks.each do |track|
+  track.remote_audio_url = "https://res.cloudinary.com/dm25xqrrj/video/upload/v1551761977/samples/David_s_Dream.mp3"
+  track.save
+end
+
+puts "3 audio tracks added to the first tour!"
+

@@ -1,6 +1,12 @@
-<div class="container">
-  <% @tours.each do |tour| %>
-  <h1><%= tour.title %></h1>
-  <% end %>
+<style type="text/css">
+body {
 
+}
+</style>
+
+<header class="page-head"><h1>Tours</h1></header>
+
+
+<div style="margin-top: 100x;">
+  <%= render 'shared/card' %>
 </div>
