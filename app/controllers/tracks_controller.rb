@@ -1,6 +1,7 @@
 class TracksController < ApplicationController
   before_action :set_track, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:index, :create]
+  before_action :set_tour, only: [:show, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @tracks = policy_scope(Track)
@@ -43,8 +44,6 @@ class TracksController < ApplicationController
     # if @booked
     #   @booking = current_user.bookings.where(track_id: params[:id]).first
     # end
-
-    authorize @booking
   end
 
   def new
@@ -56,9 +55,10 @@ class TracksController < ApplicationController
     @track = Track.new(track_params)
     authorize @track
     @track.user = current_user
+    @track.tour = @tour
     @track.save
     if @track.save
-      redirect_to track_path(@track)
+      redirect_to tour_path(@tour)
     else
       render :new
     end
@@ -69,12 +69,12 @@ class TracksController < ApplicationController
 
   def update
     @track.update(track_params)
-    redirect_to track_path(@track)
+    redirect_to tour_path(@tour)
   end
 
   def destroy
     @track.destroy
-    redirect_to profile_path(just_tracks: "true")
+    redirect_to tour_path(@tour)
   end
 
   private
@@ -84,7 +84,12 @@ class TracksController < ApplicationController
     authorize @track
   end
 
+  def set_tour
+    @tour = Tour.find(params[:tour_id])
+    authorize @tour
+  end
+
   def track_params
-    params.require(:track).permit(:title, :location:start_location, :description, :user_id, :duration, :category, :language)
+    params.require(:track).permit(:title, :location, :tour_id, :photo, :audio)
   end
 end
