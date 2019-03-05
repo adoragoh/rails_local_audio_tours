@@ -171,15 +171,18 @@ Tour.create!(tours_array)
 
 # TODO: add photos to seeds
 
-# tours = Tour.all
+tours = Tour.all
 
-# tours.each do |tour|
-#   p = Photo.new
-#   tour.photo = p
-#   # p.remote_photo_url = "https://source.unsplash.com/1600x900/?#{tour.title}"
-#   # p.save
-#   # tour.photo = p
-#   # tour.save
-# end
+tours.each do |tour|
+  photo = Photo.new
+  photo.remote_photo_url = "https://source.unsplash.com/1600x900/?#{tour.title}"
+  photo.tour = tour
+  photo.save
+  tour.photo = photo
+  # p.remote_photo_url = "https://source.unsplash.com/1600x900/?#{tour.title}"
+  # p.save
+  # tour.photo = p
+  # tour.save
+end
 
 puts "Many awesome tours added to your database!"
