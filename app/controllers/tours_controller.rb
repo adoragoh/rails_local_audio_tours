@@ -4,6 +4,14 @@ class ToursController < ApplicationController
   def index
     @tours = policy_scope(Tour)
 
+    @markers = @tours.map do |tour|
+      {
+        lng: tour.longitude,
+        lat: tour.latitude
+        # infoWindow: render_to_string(partial: "/shared/map_info", locals: { tour: tour })
+      }
+    end
+
     # if params[:query].present?
     #   sql_query = "title ILIKE :query OR location ILIKE :query OR category ILIKE :query"
     #   @tours = Tour.where(sql_query, query: "%#{params[:query]}%").where.not(latitude: nil, longitude: nil)
@@ -11,13 +19,6 @@ class ToursController < ApplicationController
     #   @tours = Tour.all.where.not(latitude: nil, longitude: nil)
     # end
 
-    # @markers = @tours.map do |tour|
-    #   {
-    #     lng: tour.longitude,
-    #     lat: tour.latitude,
-    #     infoWindow: render_to_string(partial: "/shared/map_info", locals: { tour: tour })
-    #   }
-    # end
 
     # @all_tours.each do |tour|
     #   if !@categories.include?(tour.category)
@@ -27,12 +28,11 @@ class ToursController < ApplicationController
   end
 
   def show
-    #set_tour method called
-    #authorize @tour
-    # @marker = [{
-    #   lng: @tour.longitude,
-    #   lat: @tour.latitude,
-    # }]
+    @marker = [{
+      lng: @tour.longitude,
+      lat: @tour.latitude
+    }]
+
     # @booking = Booking.new
 
     # if current_user != nil
