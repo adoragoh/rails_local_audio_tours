@@ -5,5 +5,5 @@ class Tour < ApplicationRecord
 
   geocoded_by :start_location
   after_validation :geocode, if: :will_save_change_to_start_location?
-  #Use this in the methods --> authorize @tour
+
 end

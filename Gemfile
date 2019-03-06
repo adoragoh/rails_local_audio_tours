@@ -5,6 +5,7 @@ gem 'devise'
 gem 'pundit'
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary', '~> 1.9.1'
+gem 'geocoder'
 
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
@@ -15,7 +16,6 @@ gem 'redis'
 gem 'bootstrap', '~> 4.3.1'
 
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 5.5.0'
 gem 'sassc-rails'
 gem 'simple_form'
