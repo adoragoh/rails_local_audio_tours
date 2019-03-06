@@ -17,14 +17,27 @@
 </ul>
 
 
-<div class="tab-content">
-  <div role="tabpanel" class="list-cards tab-pane active" id="1">
-    <div style="margin-top: 75px;">
-    <%= render 'shared/card' %>
-    </div>
+    <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-  </div>
-  <div role="tabpanel" class="map-card tab-pane" role="tabpanel" id="2">
-    <%= render 'shared/map' %>
-  </div>
-</div>
+
