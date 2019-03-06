@@ -6,7 +6,7 @@
       <input type="radio" name="show-hide" id="show-poi"
       <label for="show-poi">Show</label>
     </div> -->
-    <div id="map"></div>
+    <!-- <div id="map"></div> -->
   </div>
   <div class="show-title">
     <h3>Preview Tour  <i class="fas fa-play-circle"></i></h3>
@@ -14,18 +14,20 @@
   <div class="show-details">
     <h4><%= @tour.title %></h4>
     @tour.photos
+  <%= render 'shared/route_map' %>
     <% tracks = @tour.tracks %>
     <% tracks.each do |track| %>
     <p><%= track.location %></p>
     <% end %>
   </div>
+  <div><%= @tracks_markers %></div>
   <div class="show-guide-details">
 
   </div>
 </div>
 
 
-<script>
+<!-- <script>
   var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -77,8 +79,8 @@
 
       ;
 
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJy7YkTS0iPiFJczwoVJ1MrnZA2lKZqGg&callback=initMap" async defer></script>
+    </script> -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJy7YkTS0iPiFJczwoVJ1MrnZA2lKZqGg&callback=initMap" async defer></script> -->
 
 
 
