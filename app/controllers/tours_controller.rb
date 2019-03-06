@@ -25,6 +25,7 @@ class ToursController < ApplicationController
     #     @categories << tour.category
     #   end
     # end
+
   end
 
   def show

@@ -53,6 +53,6 @@ class FavouritesController < ApplicationController
   end
 
   def favourite_params
-    params.require(:favourite).permit(:title, :location:start_location, :description, :user_id, :duration, :category, :language)
+    params.require(:favourite).permit(:tour_id, :user_id)
   end
 end
