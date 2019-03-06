@@ -29,7 +29,11 @@
 .navbar-wagon-right {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.navbar-wagon-right a {
+  margin: 40px;
 }
 
 /* Basic navbar item */
