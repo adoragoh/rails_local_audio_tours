@@ -22,3 +22,14 @@
 .show-guide-details{
 
 }
+
+.grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 33.33333% 33.33333% 33.33333%;
+}
+
+.main-pic{
+  grid-row: 1/ span 1;
+  grid-column: 1/ span 3;
+}

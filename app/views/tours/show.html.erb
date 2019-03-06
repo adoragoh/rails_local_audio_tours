@@ -7,6 +7,11 @@
           class="selector-control" checked="checked">
       <label for="show-poi">Show</label>
     </div> -->
+  <div class="grid">
+    <div class="main-pic"></div>
+
+  </div>
+
     <div id="map"></div>
   </div>
   <div class="show-title">
@@ -14,7 +19,8 @@
   </div>
   <div class="show-details">
     <h4><%= @tour.title %></h4>
-    @tour.photos
+    <% @tour.photos do |photo| %>
+    <%= cl_image_tag .photo, height: 800, width: 600, crop: :fill %>
   </div>
   <div class="show-guide-details">
 
