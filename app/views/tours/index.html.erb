@@ -1,8 +1,31 @@
-<header class="page-head"><h1>Tours</h1></header>
 
-<%= render 'shared/map' %>
+<head> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></head>
 
-<div style="margin-top: 100x;">
-  <%= render 'shared/card' %>
+<header class="page-head"><h1 style="text-align: center; margin-top: 15px;">Tours</h1></header>
+
+
+
+
+
+
+ <ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link active" href="#1" data-toggle="tab">List</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#2" data-toggle="tab">Map</a>
+  </li>
+</ul>
+
+
+<div class="tab-content">
+  <div role="tabpanel" class="list-cards tab-pane active" id="1">
+    <div style="margin-top: 75px;">
+    <%= render 'shared/card' %>
+    </div>
+
+  </div>
+  <div role="tabpanel" class="map-card tab-pane" role="tabpanel" id="2">
+    <%= render 'shared/map' %>
+  </div>
 </div>
-
