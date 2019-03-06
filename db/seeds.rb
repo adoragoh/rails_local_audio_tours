@@ -185,6 +185,8 @@ tours.each do |tour|
   # tour.save
 end
 
+
+
 puts "Many awesome tours added to your database!"
 
 tracks_array = [
