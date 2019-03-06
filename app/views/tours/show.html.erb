@@ -18,7 +18,16 @@
   </div>
 </div>
 
-
+<div class="container-fluid">
+   <!-- <div id="style-selector-control" class="map-control">
+      <input type="radio" name="show-hide" id="hide-poi"
+          class="selector-control">
+      <label for="hide-poi">Hide</label>
+      <input type="radio" name="show-hide" id="show-poi"
+      <label for="show-poi">Show</label>
+    </div> -->
+    <!-- <div id="map"></div> -->
+  </div>
     <div class="show-title">
       <h3>Preview Tour  <i class="fas fa-play-circle"></i></h3>
     </div>
@@ -40,7 +49,6 @@
     <hr>
     <div class="container">
       <h5 class="card-title">Visited Places</h5>
-
       <% tracks = @tour.tracks %>
       <% tracks.each do |track| %>
       <ul>
@@ -53,6 +61,3 @@
     <div class="container">
       <%= render 'shared/route_map' %>
     </div>
-
-
-
