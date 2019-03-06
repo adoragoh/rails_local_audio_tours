@@ -14,6 +14,10 @@
   <div class="show-details">
     <h4><%= @tour.title %></h4>
     @tour.photos
+    <% tracks = @tour.tracks %>
+    <% tracks.each do |track| %>
+    <p><%= track.location %></p>
+    <% end %>
   </div>
   <div class="show-guide-details">
 

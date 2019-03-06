@@ -43,7 +43,7 @@ class ToursController < ApplicationController
     #   @booking = current_user.bookings.where(tour_id: params[:id]).first
     # end
 
-    authorize @favourite
+    # authorize @favourite
   end
 
   def new
