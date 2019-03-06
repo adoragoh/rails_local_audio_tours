@@ -4,13 +4,13 @@ class ToursController < ApplicationController
   def index
     @tours = policy_scope(Tour)
 
-    # @markers = @tours.map do |tour|
-    #   {
-    #     lng: tour.longitude,
-    #     lat: tour.latitude
-    #     # infoWindow: render_to_string(partial: "/shared/map_info", locals: { tour: tour })
-    #   }
-    # end
+    @markers = @tours.map do |tour|
+      {
+        lng: tour.longitude,
+        lat: tour.latitude
+        # infoWindow: render_to_string(partial: "/shared/map_info", locals: { tour: tour })
+      }
+    end
 
     # if params[:query].present?
     #   sql_query = "title ILIKE :query OR location ILIKE :query OR category ILIKE :query"
@@ -25,6 +25,7 @@ class ToursController < ApplicationController
     #     @categories << tour.category
     #   end
     # end
+
   end
 
   def show
