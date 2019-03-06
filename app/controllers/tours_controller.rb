@@ -1,5 +1,6 @@
 class ToursController < ApplicationController
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
+  before_action :set_tracks, only: :show
 
   def index
     @tours = policy_scope(Tour)
@@ -33,6 +34,14 @@ class ToursController < ApplicationController
       lat: @tour.latitude
     }]
 
+    @tracks_markers = @tracks.map do |track|
+      {
+        lng: track.longitude,
+        lat: track.latitude
+        # infoWindow: render_to_string(partial: "/shared/map_info", locals: { tour: tour })
+      }
+    end
+
     # @booking = Booking.new
 
     # if current_user != nil
@@ -44,6 +53,7 @@ class ToursController < ApplicationController
     # end
 
     # authorize @favourite
+
   end
 
   def new
@@ -81,6 +91,10 @@ class ToursController < ApplicationController
   def set_tour
     @tour = Tour.find(params[:id])
     authorize @tour
+  end
+
+  def set_tracks
+    @tracks = @tour.tracks
   end
 
   def tour_params
