@@ -3,15 +3,20 @@ class ToursController < ApplicationController
   before_action :set_tracks, only: :show
 
   def index
+
     @tours = policy_scope(Tour)
+
+    @tours = Tour.where.not(latitude: nil, longitude: nil)
 
     @markers = @tours.map do |tour|
       {
         lng: tour.longitude,
         lat: tour.latitude
-        # infoWindow: render_to_string(partial: "/shared/map_info", locals: { tour: tour })
+        # infoWindow: render_to_string(partial: "infoWindow", locals: { tour: tour })
+        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
+
 
     # if params[:query].present?
     #   sql_query = "title ILIKE :query OR location ILIKE :query OR category ILIKE :query"
@@ -30,16 +35,14 @@ class ToursController < ApplicationController
   end
 
   def show
-    @marker = [{
-      lng: @tour.longitude,
-      lat: @tour.latitude
-    }]
 
-    @tracks_markers = @tracks.map do |track|
+    # @tours = Tour.where.not(latitude: nil, longitude: nil)
+
+    @markers = @tracks.map do |track|
       {
         lng: track.longitude,
         lat: track.latitude
-        # infoWindow: render_to_string(partial: "/shared/map_info", locals: { tour: tour })
+        # infoWindow: render_to_string(partial: "infoWindow", locals: { tour: tour })
       }
     end
 
@@ -96,6 +99,7 @@ class ToursController < ApplicationController
 
   def set_tracks
     @tracks = @tour.tracks
+    authorize @tracks
   end
 
   def tour_params
