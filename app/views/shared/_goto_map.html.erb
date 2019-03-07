@@ -1,0 +1,10 @@
+<div
+  id="map"
+  style="
+  min-width: 100vw;
+  min-height: 80vh;"
+  data-markers="[<%= @marker.to_json %>]"
+  data-destination-lon="<%= @marker[:lng] %>"
+  data-destination-lat="<%= @marker[:lat] %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>

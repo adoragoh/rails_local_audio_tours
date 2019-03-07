@@ -6,7 +6,11 @@ class ToursController < ApplicationController
 
     @tours = policy_scope(Tour)
 
-    @tours = Tour.where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      search
+    else
+      @tours = Tour.where.not(latitude: nil, longitude: nil)
+    end
 
     @markers = @tours.map do |tour|
       {
@@ -18,12 +22,7 @@ class ToursController < ApplicationController
     end
 
 
-    # if params[:query].present?
-    #   sql_query = "title ILIKE :query OR location ILIKE :query OR category ILIKE :query"
-    #   @tours = Tour.where(sql_query, query: "%#{params[:query]}%").where.not(latitude: nil, longitude: nil)
-    # else
-    #   @tours = Tour.all.where.not(latitude: nil, longitude: nil)
-    # end
+
 
 
     # @all_tours.each do |tour|
@@ -91,6 +90,11 @@ class ToursController < ApplicationController
   end
 
   private
+
+  def search
+    sql_query = "title ILIKE :query OR start_location ILIKE :query OR category ILIKE :query"
+    @tours = Tour.where(sql_query, query: "%#{params[:query]}%").where.not(latitude: nil, longitude: nil)
+  end
 
   def set_tour
     @tour = Tour.find(params[:id])

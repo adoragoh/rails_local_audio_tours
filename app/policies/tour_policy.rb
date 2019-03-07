@@ -13,6 +13,10 @@ class TourPolicy < ApplicationPolicy
     true
   end
 
+  def goto?
+    true
+  end
+
   def edit?
     # Instead of current_user we have -> user
     # Instead of tour we have -> record

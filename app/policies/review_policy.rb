@@ -1,7 +1,12 @@
-class TrackPolicy < ApplicationPolicy
+class ReviewPolicy < ApplicationPolicy
+  class Scope < Scope
+    def resolve
+      scope.all
+    end
+  end
 
   def new?
-    # By returning true we allow our users to create a track
+    # By returning true we allow our users to create a booking
     true
   end
 
@@ -13,13 +18,9 @@ class TrackPolicy < ApplicationPolicy
     true
   end
 
-  def goto?
-    true
-  end
-
   def edit?
     # Instead of current_user we have -> user
-    # Instead of tour we have -> record
+    # Instead of restaurant we have -> record
     user_is_owner?
   end
 
@@ -35,11 +36,5 @@ class TrackPolicy < ApplicationPolicy
 
   def user_is_owner?
     record.user == user || user.admin
-  end
-
-  class Scope < Scope
-    def resolve
-      scope.all
-    end
   end
 end
