@@ -3,11 +3,11 @@
 </head> -->
 
 
-<div id="heading-goto" style="text-align: center; height: 10vh;">Go to the start
+<!-- <div id="heading-goto" style="text-align: center; height: 10vh;">Go to the start
 </div>
-
+ -->
   <%= render 'shared/goto_map' %>
 
-<button type="button" class="btn btn-primary btn-lg btn-block" style="height: 10vh;">play track</button>
+<button type="button" class="btn btn-success btn-lg btn-block" style="height: 10vh;"> <%= link_to "PLAY TRACK", tour_track_path(@tour, @track) %></button>
 
 <!-- <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.0/mapbox-gl-directions.js'></script> -->
