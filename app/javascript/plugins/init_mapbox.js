@@ -21,12 +21,16 @@ const initMapbox = () => {
       .addTo(map);
     });
 
+    map.addControl(new mapboxgl.GeolocateControl({
+      positionOptions: {
+        enableHighAccuracy: true
+      },
+      trackUserLocation: true
+    }));
 
     fitMapToMarkers(map, markers);
   }
-
 };
-
 
 
 export { initMapbox };

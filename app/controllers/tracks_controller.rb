@@ -47,6 +47,12 @@ class TracksController < ApplicationController
   end
 
   def goto
+    @marker =
+      {
+        lng: @track.longitude,
+        lat: @track.latitude
+        # infoWindow: render_to_string(partial: "infoWindow", locals: { tour: tour })
+      }
   end
 
   def new
