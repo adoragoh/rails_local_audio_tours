@@ -11,8 +11,8 @@ class ToursController < ApplicationController
     @markers = @tours.map do |tour|
       {
         lng: tour.longitude,
-        lat: tour.latitude
-        # infoWindow: render_to_string(partial: "infoWindow", locals: { tour: tour })
+        lat: tour.latitude,
+        infoWindow: render_to_string(partial: "/shared/infoWindow-tours", locals: { tour: tour })
         # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
@@ -37,12 +37,11 @@ class ToursController < ApplicationController
   def show
 
     # @tours = Tour.where.not(latitude: nil, longitude: nil)
-
     @markers = @tracks.map do |track|
       {
         lng: track.longitude,
-        lat: track.latitude
-        # infoWindow: render_to_string(partial: "infoWindow", locals: { tour: tour })
+        lat: track.latitude,
+        infoWindow: render_to_string(partial: "/shared/infoWindow-tracks", locals: { track: track })
       }
     end
 
