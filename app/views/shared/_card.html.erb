@@ -2,7 +2,7 @@
 
 <% @tours.each do |tour| %>
 <div class="card mb-3" style="margin:20px;">
-  <img class="card-img-top" id="image-top" src="https://i.ibb.co/89ZZGxL/steven-groeneveld-1107176-unsplash.jpg"  alt="Card image cap">
+  <img class="card-img-top" id="image-top" src="<%= cl_image_path tour.photos[0].photo %>"  alt="Card image cap">
   <div class="card-body">
     <h3 class="card-title"><%= tour.title %></h3>
     <p class="card-text"><%= tour.start_location %></p>

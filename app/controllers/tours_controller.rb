@@ -6,24 +6,23 @@ class ToursController < ApplicationController
 
     @tours = policy_scope(Tour)
 
-    @tours = Tour.where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      search
+    else
+      @tours = Tour.where.not(latitude: nil, longitude: nil)
+    end
 
     @markers = @tours.map do |tour|
       {
         lng: tour.longitude,
-        lat: tour.latitude
-        # infoWindow: render_to_string(partial: "infoWindow", locals: { tour: tour })
+        lat: tour.latitude,
+        infoWindow: render_to_string(partial: "/shared/infoWindow-tours", locals: { tour: tour })
         # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
 
 
-    # if params[:query].present?
-    #   sql_query = "title ILIKE :query OR location ILIKE :query OR category ILIKE :query"
-    #   @tours = Tour.where(sql_query, query: "%#{params[:query]}%").where.not(latitude: nil, longitude: nil)
-    # else
-    #   @tours = Tour.all.where.not(latitude: nil, longitude: nil)
-    # end
+
 
 
     # @all_tours.each do |tour|
@@ -37,12 +36,11 @@ class ToursController < ApplicationController
   def show
 
     # @tours = Tour.where.not(latitude: nil, longitude: nil)
-
     @markers = @tracks.map do |track|
       {
         lng: track.longitude,
-        lat: track.latitude
-        # infoWindow: render_to_string(partial: "infoWindow", locals: { tour: tour })
+        lat: track.latitude,
+        infoWindow: render_to_string(partial: "/shared/infoWindow-tracks", locals: { track: track })
       }
     end
 
@@ -91,6 +89,11 @@ class ToursController < ApplicationController
   end
 
   private
+
+  def search
+    sql_query = "title ILIKE :query OR start_location ILIKE :query OR category ILIKE :query"
+    @tours = Tour.where(sql_query, query: "%#{params[:query]}%").where.not(latitude: nil, longitude: nil)
+  end
 
   def set_tour
     @tour = Tour.find(params[:id])
