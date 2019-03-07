@@ -24,13 +24,20 @@ const initMapbox = () => {
       .setPopup(popup) // <-- add this
       .addTo(map);
     });
+
+    map.addControl(new mapboxgl.GeolocateControl({
+      positionOptions: {
+        enableHighAccuracy: true
+      },
+      trackUserLocation: true
+    }));
+
     fitMapToMarkers(map, markers);
     // addMarkersToMap(map, markers);
   }
 
 
 };
-
 
 
 export { initMapbox };

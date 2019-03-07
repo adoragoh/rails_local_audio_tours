@@ -43,12 +43,15 @@
         <p class="card-text">Duration: <%= @tour.duration %></p>
         <p class="card-text">Language: <%= @tour.language %></p>
 
-            <p class="card-text"><small class="text-muted">Last updated: <%= @tour.updated_at %></small></p>
+        <p class="card-text"><small class="text-muted">Last updated: <%= @tour.updated_at %></small></p>
             <br>
-            <h6 class="card-title">Tracks: [This will be the tracks list users can select from. When they click on track, it will go to map with directions to the track's starting location. TBC]</h6>
-            <% @tracks.each do |track| %>
-            <p class="card-text"><%= link_to track.title, track_goto_path(params[:id], track) %></p>
-            <% end %>
+        <h6 class="card-title">Tracks: [This will be the tracks list users can select from. When they click on track, it will go to map with directions to the track's starting location. TBC]</h6>
+        <% @tracks.each do |track| %>
+        <p class="card-text"><%= link_to track.title, track_goto_path(params[:id], track) %></p>
+        <% end %>
+
+        <p class="card-text"><%= link_to 'Start tour', track_goto_path(params[:id], @tracks.first) %></p>
+
           </div>
         </div>
       </div>
@@ -61,7 +64,7 @@
       <% tracks.each do |track| %>
       <ul>
         <li>
-          <p><%= track.title %></p>
+          <p><%= track.title %> | <%= track.id %></p>
         </li>
       </ul>
       <% end %>
