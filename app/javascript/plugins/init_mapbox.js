@@ -22,56 +22,66 @@ const initMapbox = () => {
     });
     markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // <-- add this
-    // new mapboxgl.Marker()
-    //   .setLngLat([ marker.lng, marker.lat ])
-    //   .setPopup(popup) // <-- add this
-    //   .addTo(map);
+    new mapboxgl.Marker()
+      .setLngLat([ marker.lng, marker.lat ])
+      .setPopup(popup) // <-- add this
+      .addTo(map);
     });
 
-    var userLocationControl = new mapboxgl.GeolocateControl({
-      positionOptions: {
-        enableHighAccuracy: true
-      },
-      showUserLocation: true
-    })
+    // var userLocationControl = new mapboxgl.GeolocateControl({
+    //   positionOptions: {
+    //     enableHighAccuracy: true
+    //   },
+    //   showUserLocation: true
+    // })
 
-    map.addControl(userLocationControl);
+    // map.addControl(userLocationControl);
 
-      var directionsControl = new MapboxDirections({
-        accessToken: mapboxgl.accessToken,
-        interactive: false,
-        profile:'mapbox/walking',
-        controls:{
-          inputs:false,
-          instructions:false,
-          profileSwitcher:false
-        }
-      })
+    //   var directionsControl = new MapboxDirections({
+    //     accessToken: mapboxgl.accessToken,
+    //     interactive: false,
+    //     profile:'mapbox/walking',
+    //     controls:{
+    //       inputs:false,
+    //       instructions:false,
+    //       profileSwitcher:false
+    //     }
+    //   })
 
-      map.addControl(directionsControl, 'top-left');
+    //   map.addControl(directionsControl, 'top-left');
 
-      const addRouteToMap = (currentUserLat, currentUserLon) => {
-        directionsControl.setOrigin([currentUserLon, currentUserLat]);
-        directionsControl.setDestination([mapElement.dataset.destinationLon, mapElement.dataset.destinationLat]);
-      }
-
-
-      map.on('load', function(){
-        userLocationControl.trigger();
-      });
-
-      userLocationControl.on('geolocate', function(userLocation) {
-        addRouteToMap(userLocation.coords.latitude, userLocation.coords.longitude);
-      });
-
-      userLocationControl.on('error', function(error) {
-        alert(error.message);
-      });
+    //   const addRouteToMap = (currentUserLat, currentUserLon) => {
+    //     directionsControl.setOrigin([currentUserLon, currentUserLat]);
+    //     directionsControl.setDestination([mapElement.dataset.destinationLon, mapElement.dataset.destinationLat]);
+    //   }
 
 
-    // fitMapToMarkers(map, markers);
-    // addMarkersToMap(map, markers);
+    //   map.on('load', function(){
+    //     userLocationControl.trigger();
+    //   });
+
+    //   userLocationControl.on('geolocate', function(userLocation) {
+    //     addRouteToMap(userLocation.coords.latitude, userLocation.coords.longitude);
+    //   });
+
+    //   userLocationControl.on('error', function(error) {
+    //     alert(error.message);
+    //   });
+
+    const resizeMap = () => {
+      setTimeout( () => {
+        map.resize();
+      }, 1);
+    }
+
+    document.querySelector('.js-refresh-size').addEventListener('click', resizeMap);
+    document.querySelector('.js-refresh-size').addEventListener('touchstart', resizeMap);
+
+
+    fitMapToMarkers(map, markers);
+    addMarkersToMap(map, markers);
   }
+
 
 
 

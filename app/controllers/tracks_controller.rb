@@ -47,6 +47,7 @@ class TracksController < ApplicationController
   end
 
   def goto
+    raise
     @marker =
       {
         lng: @track.longitude,
