@@ -1,0 +1,22 @@
+.top-navbar-wrapper{
+  background-color:white;
+}
+
+.top-navbar{
+  color:#ff525e;
+  font-family: "Montserrat";
+  font-weight: bold;
+  text-align: center;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  transition: all 0.3s ease;
+
+  .avatar{
+    height:40px;
+    margin-right:10px;
+  }
+}
+
+
+
