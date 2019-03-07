@@ -1,8 +1,10 @@
 <div
-  id="goto-map"
+  id="map"
   style="
   min-width: 100%;
   min-height: 1000px;"
   data-markers="[<%= @marker.to_json %>]"
+  data-destination-lon="<%= @marker[:lng] %>"
+  data-destination-lat="<%= @marker[:lat] %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
