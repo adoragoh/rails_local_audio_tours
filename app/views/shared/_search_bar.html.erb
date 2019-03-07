@@ -1,4 +1,4 @@
-<div class="container-fluid">
+
   <div class="search-container">
     <%= form_tag tours_path, method: :get do %>
     <%= text_field_tag :query,
@@ -7,9 +7,9 @@
         id: "search-bar",
       placeholder: "Find a tour near you"
       %>
-    <div class="form-inputs">
-      <%= button_to :submit %>
-    </div>
+      <div class="form-inputs">
+        <%= button_to :submit %>
+      </div>
+    <%end%>
+  </div>
 
-  <% end %>
-</div>
