@@ -1,7 +1,7 @@
 class TracksController < ApplicationController
-  before_action :set_track, only: [:show, :edit, :update, :destroy]
-  before_action :set_tour, only: [:show, :create, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_track, only: [:show, :edit, :update, :destroy, :goto]
+  before_action :set_tour, only: [:show, :create, :edit, :update, :destroy, :goto]
+  before_action :authenticate_user!, except: [:index, :show, :goto]
 
   def index
     @tracks = policy_scope(Track)
@@ -44,6 +44,9 @@ class TracksController < ApplicationController
     # if @booked
     #   @booking = current_user.bookings.where(track_id: params[:id]).first
     # end
+  end
+
+  def goto
   end
 
   def new
