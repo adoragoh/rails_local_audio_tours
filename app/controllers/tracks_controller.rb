@@ -13,13 +13,13 @@ class TracksController < ApplicationController
     #   @tracks = track.all.where.not(latitude: nil, longitude: nil)
     # end
 
-    # @markers = @tracks.map do |track|
-    #   {
-    #     lng: track.longitude,
-    #     lat: track.latitude,
-    #     infoWindow: render_to_string(partial: "/shared/map_info", locals: { track: track })
-    #   }
-    # end
+    @markers = @tracks.map do |track|
+      {
+        lng: track.longitude,
+        lat: track.latitude,
+        infoWindow: render_to_string(partial: "/shared/map_info", locals: { track: track })
+      }
+    end
 
     # @all_tracks.each do |track|
     #   if !@categories.include?(track.category)
