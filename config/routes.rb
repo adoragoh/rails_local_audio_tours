@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   resources :favourites, only: [ :index, :edit, :update, :destroy ]
 
   get '/profile', to: 'profiles#index'
+  get '/tours/:tour_id/tracks/:id/goto', to: 'tracks#goto', as: 'track_goto'
 
 end

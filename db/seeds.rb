@@ -10,6 +10,7 @@ puts "Clearing database..."
 
 User.destroy_all
 Tour.destroy_all
+Track.destroy_all
 
 puts "Adding Winson, Alex & Adora as users to the database."
 
@@ -185,6 +186,8 @@ tours.each do |tour|
   # tour.save
 end
 
+
+
 puts "Many awesome tours added to your database!"
 
 tracks_array = [
@@ -199,8 +202,8 @@ tracks_array = [
     tour: Tour.first
   },
   {
-    title: "Yarra River",
-    location: "Yarra River",
+    title: "Eureka Skydeck",
+    location: "Eureka Skydeck",
     tour: Tour.first
   }
 ]
