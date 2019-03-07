@@ -13,7 +13,7 @@ class ToursController < ApplicationController
         lng: tour.longitude,
         lat: tour.latitude,
         infoWindow: render_to_string(partial: "/shared/infoWindow-tours", locals: { tour: tour })
-        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+        # image_url: helpers.asset_url('<%= cl_image_path @tour.photos[0].photo %>')
       }
     end
 
@@ -42,6 +42,7 @@ class ToursController < ApplicationController
         lng: track.longitude,
         lat: track.latitude,
         infoWindow: render_to_string(partial: "/shared/infoWindow-tracks", locals: { track: track })
+        # image_url: helpers.asset_url('<%= cl_image_path track.photo %>')
       }
     end
 

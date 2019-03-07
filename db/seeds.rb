@@ -40,7 +40,7 @@ tours_array = [
   {
   title: "1900s history booze cruise",
   start_location: "Melbourne",
-  description: "Super awesome booze cruise with lots of chicks Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam repellat pariatur, quis suscipit, sed, nostrum provident quod eligendi assumenda saepe eius adipisci aspernatur debitis tempore nihil voluptatibus corrupti, optio eveniet..",
+  description: "Super awesome booze cruise with lots of chicks. In this audio tour, we will explore new bars in the historic sites of Melbourne. Bring along your friends and your booze appetite. We will live it up like its 1989!",
   user: User.last,
   category: "Boozy", #TODO: Create a dropdown of categories to choose from (mayben will need new table? But don't worry about it yet)
   language: "English"
@@ -177,7 +177,6 @@ tours = Tour.all
 tours.each do |tour|
   photo = Photo.new
   photo.remote_photo_url = "https://source.unsplash.com/1600x900/?#{tour.title}"
-  # "https://res.cloudinary.com/dm25xqrrj/video/upload/v1551761977/samples/David_s_Dream.mp3"
   photo.tour = tour
   photo.save
   # p.remote_photo_url = "https://source.unsplash.com/1600x900/?#{tour.title}"
@@ -216,6 +215,7 @@ tracks = Track.all
 
 tracks.each do |track|
   track.remote_audio_url = "https://res.cloudinary.com/dm25xqrrj/video/upload/v1551761977/samples/David_s_Dream.mp3"
+  track.remote_photo_url = "https://source.unsplash.com/1600x900/?#{track.title}"
   track.save
 end
 
