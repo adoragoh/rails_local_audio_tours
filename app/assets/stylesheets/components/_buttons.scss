@@ -43,5 +43,6 @@
 #goto-button {
   position: fixed;
   bottom: 0;
-  height: 10vh
+  height: 10vh;
+  z-index: 5;
 }
