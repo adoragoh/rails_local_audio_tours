@@ -1,11 +1,5 @@
 <div class="navbar-wagon">
-  <!-- Logo -->
-<!--   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
-  <% end %> -->
 
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
 
@@ -13,26 +7,13 @@
       <a class="navbar-wagon-item navbar-wagon-link" href='<%= tours_path%>'><i class="fas fa-home fa-2x"></i></a>
       <a class="navbar-wagon-item navbar-wagon-link" href='<%= tours_path%>'><i class="fas fa-search fa-2x"></i></a>
       <a class="navbar-wagon-item navbar-wagon-link" href='<%= tours_path%>'><i class="far fa-star fa-2x"></i></a>
+      <a class="navbar-wagon-item navbar-wagon-link" href='<%= tours_path%>'><i class="fas fa-sign-out-alt fa-2x"></i></a>
 
-
-      <!-- Avatar with dropdown menu -->
 
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
-
-  <!-- Dropdown list appearing on mobile only -->
-<!--   <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown dropup">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
-      </ul>
-    </div>
-  </div> -->
 </div>
 
