@@ -38,6 +38,15 @@ puts "Adding 5 epic tours to the database."
 
 tours_array = [
   {
+  title: "Classic Melbourne Tour",
+  start_location: "Melbourne",
+  description: "A local's audio guide to the must visit places in Melbourne - suitable for first time explorers and those looking to delve a little deeper to explore the city's rich character. From history and architecture to contemporary laneway culture, sport or street art – we have your interests covered. This audio tour is a new and personalized way to really experience the city.",
+  user: User.last,
+  category: "Adventure", #TODO: Create a dropdown of categories to choose from (mayben will need new table? But don't worry about it yet)
+  language: "English"
+  },
+
+  {
   title: "1900s history booze cruise",
   start_location: "Melbourne",
   description: "Super awesome booze cruise with lots of chicks. In this audio tour, we will explore new bars in the historic sites of Melbourne. Bring along your friends and your booze appetite. We will live it up like its 1989!",
@@ -189,35 +198,69 @@ end
 
 puts "Many awesome tours added to your database!"
 
-tracks_array = [
-  {
-    title: "Port Melbourne",
-    location: "Port Melbourne",
-    tour: Tour.first
-  },
-  {
-    title: "Docklands",
-    location: "Docklands",
-    tour: Tour.first
-  },
-  {
-    title: "Eureka Skydeck",
-    location: "Eureka Skydeck",
-    tour: Tour.first
-  }
+# tracks_array = [
+#   {
+#     title: "Melbourne City",
+#     location: "Federation square",
+#     tour: Tour.first
+#   },
+#   {
+#     title: "S",
+#     location: "Docklands",
+#     tour: Tour.first
+#   },
+#   {
+#     title: "Eureka Skydeck",
+#     location: "Eureka Skydeck",
+#     tour: Tour.first
+#   }
+# ]
+
+
+# puts "Adding 3 audio tracks to our first tour..."
+
+# Track.create!(tracks_array)
+
+# tracks = Track.all
+
+
+track_titles = ['Melbourne',
+  'Federation square',
+  'State Library Victoria',
+  'Melbourne Central',
+  'Flinders Lane'
+  'Melbourne Gaol'
+   ]
+
+track_locations = ['Melbourne',
+  'Federation square',
+  'State Library Victoria',
+  'Melbourne Central',
+  'Flinders Lane'
+  'Melbourne Gaol'
+   ]
+
+track_urls = ['https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/Preview_take_6.3gp',
+  'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016860/Sample%20audio%20tracks/Federation_square_take_1.3gp',
+  'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/State_library_victoria_take_1.3gp',
+  'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/Melbourne_central_take_1.3gp',
+  'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016860/Sample%20audio%20tracks/Flinders_lane_take_1.3gp',
+  'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/Melbourne_gaol.3gp'
 ]
 
-puts "Adding 3 audio tracks to our first tour..."
-
-Track.create!(tracks_array)
-
-tracks = Track.all
-
-tracks.each do |track|
-  track.remote_audio_url = "https://res.cloudinary.com/dm25xqrrj/video/upload/v1551761977/samples/David_s_Dream.mp3"
-  track.remote_photo_url = "https://source.unsplash.com/1600x900/?#{track.title}"
-  track.save
+tours.each do |tour|
+  counter = 0
+  track_titles.each do |track_title|
+    if counter != track_titles.length-1
+      track = Track.create(title: track_titles[counter], location: track_locations[counter], tour: tour )
+      track.remote_audio_url = track_urls[counter]
+      track.remote_photo_url = "https://source.unsplash.com/1600x900/?#{track.title}"
+      track.save
+      counter += 1
+    end
+  end
 end
 
-puts "3 audio tracks added to the first tour!"
+
+puts "Awesome audio tracks added to the tours!"
 
