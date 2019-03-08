@@ -36,6 +36,7 @@ class ToursController < ApplicationController
   def show
 
     # @tours = Tour.where.not(latitude: nil, longitude: nil)
+
     @markers = @tracks.map do |track|
       {
         lng: track.longitude,
@@ -44,6 +45,7 @@ class ToursController < ApplicationController
         # image_url: helpers.asset_url('<%= cl_image_path track.photo %>')
       }
     end
+
 
     # @booking = Booking.new
 
