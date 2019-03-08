@@ -7,13 +7,18 @@
       <a class="navbar-wagon-item navbar-wagon-link" href='<%= tours_path%>'><i class="fas fa-home fa-2x"></i></a>
       <a class="navbar-wagon-item navbar-wagon-link" href='<%= tours_path%>'><i class="fas fa-search fa-2x"></i></a>
       <a class="navbar-wagon-item navbar-wagon-link" href='<%= tours_path%>'><i class="far fa-star fa-2x"></i></a>
-      <a class="navbar-wagon-item navbar-wagon-link" href='<%= tours_path%>'><i class="fas fa-sign-out-alt fa-2x"></i></a>
-
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fa fa-sign-out-alt fa-2x"></i>
+      <% end %>
 
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <a class="navbar-wagon-item navbar-wagon-link" href='<%= new_user_session_path%>'><i class="fas fa-sign-in-alt fa-2x"></i></a>
     <% end %>
   </div>
 </div>
+
+
+
 
