@@ -11,7 +11,8 @@
 
 <!-- <button type="button" class="btn btn-success btn-lg btn-block" style="height: 10vh;"> <%= link_to "PLAY TRACK", tour_track_path(@tour, @track) %></button> -->
    <%= link_to(tour_track_path(@tour, @track)) do   %>
-      <button type="button" class="btn btn-success btn-lg btn-block" id="goto-button">play track</button>
+      <button type="button" class="btn btn-success btn-lg btn-block" id="goto-button">
+        <h4>PLAY TRACK</h4></button>
     <%end%>
 
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.0/mapbox-gl-directions.js'></script>
