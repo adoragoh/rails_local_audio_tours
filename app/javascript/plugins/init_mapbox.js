@@ -28,6 +28,8 @@ const initMapbox = () => {
       .addTo(map);
     });
 
+
+    // goto page routing to waypoint
     var userLocationControl = new mapboxgl.GeolocateControl({
       positionOptions: {
         enableHighAccuracy: true
@@ -67,6 +69,7 @@ const initMapbox = () => {
       userLocationControl.on('error', function(error) {
         alert(error.message);
       });
+    //
 
     // map resize when tab opened on tours#index page
     const resizeMap = () => {
@@ -77,7 +80,7 @@ const initMapbox = () => {
 
     document.querySelector('.js-refresh-size').addEventListener('click', resizeMap);
     document.querySelector('.js-refresh-size').addEventListener('touchstart', resizeMap);
-
+    //
 
     fitMapToMarkers(map, markers);
     addMarkersToMap(map, markers);
