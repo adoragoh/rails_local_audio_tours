@@ -29,47 +29,47 @@ const initMapbox = () => {
     });
 
 
-    // goto page routing to waypoint
-    var userLocationControl = new mapboxgl.GeolocateControl({
-      positionOptions: {
-        enableHighAccuracy: true
-      },
-      showUserLocation: true
-    })
+    // // goto page routing to waypoint
+    // var userLocationControl = new mapboxgl.GeolocateControl({
+    //   positionOptions: {
+    //     enableHighAccuracy: true
+    //   },
+    //   showUserLocation: true
+    // })
 
-    map.addControl(userLocationControl);
+    // map.addControl(userLocationControl);
 
-      var directionsControl = new MapboxDirections({
-        accessToken: mapboxgl.accessToken,
-        interactive: false,
-        profile:'mapbox/walking',
-        controls:{
-          inputs:false,
-          instructions:false,
-          profileSwitcher:false
-        }
-      })
+    //   var directionsControl = new MapboxDirections({
+    //     accessToken: mapboxgl.accessToken,
+    //     interactive: false,
+    //     profile:'mapbox/walking',
+    //     controls:{
+    //       inputs:false,
+    //       instructions:false,
+    //       profileSwitcher:false
+    //     }
+    //   })
 
-      map.addControl(directionsControl, 'top-left');
+    //   map.addControl(directionsControl, 'top-left');
 
-      const addRouteToMap = (currentUserLat, currentUserLon) => {
-        directionsControl.setOrigin([currentUserLon, currentUserLat]);
-        directionsControl.setDestination([mapElement.dataset.destinationLon, mapElement.dataset.destinationLat]);
-      }
+    //   const addRouteToMap = (currentUserLat, currentUserLon) => {
+    //     directionsControl.setOrigin([currentUserLon, currentUserLat]);
+    //     directionsControl.setDestination([mapElement.dataset.destinationLon, mapElement.dataset.destinationLat]);
+    //   }
 
 
-      map.on('load', function(){
-        userLocationControl.trigger();
-      });
+    //   map.on('load', function(){
+    //     userLocationControl.trigger();
+    //   });
 
-      userLocationControl.on('geolocate', function(userLocation) {
-        addRouteToMap(userLocation.coords.latitude, userLocation.coords.longitude);
-      });
+    //   userLocationControl.on('geolocate', function(userLocation) {
+    //     addRouteToMap(userLocation.coords.latitude, userLocation.coords.longitude);
+    //   });
 
-      userLocationControl.on('error', function(error) {
-        alert(error.message);
-      });
-    //
+    //   userLocationControl.on('error', function(error) {
+    //     alert(error.message);
+    //   });
+    // //
 
     // map resize when tab opened on tours#index page
     const resizeMap = () => {
@@ -83,7 +83,7 @@ const initMapbox = () => {
     //
 
     fitMapToMarkers(map, markers);
-    addMarkersToMap(map, markers);
+    // addMarkersToMap(map, markers);
   }
 
 
