@@ -35,6 +35,7 @@ class ToursController < ApplicationController
 
   def show
 
+
     # @tours = Tour.where.not(latitude: nil, longitude: nil)
 
     @markers = @tracks.map do |track|
