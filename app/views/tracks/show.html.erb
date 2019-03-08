@@ -1,20 +1,21 @@
-<div class="tracks-container" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 50%), url('<%= cl_image_path @track.photo %>');">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 50%), url('<%= cl_image_path @track.photo %>');">
   <div class="container">
-      <h2><%= @track.title %></h2>
+    <h1><strong><%= @track.title %></strong></h1>
+    <hr>
     <%= render 'shared/audio_player' %>
+    <!-- <p>Change your life and learn to code at one of our campuses around the world.</p> -->
 
     <% tour_track_ids = @tour.tracks.ids %>
     <% track_id =  @track.id %>
-
-
     <% if track_id != @tour.tracks.last.id %>
       <% next_track_index = tour_track_ids.index(track_id)+1 %>
       <% next_track_id = tour_track_ids[next_track_index] %>
-      <%= next_track = @tour.tracks.find(next_track_id) %>
-      <%= link_to "Next track", track_goto_path(@tour, next_track) %>
+      <% next_track = @tour.tracks.find(next_track_id) %>
+      <br><br>
+      <%= link_to "Next track", track_goto_path(@tour, next_track), class: "btn btn-gradient" %>
     <% else %>
-    <%= link_to "Complete Tour!", tour_path(@tour)  %>
+      <br><br>
+      <%= link_to "Complete Tour!", tour_path(@tour), class: "btn btn-success"  %>
     <% end %>
   </div>
-
 </div>
