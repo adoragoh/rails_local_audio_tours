@@ -32,6 +32,10 @@ const initMapbox = () => {
       trackUserLocation: true
     }));
 
+    map.addControl(new MapboxDirections({
+      accessToken: mapboxgl.accessToken
+      }), 'top-left');
+
     fitMapToMarkers(map, markers);
     // addMarkersToMap(map, markers);
   }
