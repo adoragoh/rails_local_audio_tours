@@ -7,13 +7,13 @@
   </div>
   <div class="row">
     <div class="col-4">
-      <img src="<%= cl_image_path @tour.photos[0].photo %>" alt="" class='show-image'>
+      <img src="<%= cl_image_path @tour.tracks[0].photo %>" alt="" class='main-image'>
     </div>
     <div class="col-4">
-      <img src="<%= cl_image_path @tour.photos[0].photo %>" alt="" class='show-image'>
+      <img src="<%= cl_image_path @tour.tracks[1].photo %>" alt="" class='main-image'>
     </div>
     <div class="col-4">
-      <img src="<%= cl_image_path @tour.photos[0].photo %>" alt="" class='show-image'>
+      <img src="<%= cl_image_path @tour.tracks[2].photo %>" alt="" class='main-image'>
     </div>
   </div>
 </div>
@@ -29,7 +29,7 @@
     <!-- <div id="map"></div> -->
   </div>
     <div class="show-title">
-      <h3>Preview Tour  <i class="fas fa-play-circle"></i></h3>
+      <h3>Preview Tour</h3>
       <%= render 'shared/audio_player' %>
     </div>
 
@@ -39,18 +39,13 @@
         <p class="card-text"><small class="text-muted"><%= @tour.category.capitalize %></small></p>
         <h5 class="card-title"><%= @tour.title %> </h5>
         <p class="card-text"><%= @tour.description %></p>
-        <p class="card-text">Start location: <%= @tour.start_location %></p>
-        <p class="card-text">Duration: <%= @tour.duration %></p>
-        <p class="card-text">Language: <%= @tour.language %></p>
+        <p><i class="fas fa-map-marker-alt">&nbsp;</i><%= @tour.start_location.capitalize %></p>
+        <p><i class="fas fa-clock">&nbsp;</i><%= rand(1..3) %> hours</p>
+        <p><i class="fas fa-flag">&nbsp;</i><%= @tour.language %></p>
 
         <p class="card-text"><small class="text-muted">Last updated: <%= @tour.updated_at %></small></p>
             <br>
-        <h6 class="card-title">Tracks: [This will be the tracks list users can select from. When they click on track, it will go to map with directions to the track's starting location. TBC]</h6>
-        <% @tracks.each do |track| %>
-        <p class="card-text"><%= link_to track.title, track_goto_path(params[:id], track) %></p>
-        <% end %>
-
-        <p class="card-text"><%= link_to 'Start tour', track_goto_path(params[:id], @tracks.first) %></p>
+        <%= link_to "START TOUR !", track_goto_path(params[:id], @tracks.first), class: "btn btn-gradient" %>
 
           </div>
         </div>
@@ -64,12 +59,11 @@
       <% tracks.each do |track| %>
       <ul>
         <li>
-          <p><%= track.title %> | <%= track.id %></p>
+          <p><%= track.title %></p>
         </li>
       </ul>
       <% end %>
     </div>
-    <div class="container">
       <%= render 'shared/map' %>
-    </div>
+
 

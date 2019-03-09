@@ -1,5 +1,5 @@
 <audio controls="controls">
 <!-- <source src="track.ogg" type="audio/ogg" /> -->
-<source src="<%= cl_video_tag(@tracks[0].audio.file.public_id)%>" type="audio/mpeg" />
+<source src="<%= cl_video_tag(@track.audio.file.public_id)%>" type="audio/mpeg" />
 Your browser does not support the audio element.
 </audio>

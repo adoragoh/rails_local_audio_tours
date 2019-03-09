@@ -9,7 +9,6 @@ class Tour < ApplicationRecord
   validates :title, presence: true, uniqueness: true
   validates :start_location, presence: true
   validates :description, length: { minimum: 50, maximum: 2000 }, allow_blank: false
-  validates :capacity, presence: true, numericality: { only_integer: true }
   validates :language, presence: true
   validates :category, presence: true
 end

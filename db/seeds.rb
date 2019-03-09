@@ -38,41 +38,50 @@ puts "Adding 5 epic tours to the database."
 
 tours_array = [
   {
-  title: "1900s history booze cruise",
+  title: "Classic Melbourne Tour",
   start_location: "Melbourne",
-  description: "Super awesome booze cruise with lots of chicks Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam repellat pariatur, quis suscipit, sed, nostrum provident quod eligendi assumenda saepe eius adipisci aspernatur debitis tempore nihil voluptatibus corrupti, optio eveniet..",
+  description: "A local's audio guide to the must visit places in Melbourne - suitable for first time explorers and those looking to delve a little deeper to explore the city's rich character. From history and architecture to contemporary laneway culture, sport or street art – we have your interests covered. This audio tour is a new and personalized way to really experience the city.",
+  user: User.last,
+  category: "Adventure", #TODO: Create a dropdown of categories to choose from (mayben will need new table? But don't worry about it yet)
+  language: "English"
+  },
+
+  {
+  title: "1900s history booze cruise",
+  start_location: "Docklands",
+  description: "Super awesome booze cruise with lots of chicks. In this audio tour, we will explore new bars in the historic sites of Melbourne. Bring along your friends and your booze appetite. We will live it up like its 1989!",
   user: User.last,
   category: "Boozy", #TODO: Create a dropdown of categories to choose from (mayben will need new table? But don't worry about it yet)
   language: "English"
   },
   {
-  title: "Camel ride across the Nullabor Desert",
+  title: "Ride across the Nullabor Desert",
   start_location: "Alice Springs",
-  description: "Super awesome camel rides with lots of digital nomads. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo natus maiores laborum ipsam ea aut, accusantium ratione. Perferendis, consequuntur, adipisci. Magnam ad, placeat cum. Maxime architecto reprehenderit, dolores hic minus?",
+  description: "Follow our awesome audio driving tour across the Nullabor Desert and understand the interesting sights and places of interest in the desert that you pass by ",
   user: User.last,
   category: "Adventure",
   language: "English"
   },
   {
-  title: "Hipster bar crawl in Newtown",
+  title: "1800s Sydney Underbelly",
   start_location: "Sydney",
-  description: "Super awesome pub crawl with lots of httpsters. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quibusdam amet ad magnam esse expedita aliquam quasi id voluptas neque alias quam eveniet officia voluptatum distinctio, aperiam necessitatibus quae quisquam.",
+  description: "Take an audio tour trip back in time to 1816, the year where the Italian Mafia ruled the streets of Sydney.",
   user: User.last,
   category: "Boozy",
   language: "English"
   },
   {
   title: "Ghost Tour",
-  start_location: "Melbourne",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi commodi temporibus, veritatis quidem error, aperiam amet velit, ratione dolore eum id unde. Modi dolor enim ratione labore ipsum, sequi quas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. In porro mollitia, quam voluptates ipsam iusto, animi illum doloremque rerum hic repudiandae ad dolor impedit eum itaque. Necessitatibus animi ab, natus.",
+  start_location: "Melbourne Gaol",
+  description: "Not for the faint hearted! Try this unique tour to find out more about Melbourne's famous haunted locations.",
   user: User.last,
   category: "Supernatural",
   language: "English"
   },
   {
-  title: "Gold diggers fantasy camp",
+  title: "Gold diggers fantasy tour",
   start_location: "Ballarat",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi commodi temporibus, veritatis quidem error, aperiam amet velit, ratione dolore eum id unde. Modi dolor enim ratione labore ipsum, sequi quas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  description: "Explore Ballarat through the lens of a local gold digger.",
   user: User.last,
   category: "History",
   language: "English"
@@ -80,15 +89,15 @@ tours_array = [
   {
   title: "Foodies galore",
   start_location: "Queensland",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi commodi temporibus, veritatis quidem error, aperiam amet velit, ratione dolore eum id unde. Modi dolor enim ratione labore ipsum, sequi quas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  description: "Find the best places to eat in Queensland and discover an appetite inside of you you never knew.",
   user: User.first,
   category: "Food",
   language: "English"
   },
   {
-  title: "Diving with the sharks",
-  start_location: "Cairns",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi commodi temporibus, veritatis quidem error, aperiam amet velit, ratione dolore eum id unde. Modi dolor enim ratione labore ipsum, sequi quas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  title: "Cycling with the kangaroos and wilderbeasts",
+  start_location: "Perth",
+  description: "Go on mountain bike trail through the parks of Perth to discover the habitat of kangaroos and wilderbeasts.",
   user: User.first,
   category: "Adventure",
   language: "English"
@@ -96,7 +105,7 @@ tours_array = [
   {
   title: "Live it up with the crocodiles",
   start_location: "Darwin",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi commodi temporibus, veritatis quidem error, aperiam amet velit, ratione dolore eum id unde. Modi dolor enim ratione labore ipsum, sequi quas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  description: "Do a walking audio tour through the infamous billabongs of Darwin. Not for the faint hearted!",
   user: User.first,
   category: "Adventure",
   language: "English"
@@ -104,23 +113,23 @@ tours_array = [
   {
   title: "Tuk Tuk racing",
   start_location: "Bangkok",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi commodi temporibus, veritatis quidem error, aperiam amet velit, ratione dolore eum id unde. Modi dolor enim ratione labore ipsum, sequi quas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  description: "Jump on a tuk tuk and follow our audio tour through the famous busy streets of Bangkok.",
   user: User.first,
   category: "Sightseeing",
   language: "English"
   },
   {
-  title: "Diving with corals",
+  title: "Walkabout in Phi Phi",
   start_location: "Phi Phi Island",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi commodi temporibus, veritatis quidem error, aperiam amet velit, ratione dolore eum id unde. Modi dolor enim ratione labore ipsum, sequi quas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  description: "Have a personalised audio tour of Phi Phi island and experience the island the way locals do.",
   user: User.first,
   category: "Adventure",
   language: "English"
   },
   {
-  title: "Fight like a viking",
+  title: "Life as a viking",
   start_location: "Edinburgh",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi commodi temporibus, veritatis quidem error, aperiam amet velit, ratione dolore eum id unde. Modi dolor enim ratione labore ipsum, sequi quas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  description: "Walk through the cobbled streets of Edinburgh in a kilt and taste the exciting life of a viking in the 1800s.",
   user: User.first,
   category: "History",
   language: "English"
@@ -128,7 +137,7 @@ tours_array = [
   {
   title: "See Everest",
   start_location: "Nepal",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi commodi temporibus, veritatis quidem error, aperiam amet velit, ratione dolore eum id unde. Modi dolor enim ratione labore ipsum, sequi quas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  description: "Follow our audio tour to the peak of the highest mountain on earth.",
   user: User.first,
   category: "Adventure",
   language: "English"
@@ -136,7 +145,7 @@ tours_array = [
   {
   title: "MCG tours",
   start_location: "Melbourne Cricket Grounds",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi commodi temporibus, veritatis quidem error, aperiam amet velit, ratione dolore eum id unde. Modi dolor enim ratione labore ipsum, sequi quas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  description: "Have a free walking audio tour around one of the most important sporting grounds in Australian history.",
   user: User.first,
   category: "Sightseeing",
   language: "English"
@@ -144,15 +153,15 @@ tours_array = [
   {
   title: "Penang Foodies Tour",
   start_location: "Penang",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi commodi temporibus, veritatis quidem error, aperiam amet velit, ratione dolore eum id unde. Modi dolor enim ratione labore ipsum, sequi quas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  description: "Follow an audio tour food trail from a local's perspective. Find hidden gems of the city of Penang well-kept from the average tourist.",
   user: User.first,
   category: "Food",
   language: "English"
   },
   {
-  title: "Sand dune boarding",
+  title: "Sand dune ATV",
   start_location: "Perth",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi commodi temporibus, veritatis quidem error, aperiam amet velit, ratione dolore eum id unde. Modi dolor enim ratione labore ipsum, sequi quas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  description: "Jump on a quad bike and experience what its like to live in the sand dunes and experience the different attractions.",
   user: User.first,
   category: "Adventure",
   language: "English"
@@ -160,7 +169,7 @@ tours_array = [
   {
   title: "Hidden Melbourne cafes",
   start_location: "Melbourne",
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi commodi temporibus, veritatis quidem error, aperiam amet velit, ratione dolore eum id unde. Modi dolor enim ratione labore ipsum, sequi quas. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  description: "Follow our audio tour where we will show you how to find the hidden cafe gems in Melbourne city.",
   user: User.first,
   category: "Food",
   language: "English"
@@ -177,7 +186,6 @@ tours = Tour.all
 tours.each do |tour|
   photo = Photo.new
   photo.remote_photo_url = "https://source.unsplash.com/1600x900/?#{tour.title}"
-  # "https://res.cloudinary.com/dm25xqrrj/video/upload/v1551761977/samples/David_s_Dream.mp3"
   photo.tour = tour
   photo.save
   # p.remote_photo_url = "https://source.unsplash.com/1600x900/?#{tour.title}"
@@ -190,34 +198,67 @@ end
 
 puts "Many awesome tours added to your database!"
 
-tracks_array = [
-  {
-    title: "Port Melbourne",
-    location: "Port Melbourne",
-    tour: Tour.first
-  },
-  {
-    title: "Docklands",
-    location: "Docklands",
-    tour: Tour.first
-  },
-  {
-    title: "Eureka Skydeck",
-    location: "Eureka Skydeck",
-    tour: Tour.first
-  }
+# tracks_array = [
+#   {
+#     title: "Melbourne City",
+#     location: "Federation square",
+#     tour: Tour.first
+#   },
+#   {
+#     title: "S",
+#     location: "Docklands",
+#     tour: Tour.first
+#   },
+#   {
+#     title: "Eureka Skydeck",
+#     location: "Eureka Skydeck",
+#     tour: Tour.first
+#   }
+# ]
+
+
+# puts "Adding 3 audio tracks to our first tour..."
+
+# Track.create!(tracks_array)
+
+# tracks = Track.all
+
+
+track_titles = ['Melbourne',
+  'Federation square',
+  'State Library Victoria',
+  'Melbourne Central',
+  'Flinders Lane',
+  'Melbourne Gaol'
+   ]
+
+track_locations = ['Melbourne',
+  'Federation square',
+  'State Library Victoria',
+  'Melbourne Central',
+  'Flinders Lane',
+  'Melbourne Gaol']
+
+track_urls = ['https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/Preview_take_6.3gp',
+  'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016860/Sample%20audio%20tracks/Federation_square_take_1.3gp',
+  'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/State_library_victoria_take_1.3gp',
+  'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/Melbourne_central_take_1.3gp',
+  'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016860/Sample%20audio%20tracks/Flinders_lane_take_1.3gp',
+  'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/Melbourne_gaol.3gp'
 ]
 
-puts "Adding 3 audio tracks to our first tour..."
-
-Track.create!(tracks_array)
-
-tracks = Track.all
-
-tracks.each do |track|
-  track.remote_audio_url = "https://res.cloudinary.com/dm25xqrrj/video/upload/v1551761977/samples/David_s_Dream.mp3"
-  track.save
+tours.each do |tour|
+  counter = 0
+  track_titles.each do |track_title|
+    if counter != track_titles.length-1
+      track = Track.create(title: track_titles[counter], location: track_locations[counter], tour: tour )
+      track.remote_audio_url = track_urls[counter]
+      track.remote_photo_url = "https://source.unsplash.com/1600x900/?#{track.title}"
+      track.save
+      counter += 1
+    end
+  end
 end
 
-puts "3 audio tracks added to the first tour!"
 
+puts "Awesome audio tracks added to the tours!"
