@@ -2,33 +2,35 @@
 
 
 <!-- <header class="page-head"><h1 style="text-align: center; margin-top: 15px;">Tours</h1></header> -->
-<%= render 'shared/top-navbar' %>
-<%= render 'shared/search_bar' %>
+<div class="overall-wrapper">
+  <%= render 'shared/top-navbar' %>
+  <%= render 'shared/search_bar' %>
 
- <ul class="nav nav-pills">
-  <li class="nav-item active">
-    <a class="nav-link" href="#1" data-toggle="tab">List</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link js-refresh-size" href="#2" data-toggle="tab">Map</a>
-  </li>
-</ul>
+   <ul class="nav nav-pills">
+    <li class="nav-item active">
+      <a class="nav-link" href="#1" data-toggle="tab">List</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-refresh-size" href="#2" data-toggle="tab">Map</a>
+    </li>
+  </ul>
 
 
-<div class="tab-content">
-  <div role="tabpanel" class="list-cards tab-pane active" id="1">
-    <div style="margin-top: 20px;">
-      <div class="">
-        <h5>Audio tours near you</h5>
+  <div class="tab-content">
+    <div role="tabpanel" class="list-cards tab-pane active" id="1">
+      <div style="margin-top: 20px;">
+        <div class="index-content text-center">
+          <h3>Audio tours near you</h3>
+        </div>
+
+        <%= render 'shared/card' %>
       </div>
 
-      <%= render 'shared/card' %>
     </div>
-
-  </div>
-  <div role="tabpanel" class="map-card tab-pane" role="tabpanel" id="2">
-    <!-- <div class="container"> -->
-      <%= render 'shared/map' %>
-    <!-- </div> -->
+    <div role="tabpanel" class="map-card tab-pane" role="tabpanel" id="2">
+      <!-- <div class="container"> -->
+        <%= render 'shared/map' %>
+      <!-- </div> -->
+    </div>
   </div>
 </div>

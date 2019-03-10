@@ -1,9 +1,9 @@
 .top-navbar-wrapper{
-  background-color:white;
+  background: rgba(20,20,20,0.9);
 }
 
 .top-navbar{
-  color:#ff525e;
+  color:white;
   font-family: "Montserrat";
   font-weight: bold;
   text-align: center;
@@ -22,4 +22,14 @@
 
 .search-container{
 
+}
+
+.overall-wrapper{
+  background: rgba(40,40,40,0.9);
+}
+
+.index-content h3{
+  color: white;
+  // font-weight: bold;
+  margin: 0 auto;
 }
