@@ -38,10 +38,11 @@ class FavouritesController < ApplicationController
   end
 
   def destroy
-    @favourite.destroy
-    respond_to do |format|
-      format.html { redirect_to tour_path(params[@tour]) }
-      format.js
+    if @favourite.destroy
+      respond_to do |format|
+        format.html { redirect_to tour_path(params[@tour]) }
+        format.js
+      end
     end
   end
 
