@@ -1,10 +1,18 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 50%), url('<%= cl_image_path @track.photo %>');">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 50%), url('<%= cl_image_path @track.photo %>') ;">
   <div class="container">
     <h1><strong><%= @track.title %></strong></h1>
     <hr>
     <%= render 'shared/audio_player_tracks' %>
     <!-- <p>Change your life and learn to code at one of our campuses around the world.</p> -->
-
     <% tour_track_ids = @tour.tracks.ids %>
     <% track_id =  @track.id %>
     <% if track_id != @tour.tracks.last.id %>
@@ -12,7 +20,7 @@
       <% next_track_id = tour_track_ids[next_track_index] %>
       <% next_track = @tour.tracks.find(next_track_id) %>
       <br><br>
-      <%= link_to "Next track", track_goto_path(@tour, next_track), class: "btn btn-gradient" %>
+      <%= link_to "Next track", track_goto_path(@tour, next_track), class: "btn-gradient" %>
     <% else %>
       <br><br>
       <p>Tour Completed!</p>
@@ -23,14 +31,45 @@
 
 
 
-<div class="cards-container">
-  <div id="zomato";
-  data-track="<%= @track %>" ></div>
+
+<!-- Button trigger modal -->
+
+<button type="button" class="btn btn-ghost" data-toggle="modal" data-target="#exampleModal" id="button-hungry">
+  Hungry?
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="color:black">Here's 5 restaurants near you</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div id="zomato";
+      data-destination-lon="<%= @marker[:lng] %>"
+      data-destination-lat="<%= @marker[:lat] %>"
+      ></div>
+
+    </div>
+  </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 
         <!-- <ul id="zomato"></ul> -->
-
 
 
   </div>

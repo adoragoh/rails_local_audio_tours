@@ -29,6 +29,12 @@ class TracksController < ApplicationController
   end
 
   def show
+    @marker =
+      {
+        lng: @track.longitude,
+        lat: @track.latitude
+        # infoWindow: render_to_string(partial: "infoWindow", locals: { tour: tour })
+      }
     #set_track method called
     #authorize @track
     # @marker = [{
