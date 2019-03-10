@@ -45,6 +45,17 @@
 
         <p class="card-text"><small class="text-muted">Last updated: <%= @tour.updated_at %></small></p>
             <br>
+
+        <!-- If statement for whether current tour has already been favourited -->
+        <% if current_user.favourites.where(tour_id: @tour).first == nil %>
+          <%= link_to "Add to favourites", tour_favourites_path(params[:id]), method: :post, remote: true, class: "unfavourited", id: "favourited-button" %>
+        <% else %>
+        <% raise %>
+          <%= link_to "Remove from favourites", favourite_path(current_user.favourites.where(tour_id: @tour).first.id), method: :delete, remote: true, class: "favourited", id: "favourited-button" %>
+        <% end %>
+
+            <br>
+            <br>
         <%= link_to "START TOUR !", track_goto_path(params[:id], @tracks.first), class: "btn btn-gradient" %>
 
           </div>
@@ -65,5 +76,23 @@
       <% end %>
     </div>
       <%= render 'shared/map' %>
+
+<!-- TODO: Import favourite_button.js to make the button turn a different color when the tour has been favourited -->
+<script>
+//   // 1. Find the button we need to change
+//   const button = document.getElementById('favourited-button')
+
+//   // 2. Change the button's appearance and text
+//   button.addEventListener('click', (event) => {
+//     if (button.className === "btn-ghost") {
+//       button.className = "btn-ghost-favourited";
+//       button.innerText = "Remove from favourites";
+//     } else {
+//     button.className = "btn-ghost";
+//     button.innerText = "Add to favourites";
+//   };
+// });
+
+</script>
 
 
