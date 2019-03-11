@@ -12,7 +12,9 @@
           <p style="font-size: 10px;">Be the first to leave a review for <%= @tour.title %></p>
         <% else %>
           <% @tour.reviews.each do |review| %>
+          <p><%= review.user.first_name %></p>
           <p style="font-size: 16px"><%= review.content %></p>
+
           <hr style="margin-top: 5px; margin-bottom: 5px;">
           <% end %>
 
