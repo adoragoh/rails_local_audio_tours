@@ -1,14 +1,14 @@
 
 
 <% @tours.each do |tour| %>
-<div class="card mb-3 card-all">
+<div class="card mb-3 card-all audio-tour-card">
   <img class="card-img-top" id="image-top" src="<%= cl_image_path tour.photos[0].photo %>"  alt="Card image cap">
-  <div class="card-body">
-    <h3 class="card-title text-muted"><%= tour.title %></h3>
-    <p class="card-text text-muted"><%= tour.start_location %> <small class="text-muted"><%= tour.category %></small></p>
-    <%= link_to(tour_path(tour)) do   %>
-      <span class="full-link"></span>
-    <%end%>
+  <div class="audio-tour-card__tape-overlay">
+    <h3 class="card-title audio-tour-card__title audio-tour-card__tape-overlay-item"><%= tour.title %></h3>
+    <div class="audio-tour-card__tape-overlay-item"><%= tour.start_location %> <small class="text-muted"> - <%= tour.category %></small></div>
   </div>
+  <%= link_to(tour_path(tour)) do   %>
+    <span class="full-link"></span>
+  <%end%>
 </div>
 <%end%>

@@ -1,0 +1,61 @@
+.audio-tour-card {
+  margin: 20px ;
+  border-radius: 0;
+  border: none;
+  position: relative;
+
+  &__tape-overlay {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+
+    &-item {
+      background-color: white;
+      border-radius: 2px;
+      padding: 4px 11px;
+      color:black!important;
+    }
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #222!important;
+  }
+}
+
+
+
+.audio-tour-show-card {
+  margin: 0px;
+  border-radius: 0;
+  border: none;
+  position: relative;
+
+  &__tape-overlay {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    top: 10px;
+    left: 0px;
+    right: 20px;
+
+    &-item {
+      background-color: white;
+      border-radius: 2px;
+      padding: 4px 11px;
+    }
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 26px;
+    text-transform: uppercase;
+    color: black!important;
+  }
+}
+
