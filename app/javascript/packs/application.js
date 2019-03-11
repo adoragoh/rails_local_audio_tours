@@ -7,13 +7,13 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the styleshe
 import { initMapbox } from '../plugins/init_mapbox';
 import { initGotoMap } from '../components/goto_map';
 import {initZomato} from '../components/zomato.js';
+import {autoPlay} from '../components/autoplay.js';
 
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 initMapbox();
 initGotoMap();
 initZomato();
+autoPlay();
 
-$('#myModal').on('shown.bs.modal', function() {
-  $('#myInput').focus()
-})
+

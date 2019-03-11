@@ -1,7 +1,7 @@
 class TracksController < ApplicationController
   before_action :set_track, only: [:show, :edit, :update, :destroy, :goto]
   before_action :set_tour, only: [:show, :create, :edit, :update, :destroy, :goto]
-  before_action :authenticate_user!, except: [:index, :show, :goto]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @tracks = policy_scope(Track)
@@ -29,6 +29,12 @@ class TracksController < ApplicationController
   end
 
   def show
+    @marker =
+      {
+        lng: @track.longitude,
+        lat: @track.latitude
+        # infoWindow: render_to_string(partial: "infoWindow", locals: { tour: tour })
+      }
     #set_track method called
     #authorize @track
     # @marker = [{
