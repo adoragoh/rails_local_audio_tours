@@ -1,0 +1,7 @@
+// bla bla bla comment stuff.
+function updateDom() {
+  let button = document.getElementById('favourite-button-div');
+  button.innerHTML = "<%= j render 'favourites/add_button', tour: @tour %>";
+}
+
+updateDom();

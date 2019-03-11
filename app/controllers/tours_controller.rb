@@ -21,10 +21,6 @@ class ToursController < ApplicationController
       }
     end
 
-
-
-
-
     # @all_tours.each do |tour|
     #   if !@categories.include?(tour.category)
     #     @categories << tour.category

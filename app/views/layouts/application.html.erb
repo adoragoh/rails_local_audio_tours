@@ -14,6 +14,9 @@
     <%= favicon_link_tag asset_path('Logos_Tourio-black.png'), :rel => 'icon', :type =>  'image/png' %>
   </head>
   <body>
+    <%# unless action_name == "goto" %>
+      <%#= render 'shared/navbar_v2' %>
+    <%# end %>
     <%= render 'shared/flashes' %>
     <!-- <p class="notice"><%#= notice %></p>
     <p class="alert"><%#= alert %></p> -->
