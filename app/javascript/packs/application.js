@@ -10,10 +10,12 @@ import {initZomato} from '../components/zomato.js';
 import {autoPlay} from '../components/autoplay.js';
 
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import { hello } from '../components/navbar_v2.js';
 
 initMapbox();
 initGotoMap();
 initZomato();
 autoPlay();
+hello();
 
 

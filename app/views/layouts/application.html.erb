@@ -14,23 +14,57 @@
     <%= favicon_link_tag asset_path('Logos_Tourio-black.png'), :rel => 'icon', :type =>  'image/png' %>
   </head>
   <body>
-    <%# unless action_name == "goto" %>
-      <%#= render 'shared/navbar_v2' %>
-    <%# end %>
-    <%= render 'shared/flashes' %>
-    <!-- <p class="notice"><%#= notice %></p>
-    <p class="alert"><%#= alert %></p> -->
-    <%= yield %>
-    <%= javascript_include_tag 'application' %>
-    <%#= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
-    <%= javascript_pack_tag 'application' %>
-     <!-- javascript_pack_tag 'init_mapbox'  -->
-     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.0/mapbox-gl-directions.js'></script>
+    <div class="overall-wrapper">
+      <%# unless action_name == "goto" %>
+      <%= render 'shared/navbar_v2' %>
+      <%# end %>
+      <%= render 'shared/flashes' %>
+      <!-- <p class="notice"><%#= notice %></p>
+      <p class="alert"><%#= alert %></p> -->
+      <div id="content">
+        <%= render 'shared/navbar_v2_sidebar' %>
+        <%= yield %>
+        <%= javascript_include_tag 'application' %>
+        <%#= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
+        <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+        <%= javascript_pack_tag 'application' %>
+         <!-- javascript_pack_tag 'init_mapbox'  -->
+         <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.0/mapbox-gl-directions.js'></script>
 
-    <% unless action_name == "goto" %>
-      <%= render 'shared/navbar' %>
-    <% end %>
+        <%# unless action_name == "goto" %>
+          <%#= render 'shared/navbar' %>
+        <%# end %>
+      </div>
+    </div>
+    <div class="overlay"></div>
 
-    </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+
+  </body>
 </html>
