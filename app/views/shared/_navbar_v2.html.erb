@@ -40,9 +40,17 @@
   </div>
 
   <ul class="list-unstyled components">
-      <p>Dummy Heading</p>
       <li class="active">
-          <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
+        <!-- <a href="#">Profile</a> -->
+        <%= link_to "🙂 Profile", edit_user_registration_path %>
+      </li>
+      <li>
+        <a href="#">My Tours</a>
+      </li>
+      <li>
+        <%= link_to "⭐ Favourites", favourites_path %>
+      </li>
+      <!--<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Profile</a>
           <ul class="collapse list-unstyled" id="homeSubmenu">
               <li>
                   <a href="#">Home 1</a>
@@ -54,10 +62,8 @@
                   <a href="#">Home 3</a>
               </li>
           </ul>
-      </li>
       <li>
-          <a href="#">About</a>
-          <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
+          <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Favourited Tours</a>
           <ul class="collapse list-unstyled" id="pageSubmenu">
               <li>
                   <a href="#">Page 1</a>
@@ -69,13 +75,7 @@
                   <a href="#">Page 3</a>
               </li>
           </ul>
-      </li>
-      <li>
-          <a href="#">Portfolio</a>
-      </li>
-      <li>
-          <a href="#">Contact</a>
-      </li>
+      </li> -->
   </ul>
 
   <ul class="list-unstyled CTAs">

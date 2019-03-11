@@ -44,7 +44,7 @@
             <br>
 
         <!-- If statement for whether current tour has already been favourited -->
-        <%# if current_user != nil %>
+      <% if current_user != nil %>
         <div id="favourite-button-div">
           <% if current_user.favourites.where(tour_id: @tour).first == nil %>
             <%= render 'favourites/add_button', tour: @tour %>
@@ -52,10 +52,9 @@
             <%= render 'favourites/delete_button', tour: @tour %>
           <% end %>
         </div>
-
-        <%# else %>
-          <%#= link_to "Add to favourites", tour_favourites_path(params[:id]), method: :post, class: "unfavourited", id: "favourited-button" %>
-        <%# end %>
+      <% else %>
+        <%= link_to "Add to favourites", tour_favourites_path(params[:id]), method: :post, class: "unfavourited", id: "favourited-button" %>
+      <% end %>
 
             <br>
             <br>
