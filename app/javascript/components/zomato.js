@@ -31,17 +31,20 @@ const initZomato = () => {
 
           // INCLUDE THIS LATER!! (CSS not workinggg)
           const restaurant_modal = `
-    <div class="col-4">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="${restaurant.restaurant.featured_image}" alt="Featured restaurant img">
-        <div class="card-body" id="restaurants-modal">
-          <p style="color:black">${restaurant.restaurant.name}</p>
-          <p style="color:black">${restaurant.restaurant.location}</p>
-          <p style="color:black">${restaurant.restaurant.price_range}</p>
-          <p class="card-text"><small class="text-muted">${restaurant.restaurant.cuisines}</small></p>
-        </div>
-      </div>
-    </div>`;
+            <div class="col-12">
+              <div class="card-product">
+                <img src="${restaurant.restaurant.featured_image}">
+                <div class="card-product-infos">
+                  <h2>${restaurant.restaurant.name}</h2>
+                  <p>${restaurant.restaurant.price_range}</p>
+                  <p>${restaurant.restaurant.cuisines}</p>
+                  <p>${restaurant.restaurant.average_cost_for_two}</p>
+                  <p>Rating: ${restaurant.restaurant.user_rating.aggregate_rating}</p>
+                </div>
+              </div>
+            </div>`;
+
+
 
           zomato.insertAdjacentHTML("beforeend", restaurant_modal);
         });
