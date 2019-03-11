@@ -1,1 +1,5 @@
-<%= link_to "Add to favourites", tour_favourites_path(tour.id), method: :post, remote: true, class: "unfavourited", id: "favourited-button" %>
+<%= link_to tour_favourites_path(tour.id),method: :post, remote: true, class: "unfavourited", id: "favourited-button" do %>
+<i class="fas fa-star"></i>
+
+<% end %>
+
