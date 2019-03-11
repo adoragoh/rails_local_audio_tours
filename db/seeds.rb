@@ -38,7 +38,7 @@ puts "Adding 5 epic tours to the database."
 
 tours_array = [
   {
-  title: "Classic Melbourne Tour",
+  title: "Classic Melbourne",
   start_location: "Melbourne",
   description: "A local's audio guide to the must visit places in Melbourne - suitable for first time explorers and those looking to delve a little deeper to explore the city's rich character. From history and architecture to contemporary laneway culture, sport or street art – we have your interests covered. This audio tour is a new and personalized way to really experience the city.",
   user: User.last,
