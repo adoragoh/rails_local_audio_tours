@@ -1,11 +1,11 @@
 
 
 
-<div class="container-reviews">
+<div class="container-reviews-box">
   <div class="row">
     <div class="col-12" id="review">
       <h3>REVIEWS</h3>
-      <h5><strong><%= pluralize @tour.reviews.size, "review" %></strong></h5>
+      <h6><strong><%= pluralize @tour.reviews.size, "review" %></strong></h6>
 
       <div class="reviews">
         <% if @tour.reviews.blank? %>
