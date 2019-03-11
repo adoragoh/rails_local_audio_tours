@@ -15,7 +15,6 @@ const initZomato = () => {
           console.log(restaurant.restaurant.url)
           console.log(restaurant.restaurant.location.latitude)
           console.log(restaurant.restaurant.location.longitude)
-          console.log(restaurant.restaurant.location.longitude)
           console.log(restaurant.restaurant.cuisines)
           console.log(restaurant.restaurant.average_cost_for_two)
           console.log(restaurant.restaurant.price_range)
