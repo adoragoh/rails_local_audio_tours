@@ -2,8 +2,13 @@
 <br>
  -->
 
-<p style="font-size:14px"><%= track.location.capitalize %></p>
-<p><i class="fas fa-clock">&nbsp;</i>Duration: <%= rand(5..10) %> minutes</p>
+<div class="info-container">
+  <div class="info-image">
 
+  </div>
+  <div class="info-content">
+    <p><i class="fas fa-map-marker-alt">&nbsp;</i><%= track.location.capitalize %></p>
+    <p><i class="fas fa-clock">&nbsp;</i><%= rand(1..3) %></p>
 
-
+  </div>
+</div>
