@@ -1,17 +1,18 @@
 
-  <div class="search-container">
-    <div class="search-field">
-      <%= form_tag tours_path, method: :get do %>
-      <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-        id: "search-bar",
-      placeholder: "Find a tour near you"
-      %>
-    </div>
-    <div class="search-button">
-      <%= button_to :search %>
-    </div>
-    <%end%>
-  </div>
 
+
+<div class="search-container">
+  <div class="search-field">
+    <%= form_tag tours_path, method: :get do %>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+      id: "search-bar",
+    placeholder: "Find a tour near you"
+    %>
+  </div>
+  <div class="search-button">
+    <%= button_to :search %>
+  </div>
+  <%end%>
+</div>
