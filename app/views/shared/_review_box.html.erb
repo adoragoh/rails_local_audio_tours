@@ -12,16 +12,21 @@
           <p style="font-size: 10px;">Be the first to leave a review for <%= @tour.title %></p>
         <% else %>
           <% @tour.reviews.each do |review| %>
-          <p><%= review.user.first_name %></p>
+          <p>Reviewed by <%= review.user.first_name %></p>
           <p style="font-size: 16px"><%= review.content %></p>
 
           <hr style="margin-top: 5px; margin-bottom: 5px;">
           <% end %>
 
         <% end %>
+
+      <button class="btn btn-ghost" data-toggle="collapse" data-target="#demo" style="color: white;">Review Tour</button>
+
       </div>
-      <%= render 'reviews/form', tour: @tour, review: @review %>
-    </div>
+      <div id="demo" class="collapse">
+        <%= render 'reviews/form', tour: @tour, review: @review %>
+      </div>
+      </div>
   </div>
 </div>
 
