@@ -1,4 +1,5 @@
 class ToursController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show, :user]
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
   before_action :set_tracks, only: :show
 
@@ -87,6 +88,11 @@ class ToursController < ApplicationController
   def destroy
     @tour.destroy
     redirect_to profile_path(just_created_tour: "true")
+  end
+
+  def user
+    @tour = Tour.find(params[:tour_id])
+    authorize @tour
   end
 
   private

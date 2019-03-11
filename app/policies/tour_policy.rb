@@ -31,6 +31,10 @@ class TourPolicy < ApplicationPolicy
     user_is_owner?
   end
 
+  def user?
+    true
+  end
+
   private
 
   def user_is_owner?
