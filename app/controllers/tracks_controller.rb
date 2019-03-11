@@ -1,7 +1,7 @@
 class TracksController < ApplicationController
   before_action :set_track, only: [:show, :edit, :update, :destroy, :goto]
   before_action :set_tour, only: [:show, :create, :edit, :update, :destroy, :goto]
-  before_action :authenticate_user!, except: [:index, :show, :goto]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @tracks = policy_scope(Track)
