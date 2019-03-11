@@ -5,14 +5,20 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head> -->
 
-<div class="tour-header">
+<!-- <div class="tour-header">
   <h1 class="tour-header__title"><%= @tour.title %> </h1>
-</div>
+</div> -->
 
 <div class="main-show-container">
   <div class="row">
     <div class="col-12">
-      <img src="<%= cl_image_path @tour.photos[0].photo %>" alt="" class='main-image'>
+      <div class="card mb-3 card-all audio-tour-show-card">
+        <img class="card-img-top" id="image-top" src="<%= cl_image_path @tour.photos[0].photo %>"  alt="Card image cap">
+        <div class="audio-tour-show-card__tape-overlay">
+          <h3 class="card-title audio-tour-show-card__title audio-tour-show-card__tape-overlay-item"><%= @tour.title %></h3>
+        </div>
+      </div>
+      <!-- <img src="<%= cl_image_path @tour.photos[0].photo %>" alt="" class='main-image'> -->
     </div>
   </div>
   <div class="row">
