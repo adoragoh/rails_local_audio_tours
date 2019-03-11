@@ -1,0 +1,10 @@
+<h1>Tour guide: 😎 <%= @tour.user.email %> [should be first + last name]</h1>
+<br>
+<h3>See all <%= @tour.user.email %>'s [should be first name] tours:</h3>
+
+<% @tour.user.tours.each do |tour| %>
+  <p><%= link_to tour.title, tour_path(tour) %></p>
+<% end %>
+
+<br>
+TODO: Should also include reviews this tour creator has gotten in the past

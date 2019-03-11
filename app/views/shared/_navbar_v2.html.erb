@@ -42,6 +42,9 @@
   <ul class="list-unstyled components">
       <li class="active">
         <!-- <a href="#">Profile</a> -->
+        <%= link_to "📻 See all tours", tours_path %>
+      </li>
+      <li>
         <%= link_to "🙂 Profile", edit_user_registration_path %>
       </li>
       <li>
@@ -79,12 +82,25 @@
   </ul>
 
   <ul class="list-unstyled CTAs">
-      <li>
+    <li>
+      <%= link_to "Create a tour", new_tour_path, class: "download" %>
+      <!-- <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Creat</a> -->
+    </li>
+    <li>
+      <%= link_to "Logout", destroy_user_session_path, class: "article" %>
+    </li>
+    <li>
+      <%= link_to "Login", new_user_session_path, class: "article" %>
+    </li>
+    <li>
+      <%= link_to "Sign up", new_user_registration_path, class: "article" %>
+    </li>
+      <!-- <li>
           <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
       </li>
       <li>
           <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
-      </li>
+      </li> -->
   </ul>
 </nav>
 

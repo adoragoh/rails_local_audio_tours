@@ -40,6 +40,10 @@
   <%= render 'shared/audio_player' %>
 </div>
 
+<div>
+  <p>Created by: <%= link_to @tour.user.email, tour_user_path(@tour) %></h3>
+</div>
+
 
 <div class="show-details-top">
   <p><small class="text-muted"><%= @tour.category.capitalize %></small></p>
