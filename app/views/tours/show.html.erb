@@ -36,11 +36,11 @@
   <%= render 'shared/audio_player' %>
 </div>
 
-        <p class="card-text"><small class="text-muted">Last updated: <%= @tour.updated_at %></small></p>
-            <br>
 
-        <!-- If statement for whether current tour has already been favourited -->
-        <%# if current_user != nil %>
+<div class="show-details-top">
+  <p><small class="text-muted"><%= @tour.category.capitalize %></small></p>
+    <!-- If statement for whether current tour has already been favourited -->
+      <% if current_user != nil %>
         <div id="favourite-button-div">
           <% if current_user.favourites.where(tour_id: @tour).first == nil %>
             <%= render 'favourites/add_button', tour: @tour %>
@@ -48,13 +48,10 @@
             <%= render 'favourites/delete_button', tour: @tour %>
           <% end %>
         </div>
+      <% else %>
+        <%= link_to "Add to favourites", tour_favourites_path(params[:id]), method: :post, class: "unfavourited", id: "favourited-button" %>
+      <% end %>
 
-        <%# else %>
-          <%#= link_to "Add to favourites", tour_favourites_path(params[:id]), method: :post, class: "unfavourited", id: "favourited-button" %>
-        <%# end %>
-
-            <br>
-            <br>
 
 <%= render 'shared/tour_description' %>
 <%= render 'shared/visited_places' %>

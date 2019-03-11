@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :configure_permitted_parameters, if: :devise_controller?
   include Pundit
 
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
@@ -26,6 +27,14 @@ class ApplicationController < ActionController::Base
     else
       stored_location_for(resource) || request.referer || root_path
     end
+  end
+
+  def configure_permitted_parameters
+    # For additional fields in app/views/devise/registrations/new.html.erb
+    # devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
+
+    # For additional in app/views/devise/registrations/edit.html.erb
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :username])
   end
 end
 
