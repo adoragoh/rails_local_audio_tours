@@ -5,3 +5,6 @@
 <% @tour.user.tours.each do |tour| %>
   <p><%= link_to tour.title, tour_path(tour) %></p>
 <% end %>
+
+<br>
+TODO: Should also include reviews this tour creator has gotten in the past
