@@ -1,7 +1,7 @@
 class FavouritesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_favourite, only: [:edit, :update, :destroy]
-  before_action :set_tour, only: [:new, :create, :destroy]
+  before_action :set_tour, only: [:new, :create]
 
   def index
     @favourites = policy_scope(Favourite)
@@ -39,8 +39,9 @@ class FavouritesController < ApplicationController
 
   def destroy
     if @favourite.destroy
+      @tour = @favourite.tour
       respond_to do |format|
-        format.html { redirect_to tour_path(params[@tour]) }
+        format.html { redirect_to tour_path(@tour) }
         format.js
       end
     end

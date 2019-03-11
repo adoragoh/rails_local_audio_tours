@@ -47,15 +47,18 @@
             <br>
 
         <!-- If statement for whether current tour has already been favourited -->
-        <% if current_user != nil %>
+        <%# if current_user != nil %>
+        <div id="favourite-button-div">
           <% if current_user.favourites.where(tour_id: @tour).first == nil %>
-            <%= link_to "Add to favourites", tour_favourites_path(params[:id]), method: :post, remote: true, class: "unfavourited", id: "favourited-button" %>
+            <%= render 'favourites/add_button', tour: @tour %>
           <% else %>
-            <%= link_to "Remove from favourites", favourite_path(current_user.favourites.where(tour_id: @tour).first.id), method: :delete, remote: true, class: "favourited", id: "favourited-button" %>
+            <%= render 'favourites/delete_button', tour: @tour %>
           <% end %>
-        <% else %>
-          <%= link_to "Add to favourites", tour_favourites_path(params[:id]), method: :post, class: "unfavourited", id: "favourited-button" %>
-        <% end %>
+        </div>
+
+        <%# else %>
+          <%#= link_to "Add to favourites", tour_favourites_path(params[:id]), method: :post, class: "unfavourited", id: "favourited-button" %>
+        <%# end %>
 
             <br>
             <br>

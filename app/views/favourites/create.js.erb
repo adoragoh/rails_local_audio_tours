@@ -1,0 +1,6 @@
+function updateDom() {
+  let button = document.getElementById('favourite-button-div');
+  button.innerHTML = "<%= j render 'favourites/delete_button', tour: @tour %>";
+}
+
+updateDom();
