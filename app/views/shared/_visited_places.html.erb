@@ -1,0 +1,11 @@
+<div class="container">
+  <h5 class="card-title">Visited Places</h5>
+  <% tracks = @tour.tracks %>
+  <% tracks.each do |track| %>
+  <ul>
+    <li>
+      <p><%= track.title %></p>
+    </li>
+  </ul>
+  <% end %>
+</div>
