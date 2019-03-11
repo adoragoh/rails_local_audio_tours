@@ -28,49 +28,6 @@ const initMapbox = () => {
       .addTo(map);
     });
 
-
-    // // goto page routing to waypoint
-    // var userLocationControl = new mapboxgl.GeolocateControl({
-    //   positionOptions: {
-    //     enableHighAccuracy: true
-    //   },
-    //   showUserLocation: true
-    // })
-
-    // map.addControl(userLocationControl);
-
-    //   var directionsControl = new MapboxDirections({
-    //     accessToken: mapboxgl.accessToken,
-    //     interactive: false,
-    //     profile:'mapbox/walking',
-    //     controls:{
-    //       inputs:false,
-    //       instructions:false,
-    //       profileSwitcher:false
-    //     }
-    //   })
-
-    //   map.addControl(directionsControl, 'top-left');
-
-    //   const addRouteToMap = (currentUserLat, currentUserLon) => {
-    //     directionsControl.setOrigin([currentUserLon, currentUserLat]);
-    //     directionsControl.setDestination([mapElement.dataset.destinationLon, mapElement.dataset.destinationLat]);
-    //   }
-
-
-    //   map.on('load', function(){
-    //     userLocationControl.trigger();
-    //   });
-
-    //   userLocationControl.on('geolocate', function(userLocation) {
-    //     addRouteToMap(userLocation.coords.latitude, userLocation.coords.longitude);
-    //   });
-
-    //   userLocationControl.on('error', function(error) {
-    //     alert(error.message);
-    //   });
-    // //
-
     // map resize when tab opened on tours#index page
     const resizeMap = () => {
       setTimeout( () => {
@@ -80,7 +37,7 @@ const initMapbox = () => {
 
     document.querySelector('.js-refresh-size').addEventListener('click', resizeMap);
     document.querySelector('.js-refresh-size').addEventListener('touchstart', resizeMap);
-    //
+
 
     map.addControl(new MapboxDirections({
       accessToken: mapboxgl.accessToken

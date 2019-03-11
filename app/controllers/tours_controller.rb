@@ -30,6 +30,7 @@ class ToursController < ApplicationController
   end
 
   def show
+    @review = Review.new
 
 
     # @tours = Tour.where.not(latitude: nil, longitude: nil)

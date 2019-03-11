@@ -21,8 +21,9 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-gem "geocoder"
 gem 'jquery-rails'
+# gem 'romato'
+gem 'httparty'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
