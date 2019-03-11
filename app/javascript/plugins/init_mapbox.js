@@ -39,6 +39,10 @@ const initMapbox = () => {
     document.querySelector('.js-refresh-size').addEventListener('touchstart', resizeMap);
 
 
+    map.addControl(new MapboxDirections({
+      accessToken: mapboxgl.accessToken
+      }), 'top-left');
+
     fitMapToMarkers(map, markers);
     // addMarkersToMap(map, markers);
   }

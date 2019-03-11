@@ -1,10 +1,11 @@
 class FavouritesController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :create]
+  before_action :authenticate_user!
   before_action :set_favourite, only: [:edit, :update, :destroy]
   before_action :set_tour, only: [:new, :create]
 
   def index
     @favourites = policy_scope(Favourite)
+    @favourites = Favourite.all
   end
 
   def show
@@ -16,14 +17,15 @@ class FavouritesController < ApplicationController
   end
 
   def create
-    @favourite = Favourite.new(favourite_params)
+    @favourite = Favourite.new()
     authorize @favourite
     @favourite.user = current_user
     @favourite.tour = @tour
     if @favourite.save
-      redirect_to profile_path(just_favourited: "true")
-    else
-      render :new
+      respond_to do |format|
+        format.html { redirect_to tour_path(params[@tour]) }
+        format.js
+      end
     end
   end
 
@@ -36,8 +38,13 @@ class FavouritesController < ApplicationController
   end
 
   def destroy
-    @favourite.destroy
-    redirect_to profile_path(just_favourited: "true")
+    if @favourite.destroy
+      @tour = @favourite.tour
+      respond_to do |format|
+        format.html { redirect_to tour_path(@tour) }
+        format.js
+      end
+    end
   end
 
   private

@@ -1,0 +1,1 @@
+<%= link_to "Remove from favourites", favourite_path(current_user.favourites.where(tour_id: tour).first.id), method: :delete, remote: true, class: "favourited", id: "favourited-button" %>
