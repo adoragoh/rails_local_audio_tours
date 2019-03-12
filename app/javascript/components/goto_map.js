@@ -68,15 +68,15 @@ const initGotoMap = () => {
 
       userLocationControl.on('error', function(error) {
         alert(error.message);
+        // const defaultLat = 37.8238
+        // const defaultLon = 144.9913
+        // addRouteToMap(defaultLat, defaultLon);
       });
     //
 
     fitMapToMarkers(map, markers);
     addMarkersToMap(map, markers);
   }
-
-
-
 
 };
 

@@ -16,7 +16,7 @@ import { toggleIndex } from '../components/index_toggle.js';
 toggleIndex();
 initMapbox();
 initGotoMap();
-initZomato();
+// initZomato();
 autoPlay();
 hello();
 
