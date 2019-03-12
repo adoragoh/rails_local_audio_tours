@@ -6,7 +6,14 @@
   </div>
   <p class="tour-description-body"><%= @tour.description %></p>
 
-  <p><small class="text-muted">Last updated: <%= @tour.updated_at %></small></p>
+<div>
+  <p>Narrated by:</p>
+  <img src="<%= cl_image_path current_user.photo  %>" alt="" class='profile-pic'>
+  <% name = @tour.user.first_name.capitalize + " " + @tour.user.last_name.capitalize  %>
+  <p style="margin-bottom:0"><%= link_to name, tour_user_path(@tour) %></p>
+  <p><small>Member since: <%= @tour.user.created_at.strftime("%B %Y") %></small></p>
+</div>
+
       <br>
   <%= link_to "START TOUR !", track_goto_path(params[:id], @tracks.first), class: "btn btn-gradient floating-pill-btn" %>
 </div>
