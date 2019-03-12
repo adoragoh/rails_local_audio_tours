@@ -3,6 +3,9 @@ class Tour < ApplicationRecord
   has_many :tracks, dependent: :destroy
   has_many :photos, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :favourites, dependent: :destroy
+  accepts_nested_attributes_for :photos, :allow_destroy => true
+  accepts_nested_attributes_for :tracks, :allow_destroy => true
 
   geocoded_by :start_location
   after_validation :geocode, if: :will_save_change_to_start_location?
