@@ -6,8 +6,17 @@
 <!-- <div id="heading-goto" style="text-align: center; height: 10vh;">Go to the start
 </div>
  -->
-<div class="topnav-directions">
+
+<div class="top-index-container">
+
+  <%= render 'shared/navbar_v2' %>
+<%= render 'shared/navbar_v2_sidebar' %>
   <p>On the way to: <strong><%= @track.title %></strong></p>
+    <div class="top-navbar">
+      <img src="https://res.cloudinary.com/dm25xqrrj/image/upload/v1551938861/Logos/Tourio-white.png" alt="" class="avatar">
+      <h2>Tourio</h2>
+    </div>
+
 </div>
 
 <%= render 'shared/goto_map' %>
