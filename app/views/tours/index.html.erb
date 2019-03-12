@@ -1,11 +1,14 @@
 
+<%#= render 'shared/bootstrap_test' %>
+
 
 
 <!-- <header class="page-head"><h1 style="text-align: center; margin-top: 15px;">Tours</h1></header> -->
-
-<%#= render 'shared/top-navbar' %>
+  <%= render 'shared/navbar_v2' %>
+  <%= render 'shared/navbar_v2_sidebar' %>
 
   <%= render 'shared/search_bar' %>
+
 
    <ul class="nav nav-pills">
     <li class="nav-item active">
@@ -16,11 +19,10 @@
     </li>
   </ul>
 
-
   <div class="tab-content">
     <div role="tabpanel" class="list-cards tab-pane active" id="1">
       <div style="margin-top: 20px;">
-        <div class="index-content text-center">
+        <div class="index-content text-center ">
           <h3>Audio tours near you</h3>
         </div>
 

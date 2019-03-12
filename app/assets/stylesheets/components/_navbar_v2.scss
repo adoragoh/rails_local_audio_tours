@@ -2,7 +2,7 @@
 
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #222;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -42,7 +42,7 @@ a:focus {
 
 .navbar {
     padding: 15px 10px;
-    background: #fff;
+    background: #222;
     border: none;
     border-radius: 0;
     margin-bottom: 40px;
@@ -65,7 +65,6 @@ a:focus {
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
-
 #sidebar {
     width: 250px;
     position: fixed;
@@ -196,12 +195,12 @@ a.article:hover {
     CONTENT STYLE
 ----------------------------------------------------- */
 
-#content {
-    width: 100%;
-    padding: 20px;
-    min-height: 100vh;
-    transition: all 0.3s;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
+// #content {
+//     width: 100%;
+//     padding: 20px;
+//     min-height: 100vh;
+//     transition: all 0.3s;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+// }
