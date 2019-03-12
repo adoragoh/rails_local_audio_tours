@@ -8,7 +8,7 @@
 
 <div>
   <p>Narrated by:</p>
-  <img src="<%= cl_image_path current_user.photo  %>" alt="" class='profile-pic'>
+  <%= cl_image_tag @tour.user.photo, class: "profile-pic" %>
   <% name = @tour.user.first_name.capitalize + " " + @tour.user.last_name.capitalize  %>
   <p style="margin-bottom:0"><%= link_to name, tour_user_path(@tour) %></p>
   <p><small>Member since: <%= @tour.user.created_at.strftime("%B %Y") %></small></p>
