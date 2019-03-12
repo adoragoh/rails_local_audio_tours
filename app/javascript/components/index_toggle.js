@@ -23,5 +23,4 @@ const toggleIndex = () => {
   };
 };
 
-
 export { toggleIndex };
