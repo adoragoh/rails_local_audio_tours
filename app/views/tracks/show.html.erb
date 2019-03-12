@@ -9,7 +9,6 @@
     </div>
 </div>
 
-
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 50%), url('<%= cl_image_path @track.photo %>') ;">
 
 
@@ -30,6 +29,8 @@
       <br><br>
       <p>Tour Completed!</p>
       <br>
+
+    
       <%= link_to "Review Tour !", tour_path(@tour), class: "btn-lg btn-success", style: "padding:20px"  %>
     <% end %>
 
@@ -40,13 +41,18 @@
     </button>
   </div>
 </div>
+      <%#= link_to "Review Tour !", tour_path(@tour), class: "btn-lg btn-success"  %>
+
+    <%= render 'shared/review_modal' %>
+
+    <% end %>
+
+    <!-- Restauran modal -->
+    <%= render 'shared/nearby_restaurant' %>
 
 
-<!-- Modal -->
-<%= render 'shared/nearby_restaurant' %>
-
-
-        <!-- <ul id="zomato"></ul> -->
+  </div>
 </div>
+
 
 
