@@ -16,15 +16,18 @@ puts "Adding Winson, Alex & Adora as users to the database."
 
 users_array = [
   {
-  email: "winson@lat.com",
+  email: "winson@tourio.com",
+  first_name: 'winson',
   password: "123456"
   },
   {
-  email: "adora@lat.com",
+  email: "adora@tourio.com",
+  first_name: 'adora',
   password: "password"
   },
   {
-  email: "alex@lat.com",
+  email: "alex@tourio.com",
+  first_name: 'alex',
   password: "123456"
   }
 ]

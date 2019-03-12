@@ -37,7 +37,9 @@ ActiveRecord::Schema.define(version: 2019_03_11_085748) do
     t.bigint "tour_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["tour_id"], name: "index_reviews_on_tour_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "tours", force: :cascade do |t|
@@ -91,6 +93,7 @@ ActiveRecord::Schema.define(version: 2019_03_11_085748) do
   add_foreign_key "favourites", "users"
   add_foreign_key "photos", "tours"
   add_foreign_key "reviews", "tours"
+  add_foreign_key "reviews", "users"
   add_foreign_key "tours", "users"
   add_foreign_key "tracks", "tours"
 end
