@@ -1,8 +1,12 @@
 
 <%#= render 'shared/bootstrap_test' %>
 
-<div class="overall-wrapper">
-  <%= render 'shared/top-navbar' %>
+
+
+<!-- <header class="page-head"><h1 style="text-align: center; margin-top: 15px;">Tours</h1></header> -->
+  <%= render 'shared/navbar_v2' %>
+  <%= render 'shared/navbar_v2_sidebar' %>
+
   <%= render 'shared/search_bar' %>
 
 
@@ -14,7 +18,6 @@
       <a class="nav-link js-refresh-size" href="#2" data-toggle="tab">Map</a>
     </li>
   </ul>
-
 
   <div class="tab-content">
     <div role="tabpanel" class="list-cards tab-pane active" id="1">
