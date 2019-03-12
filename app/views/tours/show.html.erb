@@ -5,15 +5,15 @@
           <h3 class="card-title audio-tour-show-card__title audio-tour-show-card__tape-overlay-item"><%= @tour.title %></h3>
         </div>
       <!-- <img src="<%= cl_image_path @tour.photos[0].photo %>" alt="" class='main-image'> -->
-
   </div>
-    <div class="row show-max-width" style="max-width: 100vw;">
-      <% @tour.tracks.each do |track| %>
-        <div class="col">
-          <img src="<%= cl_image_path track.photo %>" alt="" class='main-image'>
-        </div>
-      <% end %>
-    </div>
+
+  <!-- <div class="row show-max-width" style="max-width: 100vw;">
+    <% @tour.tracks.each do |track| %>
+      <div class="col">
+        <img src="<%= cl_image_path track.photo %>" alt="" class='main-image'>
+      </div>
+    <% end %>
+  </div> -->
 </div>
 
 
@@ -21,11 +21,6 @@
   <h3 class="show-player__label">Preview Tour</h3>
   <%= render 'shared/audio_player' %>
 </div>
-
-<div>
-  <p>Created by: <%= link_to @tour.user.email, tour_user_path(@tour) %></h3>
-</div>
-
 
 <div class="show-details-top">
   <p><small class="text-muted"><%= @tour.category.capitalize %></small></p>
@@ -42,7 +37,9 @@
           </div>
           <% end %>
       <% else %>
-        <%= link_to "Add to favourites", tour_favourites_path(params[:id]), method: :post, class: "unfavourited", id: "favourited-button" %>
+        <%= link_to tour_favourites_path(params[:id]), method: :post, class: "unfavourited", id: "favourited-button" do %>
+        <i class="fas fa-star"></i>
+        <% end %>
       <% end %>
 </div>
 
