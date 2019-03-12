@@ -1,8 +1,11 @@
 <div class="search-filter">
   <div class="search-field">
-    <%= form_tag tours_path, method: :get do |f| %>
-<%= f.input :fund, as: :select, collection: funds, prompt: 'category', label: false %>
-  <%end%>
+<%= form_tag tours_path, method: :get do %>
+<%= select_tag :query, options_for_select([ "History", "Food", "Adventure", "Supernatural", "Sightseeing", "Romance", "Adrenaline", "Crime" ])  %>
+  <div class="search-button">
+    <%= button_to :search %>
+  </div>
+<%end%>
 </div>
 
 
