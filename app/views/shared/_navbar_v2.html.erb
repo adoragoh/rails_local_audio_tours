@@ -12,10 +12,19 @@
       <i class="fas fa-arrow-left"></i>
   </div>
 
-  <!-- <div class="sidebar-header">
-    <img src="<%#= cl_image_path current_user.photo %>" alt="" class='profile-pic'>
-    <h3><%#= current_user.first_name.capitalize %></h3>
-  </div> -->
+
+  <div class="sidebar-header">
+    <% if current_user %>
+    <img src="<%= cl_image_path current_user.photo  %>" alt="" class='profile-pic'>
+      <h3><%= current_user.first_name.capitalize %></h3>
+    <% else %>
+      <h3>
+        <%= link_to new_user_session_path do %>
+         <h4><i class="fa fa-sign-in-alt"></i> Login</h4>
+        <% end %>
+      </h3>
+    <% end %>
+  </div>
 
   <ul class="list-unstyled components">
       <li class="active">
@@ -34,8 +43,12 @@
       <li>
         <%= link_to "Create a tour !", new_tour_path %>
       </li>
-      <li>
-        <%= link_to "Logout", destroy_user_session_path %>
+      <% if current_user %>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+          <h6>Logout <i class="fa fa-sign-out-alt"></i></h6>
+        <% end %>
+      <% end %>
       </li>
 
      <!--  <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Profile</a>
