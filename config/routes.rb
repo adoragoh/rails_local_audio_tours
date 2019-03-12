@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :tours do
     resources :tracks
+    resources :photos
     resources :favourites, only: [ :index, :create, :update ]
     resources :reviews, only: :create
   end

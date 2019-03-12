@@ -1,6 +1,6 @@
 class TracksController < ApplicationController
   before_action :set_track, only: [:show, :edit, :update, :destroy, :goto]
-  before_action :set_tour, only: [:show, :create, :edit, :update, :destroy, :goto]
+  before_action :set_tour, only: [:show, :new, :create, :edit, :update, :destroy, :goto]
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
@@ -70,9 +70,9 @@ class TracksController < ApplicationController
   def create
     @track = Track.new(track_params)
     authorize @track
-    @track.user = current_user
     @track.tour = @tour
-    @track.save
+    @track.photo = params[:track][:photo]
+    @track.audio = params[:track][:audio]
     if @track.save
       redirect_to tour_path(@tour)
     else

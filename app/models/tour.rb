@@ -5,6 +5,10 @@ class Tour < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :favourites, dependent: :destroy
 
+  # The following code is not in use at the moment, but it's necessary if you're creating forms that have nested attributes and you want to save those as well.
+  accepts_nested_attributes_for :photos, :allow_destroy => true
+  accepts_nested_attributes_for :tracks, :allow_destroy => true
+
   geocoded_by :start_location
   after_validation :geocode, if: :will_save_change_to_start_location?
 

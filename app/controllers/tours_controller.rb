@@ -63,6 +63,7 @@ class ToursController < ApplicationController
   def new
     @tour = Tour.new
     authorize @tour
+    @tour.photos.build(attributes = {})
   end
 
   def create
@@ -71,7 +72,7 @@ class ToursController < ApplicationController
     @tour.user = current_user
     @tour.save
     if @tour.save
-      redirect_to tour_path(@tour)
+      redirect_to new_tour_photo_path(@tour)
     else
       render :new
     end

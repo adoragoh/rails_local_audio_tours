@@ -3,6 +3,8 @@
     <div class="col-xs-3"></div>
     <div class="col-xs-12 col-sm-6 sol-lg4">
 
+      <h2>Step 1/3: Create a tour</h2>
+
       <%= simple_form_for(@tour) do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -14,13 +16,26 @@
         <%= f.input :category, collection: [ "History", "Food", "Adventure", "Supernatural", "Sightseeing", "Romance", "Adrenaline" ] %>
         <%= f.input :language %>
         <%= f.input :duration %>
+        <%#= f.simple_fields_for :photos, Photo.new do |p| %>
+          <%#= p.input :photo, input_html: { multiple: true }, name: "tour[images_attributes][][photo]"%>
+          <%#= p.input :photo_cache, as: :hidden %>
+        <%# end %>
       </div>
-      <%= f.button :submit %>
+      <%= f.button :submit, "Next step: Upload tour photos >", class: 'btn-primary'%>
 <!--       </div> -->
    <!--  <div class="modal-footer"> -->
       <!-- <div class="form-actions"> -->
    <!--    </div> -->
-    <% end %>
+      <% end %>
+
+      <!-- Add form for uploading photos -->
+
+
+      <!-- Add form for uploading audio tracks -->
+
+
+
+
     <p>TODO:</p>
     <li>1. Add ability to add photos</li>
     <li>2. Choose from a selection of languages</li>
