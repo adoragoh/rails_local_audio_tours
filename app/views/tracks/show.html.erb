@@ -1,12 +1,6 @@
-
-
 <div class="top-index-container">
   <%= render 'shared/navbar_v2' %>
-    <%= render 'shared/navbar_v2_sidebar' %>
-    <div class="top-navbar">
-      <img src="https://res.cloudinary.com/dm25xqrrj/image/upload/v1551938861/Logos/Tourio-white.png" alt="" class="avatar">
-      <h2>Tourio</h2>
-    </div>
+  <%= render 'shared/navbar_v2_sidebar' %>
 </div>
 
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 50%), url('<%= cl_image_path @track.photo %>') ;">
@@ -30,7 +24,7 @@
       <p>Tour Completed!</p>
       <br>
 
-    
+
       <%= link_to "Review Tour !", tour_path(@tour), class: "btn-lg btn-success", style: "padding:20px"  %>
     <% end %>
 
@@ -45,7 +39,6 @@
 
     <%= render 'shared/review_modal' %>
 
-    <% end %>
 
     <!-- Restauran modal -->
     <%= render 'shared/nearby_restaurant' %>
