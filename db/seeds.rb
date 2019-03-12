@@ -11,7 +11,7 @@ users_array = [
   email: "winson@tourio.com",
   first_name: 'winson',
   last_name: 'winson',
-  about: "Experienced traveller and blogger who loves to eating destinations.",
+  about: "Experienced traveller and blogger who loves eating destinations.",
   password: "123456"
   },
   {
