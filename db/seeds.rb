@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 puts "Clearing database..."
 
 User.destroy_all
@@ -18,21 +10,35 @@ users_array = [
   {
   email: "winson@tourio.com",
   first_name: 'winson',
+  about: "Experienced traveller and blogger who loves to eating destinations.",
   password: "123456"
   },
   {
   email: "adora@tourio.com",
   first_name: 'adora',
-  password: "password"
+  about: "I'm an aspiring travel blogger, and I love to travel to unique, interesting destinations",
+  password: "password",
   },
   {
   email: "alex@tourio.com",
   first_name: 'alex',
+  about: "I love to travel to eat.",
   password: "123456"
   }
 ]
 
+
 User.create!(users_array)
+
+
+
+users = User.all
+users[0].remote_photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJjr1h7ibl8wNFU_rZgPLxHv0yXwriJVoIAGIsLjabc2TXgfnj-Q"
+users[0].save
+users[1].remote_photo_url = "https://images-na.ssl-images-amazon.com/images/I/91BLCCISDTL._SY355_.jpg"
+users[1].save
+users[2].remote_photo_url = "https://s.yimg.com/ny/api/res/1.2/T7ka83cKaoCASsJRbZQmpw--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/http://media.zenfs.com/en/homerun/feed_manager_auto_publish_494/905f723f3db3e3767cfc0bb5e13bf8f8"
+users[2].save
 
 puts "3 users added to your database!"
 
