@@ -14,7 +14,7 @@ import { hello } from '../components/navbar_v2.js';
 
 initMapbox();
 initGotoMap();
-initZomato();
+// initZomato();
 autoPlay();
 hello();
 
