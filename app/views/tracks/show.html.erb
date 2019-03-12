@@ -1,7 +1,11 @@
-
-
+<div class="top-index-container">
+  <%= render 'shared/navbar_v2' %>
+  <%= render 'shared/navbar_v2_sidebar' %>
+</div>
 
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 50%), url('<%= cl_image_path @track.photo %>') ;">
+
+
   <div class="container">
     <h1><strong><%= @track.title %></strong></h1>
     <hr>
@@ -19,23 +23,12 @@
       <br><br>
       <p>Tour Completed!</p>
       <br>
-      <%= link_to "Review Tour !", tour_path(@tour), class: "btn-lg btn-success"  %>
-    <% end %>
 
-    <!-- Button trigger modal -->
+      <%= render 'shared/review_modal' %>
+      <% end %>
+    
+    <%= render 'shared/nearby_restaurant' %>
 
-    <button type="button" class="btn btn-ghost" data-toggle="modal" data-target="#exampleModal" id="button-hungry">
-      Hungry?
-    </button>
   </div>
 </div>
-
-
-<!-- Modal -->
-<%= render 'shared/nearby_restaurant' %>
-
-
-        <!-- <ul id="zomato"></ul> -->
-</div>
-
 

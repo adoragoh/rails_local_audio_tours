@@ -1,15 +1,12 @@
+    <%= render 'shared/search_bar' %>
+    <%= render 'shared/search_filter' %>
+    <div class="top-index-container">
+      <%= render 'shared/navbar_v2' %>
+      <%= render 'shared/navbar_v2_sidebar' %>
 
-<%#= render 'shared/bootstrap_test' %>
+    </div>
 
-
-
-<!-- <header class="page-head"><h1 style="text-align: center; margin-top: 15px;">Tours</h1></header> -->
-  <%= render 'shared/navbar_v2' %>
-  <%= render 'shared/navbar_v2_sidebar' %>
-
-  <%= render 'shared/search_bar' %>
-
-
+<%= render 'shared/search_bar' %>
    <ul class="nav nav-pills">
     <li class="nav-item active">
       <a class="nav-link" href="#1" data-toggle="tab">List</a>
@@ -24,9 +21,8 @@
       <div style="margin-top: 20px;">
         <div class="index-content text-center ">
           <h3>Audio tours near you</h3>
+          <%= render 'shared/card' %>
         </div>
-
-        <%= render 'shared/card' %>
       </div>
 
     </div>
