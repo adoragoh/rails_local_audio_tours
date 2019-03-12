@@ -1,0 +1,24 @@
+<button type="button" class="btn-lg btn-success" data-toggle="modal" data-target="#reviewModal" id="button-hungry">
+Review Tour
+</button>
+
+
+<div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content review-modal">
+      <div class="modal-header">
+        <h5 class="review-modal-title" id="reviewModal" style="color:black;">please leave a review!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= render 'reviews/form', tour: @tour, review: @review %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

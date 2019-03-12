@@ -29,6 +29,7 @@ class TracksController < ApplicationController
   end
 
   def show
+    @review = Review.new
     @marker =
       {
         lng: @track.longitude,
@@ -105,6 +106,6 @@ class TracksController < ApplicationController
   end
 
   def track_params
-    params.require(:track).permit(:title, :location, :tour_id, :photo, :audio)
+    params.require(:track).permit(:id, :title, :location, :tour_id, :photo, :audio)
   end
 end

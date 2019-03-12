@@ -1,39 +1,23 @@
-<div class="top-index-container">
+
   <%= render 'shared/navbar_v2' %>
   <%= render 'shared/navbar_v2_sidebar' %>
-<div class="top-navbar">
-  <img src="https://res.cloudinary.com/dm25xqrrj/image/upload/v1551938861/Logos/Tourio-white.png" alt="" class="avatar">
-  <h2>Tourio</h2>
-</div>
-</div>
+
 
 <div class="main-show-container">
-    <div class="col-12">
-      <div class="card mb-3 card-all audio-tour-show-card">
+      <div class="audio-tour-show-card">
         <img class="card-img-top" id="image-top" src="<%= cl_image_path @tour.photos[0].photo %>"  alt="Card image cap">
-        <div class="audio-tour-show-card__tape-overlay">
+        <div class="audio-tour-show-card__tape-overlay show-page-title">
           <h3 class="card-title audio-tour-show-card__title audio-tour-show-card__tape-overlay-item"><%= @tour.title %></h3>
         </div>
-      </div>
       <!-- <img src="<%= cl_image_path @tour.photos[0].photo %>" alt="" class='main-image'> -->
 
   </div>
-    <div class="row show-max-width" style="max-width: 100vw;">
-      <div class="col">
-        <img src="<%= cl_image_path @tour.tracks[0].photo %>" alt="" class='main-image'>
-      </div>
-      <div class="col">
-        <img src="<%= cl_image_path @tour.tracks[1].photo %>" alt="" class='main-image'>
-      </div>
-      <div class="col">
-        <img src="<%= cl_image_path @tour.tracks[2].photo %>" alt="" class='main-image'>
-      </div>
-    </div>
+
 </div>
 
 
-<div class="show-title">
-  <h3>Preview Tour</h3>
+<div class="show-player">
+  <h3 class="show-player__label">Preview Tour</h3>
   <%= render 'shared/audio_player' %>
 </div>
 
@@ -62,6 +46,17 @@
 </div>
 
 <%= render 'shared/tour_description' %>
+<div class="row show-max-width" style="max-width: 100vw;">
+      <div class="col">
+        <img src="<%= cl_image_path @tour.tracks[0].photo %>" alt="" class='main-image'>
+      </div>
+      <div class="col">
+        <img src="<%= cl_image_path @tour.tracks[1].photo %>" alt="" class='main-image'>
+      </div>
+      <div class="col">
+        <img src="<%= cl_image_path @tour.tracks[2].photo %>" alt="" class='main-image'>
+      </div>
+    </div>
 <hr>
 <%= render 'shared/visited_places' %>
 <hr>
