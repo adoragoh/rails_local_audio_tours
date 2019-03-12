@@ -2,10 +2,12 @@
   <div class="search-field">
 <%= form_tag tours_path, method: :get do %>
 <%= select_tag :query, options_for_select([ "History", "Food", "Adventure", "Supernatural", "Sightseeing", "Romance", "Adrenaline", "Crime" ])  %>
+  </div>
   <div class="search-button">
     <%= button_to :search %>
   </div>
-<%end%>
+  <%end%>
+
 </div>
 
 
