@@ -14,28 +14,26 @@
     <%= favicon_link_tag asset_path('Logos_Tourio-black.png'), :rel => 'icon', :type =>  'image/png' %>
   </head>
   <body>
-    <div class="overall-wrapper">
-      <%# unless action_name == "goto" %>
-      <%= render 'shared/navbar_v2' %>
-      <%# end %>
-      <%= render 'shared/flashes' %>
-      <!-- <p class="notice"><%#= notice %></p>
-      <p class="alert"><%#= alert %></p> -->
-      <div id="content">
-        <%= render 'shared/navbar_v2_sidebar' %>
-        <%= yield %>
-        <%= javascript_include_tag 'application' %>
-        <%#= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
-        <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
-        <%= javascript_pack_tag 'application' %>
-         <!-- javascript_pack_tag 'init_mapbox'  -->
-         <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.0/mapbox-gl-directions.js'></script>
+    <%# unless action_name == "goto" %>
 
-        <%# unless action_name == "goto" %>
-          <%#= render 'shared/navbar' %>
-        <%# end %>
-      </div>
+    <%# end %>
+    <%= render 'shared/flashes' %>
+    <!-- <p class="notice"><%#= notice %></p>
+    <p class="alert"><%#= alert %></p> -->
+    <div id="content">
+      <%= yield %>
+      <%= javascript_include_tag 'application' %>
+      <%#= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
+      <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+      <%= javascript_pack_tag 'application' %>
+       <!-- javascript_pack_tag 'init_mapbox'  -->
+       <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.0/mapbox-gl-directions.js'></script>
+
+      <%# unless action_name == "goto" %>
+        <%#= render 'shared/navbar' %>
+      <%# end %>
     </div>
+
     <div class="overlay"></div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
