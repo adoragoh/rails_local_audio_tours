@@ -24,28 +24,11 @@
       <p>Tour Completed!</p>
       <br>
 
-
-      <%= link_to "Review Tour !", tour_path(@tour), class: "btn-lg btn-success", style: "padding:20px"  %>
-    <% end %>
-
-    <!-- Button trigger modal -->
-    <br>
-    <button type="button" class="btn btn-ghost" data-toggle="modal" data-target="#exampleModal" id="button-hungry">
-      Hungry?
-    </button>
-  </div>
-</div>
-      <%#= link_to "Review Tour !", tour_path(@tour), class: "btn-lg btn-success"  %>
-
-    <%= render 'shared/review_modal' %>
-
-
-    <!-- Restauran modal -->
+      <%= render 'shared/review_modal' %>
+      <% end %>
+    
     <%= render 'shared/nearby_restaurant' %>
 
-
   </div>
 </div>
-
-
 
