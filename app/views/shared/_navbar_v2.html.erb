@@ -36,7 +36,8 @@
   </div>
 
   <div class="sidebar-header">
-      <h3>[Person's profile pic and name - like Uber]</h3>
+    <img src="<%= cl_image_path current_user.photo %>" alt="" class='profile-pic'>
+    <h3><%= current_user.first_name.capitalize %></h3>
   </div>
 
   <ul class="list-unstyled components">
@@ -53,7 +54,14 @@
       <li>
         <%= link_to "⭐ Favourites", favourites_path %>
       </li>
-      <!--<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Profile</a>
+      <li>
+        <%= link_to "Create a tour !", new_tour_path %>
+      </li>
+      <li>
+        <%= link_to "Logout", destroy_user_session_path %>
+      </li>
+
+     <!--  <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Profile</a>
           <ul class="collapse list-unstyled" id="homeSubmenu">
               <li>
                   <a href="#">Home 1</a>
@@ -78,13 +86,12 @@
                   <a href="#">Page 3</a>
               </li>
           </ul>
-      </li> -->
-  </ul>
-
+      </li>
+  </ul> -->
+<!--
   <ul class="list-unstyled CTAs">
     <li>
       <%= link_to "Create a tour", new_tour_path, class: "download" %>
-      <!-- <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Creat</a> -->
     </li>
     <li>
       <%= link_to "Logout", destroy_user_session_path, class: "article" %>
@@ -95,13 +102,7 @@
     <li>
       <%= link_to "Sign up", new_user_registration_path, class: "article" %>
     </li>
-      <!-- <li>
-          <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
-      </li>
-      <li>
-          <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
-      </li> -->
   </ul>
 </nav>
 
-
+ -->
