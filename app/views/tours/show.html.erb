@@ -1,5 +1,4 @@
 <div class="main-show-container">
-  <div class="row">
     <div class="col-12">
       <div class="card mb-3 card-all audio-tour-show-card">
         <img class="card-img-top" id="image-top" src="<%= cl_image_path @tour.photos[0].photo %>"  alt="Card image cap">
@@ -8,19 +7,19 @@
         </div>
       </div>
       <!-- <img src="<%= cl_image_path @tour.photos[0].photo %>" alt="" class='main-image'> -->
-    </div>
+
   </div>
-  <div class="row">
-    <div class="col-4">
-      <img src="<%= cl_image_path @tour.tracks[0].photo %>" alt="" class='main-image'>
+    <div class="row show-max-width" style="max-width: 100vw;">
+      <div class="col">
+        <img src="<%= cl_image_path @tour.tracks[0].photo %>" alt="" class='main-image'>
+      </div>
+      <div class="col">
+        <img src="<%= cl_image_path @tour.tracks[1].photo %>" alt="" class='main-image'>
+      </div>
+      <div class="col">
+        <img src="<%= cl_image_path @tour.tracks[2].photo %>" alt="" class='main-image'>
+      </div>
     </div>
-    <div class="col-4">
-      <img src="<%= cl_image_path @tour.tracks[1].photo %>" alt="" class='main-image'>
-    </div>
-    <div class="col-4">
-      <img src="<%= cl_image_path @tour.tracks[2].photo %>" alt="" class='main-image'>
-    </div>
-  </div>
 </div>
 
 
@@ -38,25 +37,26 @@
   <p><small class="text-muted"><%= @tour.category.capitalize %></small></p>
     <!-- If statement for whether current tour has already been favourited -->
       <% if current_user != nil %>
-        <div id="favourite-button-div">
+
           <% if current_user.favourites.where(tour_id: @tour).first == nil %>
+          <div id="favourite-button-div">
             <%= render 'favourites/add_button', tour: @tour %>
+          </div>
           <% else %>
+          <div>
             <%= render 'favourites/delete_button', tour: @tour %>
+          </div>
           <% end %>
-        </div>
       <% else %>
         <%= link_to "Add to favourites", tour_favourites_path(params[:id]), method: :post, class: "unfavourited", id: "favourited-button" %>
       <% end %>
 </div>
 
 <%= render 'shared/tour_description' %>
+<hr>
 <%= render 'shared/visited_places' %>
-
-<button data-toggle="collapse" data-target="#demo">Collapsible</button>
-
-<div id="demo" class="collapse">
-  <%= render 'shared/review_box' %>
-</div>
-
-<%= render 'shared/map' %>
+<hr>
+<%= render 'shared/showmap' %>
+<hr>
+<%= render 'shared/review_box' %>
+<hr>

@@ -1,18 +1,18 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!, only: [ :index, :create ]
+  before_action :authenticate_user!, only: [:index, :create]
   before_action :set_tour, only: [:new, :create]
 
   def create
     @review = Review.new(review_params)
     @review.tour = @tour
+    @review.user = current_user
     @review.save
-
     authorize @review
   end
 
   private
 
-   def set_tour
+  def set_tour
     @tour = Tour.find(params[:tour_id])
     authorize @tour
   end

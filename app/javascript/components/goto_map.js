@@ -81,4 +81,4 @@ const initGotoMap = () => {
 };
 
 
-export { initGotoMap };
+export { initGotoMap }
