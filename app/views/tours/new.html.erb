@@ -20,7 +20,26 @@
    <!--  <div class="modal-footer"> -->
       <!-- <div class="form-actions"> -->
    <!--    </div> -->
-    <% end %>
+      <% end %>
+
+      <!-- Add form for uploading photos -->
+
+      <%= simple_form_for [@tour, @photos] do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <div class="form-inputs">
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+        </div>
+      <% end %>
+
+
+      <!-- Add form for uploading audio tracks -->
+
+
+
+
     <p>TODO:</p>
     <li>1. Add ability to add photos</li>
     <li>2. Choose from a selection of languages</li>
