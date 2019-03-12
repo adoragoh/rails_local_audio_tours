@@ -1,0 +1,18 @@
+.form-container{
+  padding-top: 80px;
+  padding-left: 10px;
+  padding-left: 10px;
+}
+
+.links-container{
+  display: flex;
+  flex-direction: flex-start;
+  justify-content: space-around;
+}
+
+.form-actions input{
+  color: white;
+  background-color: grey;
+  padding: 5px;
+  margin-bottom: 10px;
+}

@@ -15,10 +15,10 @@ import { toggleIndex } from '../components/index_toggle.js';
 
 initMapbox();
 initGotoMap();
-// initZomato();
+
+initZomato();
 autoPlay();
 hello();
 toggleIndex();
-
 
 
