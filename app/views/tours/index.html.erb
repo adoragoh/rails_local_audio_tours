@@ -1,32 +1,58 @@
-    <%= render 'shared/search_bar' %>
-    <%= render 'shared/search_filter' %>
-    <div class="top-index-container">
-      <%= render 'shared/navbar_v2' %>
-      <%= render 'shared/navbar_v2_sidebar' %>
-    </div>
+<%= render 'shared/search_bar' %>
+<%= render 'shared/search_filter' %>
 
-   <ul class="nav nav-pills">
-    <li class="nav-item active">
-      <a class="nav-link" href="#1" data-toggle="tab">List</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link js-refresh-size" href="#2" data-toggle="tab">Map</a>
-    </li>
-  </ul>
+<div class="top-index-container">
+  <%= render 'shared/navbar_v2' %>
+  <%= render 'shared/navbar_v2_sidebar' %>
+</div>
 
-  <div class="tab-content">
-    <div role="tabpanel" class="list-cards tab-pane active" id="1">
-      <div style="margin-top: 20px;">
-        <div class="index-content text-center ">
-          <h3>Audio tours near you</h3>
-          <%= render 'shared/card' %>
-        </div>
+<ul class="nav nav-pills">
+  <li class="nav-item active">
+    <a class="nav-link" href="#1" data-toggle="tab">List</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link js-refresh-size" href="#2" data-toggle="tab">Map</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+  <div role="tabpanel" class="list-cards tab-pane active" id="1">
+    <div style="margin-top: 20px;">
+      <div class="index-content text-center ">
+        <h3>Audio tours near you</h3>
+        <%= render 'shared/card' %>
       </div>
+    </div>
 
-    </div>
-    <div role="tabpanel" class="map-card tab-pane" role="tabpanel" id="2">
-      <!-- <div class="container"> -->
-        <%= render 'shared/map' %>
-      <!-- </div> -->
-    </div>
+</div>
+  <div role="tabpanel" class="map-card tab-pane active" role="tabpanel" id="2">
+    <!-- <div class="container"> -->
+      <%= render 'shared/map' %>
+    <!-- </div> -->
   </div>
+</div>
+
+<script>
+  // const buttonCards = document.querySelectorAll(".nav-item")[0];
+
+  // const buttonMap = document.querySelectorAll(".nav-item")[1];
+
+  // buttonCards.addEventListener("click", (event) => {
+  //   const cards = document.getElementById("1");
+  //   cards.classList.add("active");
+  //   const map = document.getElementById("2");
+  //   map.classList.remove("active");
+  //   buttonCards.classList.add("active");
+  //   buttonMap.classList.remove("active");
+  // });
+
+  // buttonMap.addEventListener("click", (event) => {
+  //   const map = document.getElementById("2");
+  //   map.classList.add("active");
+  //   const cards = document.getElementById("1");
+  //   cards.classList.remove("active");
+  //   buttonMap.classList.add("active");
+  //   buttonCards.classList.remove("active");
+  // });
+
+</script>
