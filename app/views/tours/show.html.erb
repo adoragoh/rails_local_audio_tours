@@ -10,15 +10,19 @@
 
   </div>
     <div class="row show-max-width" style="max-width: 100vw;">
-      <div class="col">
-        <img src="<%= cl_image_path @tour.tracks[0].photo %>" alt="" class='main-image'>
-      </div>
-      <div class="col">
+      <% @tour.tracks.each do |track| %>
+        <div class="col">
+          <img src="<%= cl_image_path track.photo %>" alt="" class='main-image'>
+        </div>
+      <% end %>
+
+
+      <!-- <div class="col">
         <img src="<%#= cl_image_path @tour.tracks[1].photo %>" alt="" class='main-image'>
       </div>
       <div class="col">
         <img src="<%#= cl_image_path @tour.tracks[2].photo %>" alt="" class='main-image'>
-      </div>
+      </div> -->
     </div>
 </div>
 
