@@ -12,6 +12,7 @@
       <i class="fas fa-arrow-left"></i>
   </div>
 
+
   <div class="sidebar-header">
     <% if current_user %>
     <img src="<%= cl_image_path current_user.photo  %>" alt="" class='profile-pic'>
@@ -31,10 +32,10 @@
         <%= link_to "📻 See all tours", tours_path %>
       </li>
       <li>
-        <%= link_to "🙂 Profile", edit_user_registration_path %>
+        <%= link_to "🙂 Edit my profile", edit_user_registration_path %>
       </li>
       <li>
-        <a href="#">🎧 My Tours</a>
+        <%= link_to "🎧 My Tours", "#" %>
       </li>
       <li>
         <%= link_to "⭐ Favourites", favourites_path %>
