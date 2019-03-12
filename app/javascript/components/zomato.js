@@ -8,7 +8,6 @@ const initZomato = () => {
     })
       .then(response => response.json())
       .then((data) => {
-        console.log(data)
         let restaurants = data.nearby_restaurants;
         restaurants.forEach((restaurant)=>{
           console.log(restaurant.restaurant.name)
@@ -18,7 +17,7 @@ const initZomato = () => {
           console.log(restaurant.restaurant.cuisines)
           console.log(restaurant.restaurant.average_cost_for_two)
           console.log(restaurant.restaurant.price_range)
-          console.log(restaurant.restaurant.offers)
+          // console.log(restaurant.restaurant.offers)
           console.log(restaurant.restaurant.user_rating.aggregate_rating)
           console.log(restaurant.restaurant.user_rating.rating_text)
           console.log(restaurant.restaurant.user_rating.rating_color)
