@@ -5,7 +5,7 @@
     <h1><strong><%= @track.title %></strong></h1>
     <hr>
     <%= render 'shared/audio_player_tracks' %>
-    <!-- <p>Change your life and learn to code at one of our campuses around the world.</p> -->
+    <!-- Script below to check whether its the last track to show the appropriate button-->
     <% tour_track_ids = @tour.tracks.ids %>
     <% track_id =  @track.id %>
     <% if track_id != @tour.tracks.last.id %>

@@ -14,20 +14,29 @@
   object-fit: cover;
 }
 
-.card-product h2 {
+
+.card-product .card-product-infos {
+  width:100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  padding: 16px;
+  color: black;
+
+  p{
+    color:black;
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+
+  h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-}
+  }
 
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product .card-product-infos {
-  padding: 16px;
 }
