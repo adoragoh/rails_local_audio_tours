@@ -29,17 +29,22 @@ const initZomato = () => {
           // const restaurant_modal = `<p> ${restaurant.restaurant.name}</p>`
 
           // INCLUDE THIS LATER!! (CSS not workinggg)
+          let priceRangeMarkup = '';
+          for (let i = 0; i < restaurant.restaurant.price_range; i++) {
+            priceRangeMarkup += '<i class="fas fa-dollar-sign"></i>';
+          }
+
           const restaurant_modal = `
             <div class="col-12">
               <div class="card-product">
                 <img src="${restaurant.restaurant.featured_image}">
                 <div class="card-product-infos">
                   <h2>${restaurant.restaurant.name}</h2>
-                  <p>${restaurant.restaurant.price_range}</p>
+                  <p style="color:darkgreen"> ${priceRangeMarkup}</p>
                   <p>${restaurant.restaurant.cuisines}</p>
-                  <p>${restaurant.restaurant.average_cost_for_two}</p>
-                  <p>Rating: ${restaurant.restaurant.user_rating.aggregate_rating}</p>
+                  <p>Zomato Rating: <strong> ${restaurant.restaurant.user_rating.aggregate_rating} / 5</strong></p>
                 </div>
+                <a href="${restaurant.restaurant.url}" target="_blank"></a>
               </div>
             </div>`;
 
