@@ -45,3 +45,37 @@
   color: #da552f;
   text-decoration: none;
 }
+.search-bar {
+position: fixed;
+    top: 0px;
+    right: 20px;
+        display: flex;
+            z-index: 999;
+}
+.search-bar__button {
+position: absolute;
+    top: 25px;
+    right: 5px;
+    color: white;
+}
+.search-bar__form {
+  width: 100vw;
+    margin-right: -20px;
+    background: #333;
+    padding: 20px;
+
+    input {
+  background: none !important;
+  border: 0 !important;
+  border-radius: 0;
+  padding: 0;
+  color: white!important;
+  border-bottom: 1px solid white!important;
+
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: none;
+    }
+  }
+}
