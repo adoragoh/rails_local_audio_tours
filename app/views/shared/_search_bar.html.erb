@@ -1,18 +1,24 @@
-
-
-
-<div class="search-container">
-  <div class="search-field">
-    <%= form_tag tours_path, method: :get do %>
-    <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-      id: "search-bar",
-    placeholder: "Find a tour near you"
-    %>
-  </div>
-  <div class="search-button">
-    <%= button_to :search %>
-  </div>
-  <%end%>
+<nav class="searchbar navbar-expand-lg navbar-light">
+    <button type="button" id="searchButton" class="btn btn-info navbar__menu-btn">
+      <img src="https://www.clipartmax.com/png/small/74-742441_preamps-white-search-icon-svg.png" alt="" class="avatar">
+    </button>
+<div id="search-container">
+    <div class="search-field">
+        <%= form_tag tours_path, method: :get do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          id: "search-bar",
+          placeholder: "Find a tour near you"
+          %>
+        <%end%>
+      </div>
+    <!--<div class="search-button">
+      <%#= button_to :search %>
+    </div> -->
 </div>
+</nav>
+
+
+
+
