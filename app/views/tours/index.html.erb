@@ -20,7 +20,7 @@
         <div class="category-tags">
           <% categories = [ "History", "Food", "Adventure", "Supernatural", "Sightseeing", "Romance", "Adrenaline", "Crime" ] %>
           <% categories.each do |category| %>
-            <button id="<%= category.downcase %>-category"><%= link_to category.upcase, tours_path(query: category) %></button>
+            <%= link_to category, tours_path(query: category), class: 'btn btn-ghost-category' %>
             <!-- <a><%#= link_to category.upcase, tours_path(query: category) %></a> -->
           <% end %>
         </div>

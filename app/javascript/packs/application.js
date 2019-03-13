@@ -15,8 +15,8 @@ import { toggleIndex } from '../components/index_toggle.js';
 import { searchbar } from '../components/searchbar.js.erb';
 import { categorySelector } from '../components/category_selector.js';
 
+categorySelector();
 toggleIndex();
-// categorySelector();
 searchbar();
 initMapbox();
 initGotoMap();
