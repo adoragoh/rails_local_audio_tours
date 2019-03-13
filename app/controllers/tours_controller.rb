@@ -100,6 +100,11 @@ class ToursController < ApplicationController
     authorize @tours
   end
 
+  def show_categories
+    @tours = Tour.where(category: category)
+    authorize @tours
+  end
+
   private
 
   def search

@@ -39,6 +39,10 @@ class TourPolicy < ApplicationPolicy
     true
   end
 
+  def show_categories?
+    true
+  end
+
   private
 
   def user_is_owner?
