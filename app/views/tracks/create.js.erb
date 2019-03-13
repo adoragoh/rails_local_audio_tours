@@ -1,6 +1,16 @@
 function updateDom() {
   const place = document.getElementById("existing-tracks");
   place.insertAdjacentHTML('beforeend','<p><%= @track.title %></p>')
+  let inputBox = document.getElementById('track_title')
+  inputBox.value = ""
+  inputBox = document.getElementById('track_title')
+  inputBox.value = ""
+  inputBox = document.getElementById('track_location')
+  inputBox.value = ""
+  inputBox = document.getElementById('track_audio')
+  inputBox.value = ""
+  inputBox = document.getElementById('track_photo')
+  inputBox.value = ""
 };
 
 updateDom();
