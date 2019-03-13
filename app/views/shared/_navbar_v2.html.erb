@@ -14,28 +14,36 @@
 
 
   <div class="sidebar-header">
+    <!-- User Displayname: Cases if session user has registered -->
     <% if current_user %>
       <% if current_user.photo? && current_user.first_name?  %>
         <img src="<%= cl_image_path current_user.photo  %>" alt="" class='profile-pic'>
         <h3><%= current_user.first_name.capitalize %></h3>
+      <% elsif current_user.first_name? %>
+        <h3><%= current_user.first_name.capitalize %></h3>
       <% else %>
         <p><%= current_user.email %></p>
       <% end %>
+
+    <!-- User Displayname: Cases if session user has NOT registered -->
     <% else %>
       <h3>
         <%= link_to new_user_session_path do %>
          <h4><i class="fa fa-sign-in-alt"></i> Login / Sign Up</h4>
         <% end %>
       </h3>
-
     <% end %>
   </div>
 
+
+
   <ul class="list-unstyled components">
-      <li class="active">
-        <!-- <a href="#">Profile</a> -->
-        <%= link_to "Home", tours_path %>
-      </li>
+    <li class="active">
+      <!-- <a href="#">Profile</a> -->
+      <%= link_to "Home", tours_path %>
+    </li>
+    <!-- Options links if session user has registered -->
+    <% if current_user %>
       <li>
         <%= link_to "Edit my profile", edit_user_registration_path %>
       </li>
@@ -48,14 +56,15 @@
       <li>
         <%= link_to "Create a tour !", new_tour_path %>
       </li>
-      <% if current_user %>
-        <li>
-          <%= link_to destroy_user_session_path, method: :delete do %>
-          <h6>Logout <i class="fa fa-sign-out-alt"></i></h6>
-        <% end %>
+    <% end %>
+    <% if current_user %>
+      <li>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+        <h6>Logout <i class="fa fa-sign-out-alt"></i></h6>
       <% end %>
-      </li>
-    
+    <% end %>
+    </li>
+  </ul>
      <!--  <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Profile</a>
           <ul class="collapse list-unstyled" id="homeSubmenu">
               <li>
