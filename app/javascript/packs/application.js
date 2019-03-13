@@ -15,8 +15,7 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { hello } from '../components/navbar_v2.js';
 import { toggleIndex } from '../components/index_toggle.js';
 
-
-
+toggleIndex();
 initMapbox();
 initGotoMap();
 toggleIndex();

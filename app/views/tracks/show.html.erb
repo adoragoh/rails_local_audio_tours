@@ -1,4 +1,5 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 50%), url('<%= cl_image_path @track.photo %>') ;">
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 50%), url('<%= cl_image_path @track.photo %>');">
 
 
   <div class="container">
@@ -14,15 +15,16 @@
       <% next_track = @tour.tracks.find(next_track_id) %>
       <br><br>
       <%= link_to "Next track", track_goto_path(@tour, next_track), class: "btn-gradient" %>
+      <%= render 'shared/nearby_restaurant' %>
     <% else %>
       <br><br>
-      <p>Tour Completed!</p>
-      <br>
-
-      <%= render 'shared/review_modal' %>
+      <div class="completed-info">
+        <p>Tour Completed!</p>
+        <%= render 'shared/review_modal' %>
       <% end %>
 
       <%= render 'shared/nearby_restaurant' %>
+      </div>
 
   </div>
 </div>

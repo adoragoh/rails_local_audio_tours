@@ -5,22 +5,44 @@
 
       <h2>Final step 3/3: Add tracks to <%= @tour.title %></h2>
 
-      <%= simple_form_for [@tour, @track] do |f| %>
-      <%= f.error_notification %>
-      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <br>
 
-      <div class="form-inputs">
-        <%= f.input :photo %>
-        <%= f.input :photo_cache, as: :hidden %>
-        <%= f.input :audio %>
-        <%= f.input :title %>
-        <%= f.input :location %>
-        <%= f.input :description %>
+      <div id="existing-tracks">
+        <h5>Existing tracks:</h5>
+        <% @tour.tracks.each do |track| %>
+          <p><%= track.title %></p>
+        <% end %>
       </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Finished", class: 'btn-primary'%>
+
+      <br>
+
+      <div id="add-track-form">
+        <%= simple_form_for [@tour, @track], remote: true do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <div class="form-inputs">
+          <%= f.input :title %>
+          <%= f.input :location %>
+          <%= f.input :description %>
+          <%= f.input :audio %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Add track", class: 'btn-primary', id: "btn-add-track" %>
+        </div>
+        <% end %>
       </div>
-      <% end %>
+
+      <br>
+
+      <div>
+        <%= link_to "Finished!", tour_path(@tour), class: 'btn btn-success' %>
+      </div>
+
     </div>
   </div>
 </div>
+
