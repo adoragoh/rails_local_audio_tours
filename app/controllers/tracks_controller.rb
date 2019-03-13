@@ -17,7 +17,8 @@ class TracksController < ApplicationController
       {
         lng: track.longitude,
         lat: track.latitude,
-        infoWindow: render_to_string(partial: "/shared/map_info", locals: { track: track })
+        # infoWindow: render_to_string(partial: "/shared/map_info", locals: { track: track }),
+        image_url: helpers.asset_url('https://res.cloudinary.com/dm25xqrrj/image/upload/v1551938861/Logos/Tourio-black.png')
       }
     end
 
@@ -33,7 +34,8 @@ class TracksController < ApplicationController
     @marker =
       {
         lng: @track.longitude,
-        lat: @track.latitude
+        lat: @track.latitude,
+        image_url: helpers.asset_url('https://res.cloudinary.com/dm25xqrrj/image/upload/v1551938861/Logos/Tourio-black.png')
         # infoWindow: render_to_string(partial: "infoWindow", locals: { tour: tour })
       }
     #set_track method called
