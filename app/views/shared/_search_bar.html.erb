@@ -1,18 +1,20 @@
-
-
-
-<div class="search-container">
-  <div class="search-field">
-    <%= form_tag tours_path, method: :get do %>
-    <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-      id: "search-bar",
-    placeholder: "Find a tour near you"
-    %>
+<nav class="search-bar">
+      <div class="search-field search-bar__form">
+          <%= form_tag tours_path, method: :get do %>
+            <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            id: "search-bar",
+            autofocus: true,
+            placeholder: "Find a tour near you"
+            %>
+          <%end%>
   </div>
-  <div class="search-button">
-    <%= button_to :search %>
-  </div>
-  <%end%>
-</div>
+  <button type="button" id="searchButton" class="search-bar__button">
+    <span class="fa fa-search"></span>
+  </button>
+</nav>
+
+
+
+

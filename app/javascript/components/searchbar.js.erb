@@ -1,0 +1,12 @@
+const searchbar = () => {
+  const searchButton = document.getElementById("searchButton");
+
+  if (searchButton) {
+    searchButton.addEventListener("click", (event) => {
+      const display = document.querySelector(".search-field");
+      display.classList.toggle("search-field-active")
+      });
+    }
+};
+
+export { searchbar };

@@ -69,6 +69,17 @@ a:focus {
     left: 0;
 }
 
+.searchbar {
+    border: none;
+    border-radius: 0;
+    top: 0px;
+    position: fixed;
+    z-index: 9999;
+    top: 5px;
+    right: 0;
+}
+
+
 .navbar__menu-btn {
     border-radius: 50%;
     width: 44px;

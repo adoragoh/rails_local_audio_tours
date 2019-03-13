@@ -15,14 +15,19 @@
 
   <div class="sidebar-header">
     <% if current_user %>
-    <img src="<%= cl_image_path current_user.photo  %>" alt="" class='profile-pic'>
-      <h3><%= current_user.first_name.capitalize %></h3>
+      <% if current_user.photo? && current_user.first_name?  %>
+        <img src="<%= cl_image_path current_user.photo  %>" alt="" class='profile-pic'>
+        <h3><%= current_user.first_name.capitalize %></h3>
+      <% else %>
+        <p><%= current_user.email %></p>
+      <% end %>
     <% else %>
       <h3>
         <%= link_to new_user_session_path do %>
-         <h4><i class="fa fa-sign-in-alt"></i> Login</h4>
+         <h4><i class="fa fa-sign-in-alt"></i> Login / Sign Up</h4>
         <% end %>
       </h3>
+
     <% end %>
   </div>
 
@@ -35,7 +40,7 @@
         <%= link_to "Edit my profile", edit_user_registration_path %>
       </li>
       <li>
-        <%= link_to "My Tours", "#" %>
+        <%= link_to "My Tours", my_tour_path %>
       </li>
       <li>
         <%= link_to "Favourites", favourites_path %>

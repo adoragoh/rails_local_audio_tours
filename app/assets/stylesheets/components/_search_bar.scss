@@ -6,8 +6,10 @@
 }
 
 .search-field {
-  width: 80%;
-  height: 100%;
+  display: none;
+}
+.search-field-active {
+  display: block;
 }
 
 .search-filter{
