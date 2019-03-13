@@ -21,13 +21,9 @@
         <hr>
         <hr>
         <div class="category-tags">
-  <a href="#">History</a>
-  <a href="#">Food</a>
-  <a href="#">Adventure</a>
-  <a href="#">Supernatural</a>
-  <a href="#">Food</a>
-  <a href="#">Adventure</a>
-  <a href="#">Supernatural</a>
+  <% Tour::Categories.each do |category| %>
+  <%= link_to category.upcase, tours_path(query: category), class: "btn-ghost" %>
+  <%end %>
 </div>
 
         <%= render 'shared/card' %>

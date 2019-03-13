@@ -17,4 +17,6 @@ class Tour < ApplicationRecord
   validates :description, length: { minimum: 50, maximum: 2000 }, allow_blank: false
   validates :language, presence: true
   validates :category, presence: true
+
+  Categories = ['History', 'Crime', 'Food', 'Adventure', 'Supernatural', 'Sightseeing', 'Romance']
 end
