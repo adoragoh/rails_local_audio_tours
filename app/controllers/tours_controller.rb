@@ -95,6 +95,11 @@ class ToursController < ApplicationController
     authorize @tour
   end
 
+  def my_tours
+    @tours = Tour.where(user_id: current_user)
+    authorize @tours
+  end
+
   private
 
   def search

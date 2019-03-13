@@ -1,0 +1,21 @@
+.floating-nav {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .nav {
+    background: #444;
+    padding: 2px;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    text-transform: uppercase;
+    /* font-weight: 500; */
+    letter-spacing: 1px;
+    border: 2px solid rgba(255,255,255,0.2);
+  }
+}

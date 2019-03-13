@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   get '/profile', to: 'profiles#index'
   get '/tours/:tour_id/tracks/:id/goto', to: 'tracks#goto', as: 'track_goto'
   get '/tours/:tour_id/user', to: 'tours#user', as: 'tour_user'
+  get '/my_tours', to: 'tours#my_tours', as: 'my_tour'
 
 end

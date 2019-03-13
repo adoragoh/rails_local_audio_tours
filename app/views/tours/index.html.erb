@@ -1,6 +1,7 @@
 <%= render 'shared/search_bar' %>
-<%= render 'shared/search_filter' %>
+<%#= render 'shared/search_filter' %>
 
+<div class="floating-nav">
 <ul class="nav nav-pills">
   <li class="nav-item active">
     <a class="nav-link" href="#1" data-toggle="tab">List</a>
@@ -9,12 +10,23 @@
     <a class="nav-link js-refresh-size" href="#2" data-toggle="tab">Map</a>
   </li>
 </ul>
+</div>
 
 <div class="tab-content">
   <div role="tabpanel" class="list-cards tab-pane active" id="1">
     <div style="margin-top: 20px;">
       <div class="index-content text-center ">
         <h3>Audio tours near you</h3>
+        <div class="category-tags">
+  <a href="#">History</a>
+  <a href="#">Food</a>
+  <a href="#">Adventure</a>
+  <a href="#">Supernatural</a>
+  <a href="#">Food</a>
+  <a href="#">Adventure</a>
+  <a href="#">Supernatural</a>
+</div>
+
         <%= render 'shared/card' %>
       </div>
     </div>
