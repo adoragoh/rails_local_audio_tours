@@ -18,23 +18,21 @@
       <div class="index-content text-center ">
         <h3>Audio tours near you</h3>
         <div class="category-tags">
-  <a href="#">History</a>
-  <a href="#">Food</a>
-  <a href="#">Adventure</a>
-  <a href="#">Supernatural</a>
-  <a href="#">Food</a>
-  <a href="#">Adventure</a>
-  <a href="#">Supernatural</a>
-</div>
-
-        <%= render 'shared/card' %>
+          <% categories = [ "History", "Food", "Adventure", "Supernatural", "Sightseeing", "Romance", "Adrenaline", "Crime" ] %>
+          <% categories.each do |category| %>
+            <a><%= link_to category.upcase, tours_path(query: category) %></a>
+          <% end %>
+        </div>
+        <% @tours.each do |tour| %>
+          <%= render 'shared/card_v2', tour: tour %>
+        <% end %>
       </div>
     </div>
+  </div>
 
-</div>
   <div role="tabpanel" class="map-card tab-pane active" role="tabpanel" id="2">
     <!-- <div class="container"> -->
-      <%= render 'shared/map' %>
+    <%= render 'shared/map' %>
     <!-- </div> -->
   </div>
 </div>
