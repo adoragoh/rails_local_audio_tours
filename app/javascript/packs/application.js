@@ -18,8 +18,8 @@ toggleIndex();
 searchbar();
 initMapbox();
 initGotoMap();
-// initZomato();
-// autoPlay();
+initZomato();
+autoPlay();
 // hello();
 
 
