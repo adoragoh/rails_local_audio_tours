@@ -74,9 +74,10 @@ class TracksController < ApplicationController
     @track.photo = params[:track][:photo]
     @track.audio = params[:track][:audio]
     if @track.save
-      redirect_to tour_path(@tour)
-    else
-      render :new
+      respond_to do |format|
+        format.html { redirect_to new_tour_track_path(@tour) }
+        format.js
+      end
     end
   end
 

@@ -1,0 +1,6 @@
+function updateDom() {
+  const place = document.getElementById("existing-tracks");
+  place.insertAdjacentHTML('beforeend','<p><%= @track.title %></p>')
+};
+
+updateDom();
