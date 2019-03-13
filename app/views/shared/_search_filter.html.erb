@@ -1,7 +1,7 @@
 <div class="search-filter">
   <%= form_tag tours_path, method: :get do %>
-  <%= select_tag :query, options_for_select([ "History", "Food", "Adventure", "Supernatural", "Sightseeing", "Romance", "Adrenaline", "Crime" ]),
-    class: "js-auto-submit"   %>
+  <%= select_tag :query, options_for_select([ "", "History", "Food", "Adventure", "Supernatural", "Sightseeing", "Romance", "Adrenaline", "Crime" ]),
+    class: "js-auto-submit dropdown-filter-list"   %>
   <%end%>
 </div>
 
