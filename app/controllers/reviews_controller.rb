@@ -8,6 +8,9 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     @review.save
     authorize @review
+    if request.referer.include? "tracks"
+      redirect_to tour_path(@tour)
+    end
   end
 
   private

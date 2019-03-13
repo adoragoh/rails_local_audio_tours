@@ -8,6 +8,10 @@
   width:100%;
 }
 
+.list-unstyled {
+  font-weight: 100;
+}
+
 .show-track-navbar{
   display:flex;
   justify-content: space-between;
@@ -191,7 +195,7 @@ a:focus {
 }
 
 #sidebar ul li a:hover {
-    color: #ff525e;
+    color: #7386D5;
     background: #fff;
 }
 
