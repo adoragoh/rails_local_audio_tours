@@ -48,8 +48,6 @@ const initZomato = () => {
               </div>
             </div>`;
 
-
-
           zomato.insertAdjacentHTML("beforeend", restaurant_modal);
         });
       })

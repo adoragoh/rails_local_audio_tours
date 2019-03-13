@@ -1,10 +1,18 @@
 .tour-header {
-  background-color: #222;
+  background-color: rgba(40,40,40,0.6);
   color: white;
-  padding: 20px;
+  padding: 2px;
+  text-align:center;
+
 
   &__title {
     font-size: 40px;
     margin: 0;
+    color:white;
+  }
+
+  p{
+    color:white;
+    margin: auto 0;
   }
 }
