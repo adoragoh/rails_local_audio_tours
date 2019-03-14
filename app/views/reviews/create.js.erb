@@ -1,13 +1,25 @@
+function refreshForm(formHTML){
+  console.log('<%= @review.persisted? %>');
+  const form = document.getElementById('new_review');
+  form.innerHTML = formHTML;
+}
 
-var newReview = `<li>
-<p>Reviewed by <%= review.user.first_name %></p>
-<p style="font-size: 16px"><%= review.content %></p>
-</li>`
+function addReview() {
+  const newReview = `
+  <li>
+    <p>Reviewed by <%= @review.user.first_name %></p>
+    <p style="font-size: 16px"><%= @review.content %></p>
+  </li>`;
+  const reviews = document.querySelector('.reviews-list');
+  reviews.insertAdjacentHTML('beforeend', newReview);
+}
 
-var reviews = document.querySelector('.reviews-list')
-
-reviews.insertAdjacentHTML('beforeend', newReview)
-
-var inputBox = document.getElementById('review_content')
-inputBox.value = ""
+<% if @review.persisted? %>
+  console.log("works");
+  addReview();
+  refreshForm("<%= j render 'reviews/form', tour: @tour, review: Review.new %>");
+<% else %>
+  console.log("does not work");
+  refreshForm("<%= j render 'reviews/form', tour: @tour, review: @review %>");
+<% end %>
 
