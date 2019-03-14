@@ -54,9 +54,15 @@ position: fixed;
 }
 .search-bar__button {
 position: absolute;
-    top: 25px;
+    top: 14px;
     right: 5px;
     color: white;
+    background: #222;
+    border-color: #222;
+    font-size: 22px;
+    box-shadow: none;
+    opacity:0.9;
+
 }
 .search-bar__form {
   width: 100vw;
