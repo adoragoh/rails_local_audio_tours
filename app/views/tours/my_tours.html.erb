@@ -1,11 +1,20 @@
-<div class="tab-content">
-  <div role="tabpanel" class="list-cards tab-pane active" id="1">
-    <div style="margin-top: 20px;">
-      <div class="index-content text-center ">
-        <h3>Your favourites</h3>
-        <% @tours.each do |tour| %>
-          <%= render 'shared/card_v2', tour: tour %>
-        <% end %>
-      </div>
+<div class="form-container">
+  <h1>My tours: </h1>
+
+  <% @tours.each do |tour| %>
+  <div class="card mb-3 card-all audio-tour-card">
+    <img class="card-img-top" id="image-top" src="<%= cl_image_path tour.photos[0].photo %>"  alt="Card image cap">
+    <div class="audio-tour-card__tape-overlay">
+      <h3 class="card-title audio-tour-card__title audio-tour-card__tape-overlay-item"><%= tour.title %></h3>
+      <div class="audio-tour-card__tape-overlay-item audio-tour-card__description"><%= tour.start_location %> <small class="text-muted"> - <%= tour.category %></small></div>
+      <div class="audio-tour-card__tape-overlay-item audio-tour-card__edit"><%= link_to "Edit tour", new_tour_track_path(tour) %></small></div>
     </div>
+    <%= link_to(tour_path(tour)) do   %>
+      <span class="full-link"></span>
+    <%end%>
   </div>
+  <%end%>
+  <% if @tours!=true %>
+    <p>You have not created any tours yet.</p>
+  <% end %>
+</div>

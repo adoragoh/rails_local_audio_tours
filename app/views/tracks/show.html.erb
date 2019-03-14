@@ -17,12 +17,12 @@
       <%= link_to "Next track", track_goto_path(@tour, next_track), class: "btn-gradient" %>
       <%= render 'shared/nearby_restaurant' %>
     <% else %>
-      <br><br>
       <div class="completed-info">
         <p>Tour Completed!</p>
         <%= render 'shared/review_modal' %>
-        <%= render 'shared/nearby_restaurant' %>
       <% end %>
+
+      <%= render 'shared/nearby_restaurant' %>
       </div>
 
   </div>

@@ -1,5 +1,5 @@
 <div>
-  <button type="button" class="btn-lg btn-success" data-toggle="modal" data-target="#reviewModal">
+  <button type="button" class="btn-lg btn-success" data-toggle="modal" data-target="#reviewModal" style="text-align: center;">
   Review Tour
   </button>
 </div>
@@ -14,11 +14,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= render 'reviews/form', tour: @tour, review: @review %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save</button>
+        <%= render 'reviews/modal_form', tour: @tour, review: @review %>
       </div>
     </div>
   </div>

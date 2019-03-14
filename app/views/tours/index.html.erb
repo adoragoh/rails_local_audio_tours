@@ -16,7 +16,10 @@
   <div role="tabpanel" class="list-cards tab-pane active" id="1">
     <div style="margin-top: 20px;">
       <div class="index-content text-center ">
-        <h3>Audio tours near you</h3>
+        <!-- <h3>Audio tours near you</h3> -->
+        <hr>
+        <hr>
+        <hr>
         <div class="category-tags">
           <% categories = [ "History", "Food", "Adventure", "Supernatural", "Sightseeing", "Romance", "Adrenaline", "Crime" ] %>
           <% categories.each do |category| %>
@@ -35,9 +38,9 @@
     </div>
   </div>
 
-  <div role="tabpanel" class="map-card tab-pane" role="tabpanel" id="2">
-    <!-- <div class="container"> -->
-    <%= render 'shared/map' %>
-    <!-- </div> -->
+
+  <div role="tabpanel" class="map-card tab-pane active" role="tabpanel" id="2">
+      <%= render 'shared/map' %>
   </div>
+
 </div>

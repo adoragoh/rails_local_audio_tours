@@ -1,5 +1,5 @@
 class ToursController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show, :user]
+  skip_before_action :authenticate_user!, only: [:index, :show, :user]
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
   before_action :set_tracks, only: :show
 
@@ -17,8 +17,8 @@ class ToursController < ApplicationController
       {
         lng: tour.longitude,
         lat: tour.latitude,
-        infoWindow: render_to_string(partial: "/shared/infoWindow-tours", locals: { tour: tour })
-        # image_url: helpers.asset_url('<%= cl_image_path @tour.photos[0].photo %>')
+        infoWindow: render_to_string(partial: "/shared/infoWindow-tours", locals: { tour: tour }),
+        image_url: helpers.asset_url('https://res.cloudinary.com/dm25xqrrj/image/upload/v1551938861/Logos/Tourio-white.png')
       }
     end
 
@@ -39,8 +39,8 @@ class ToursController < ApplicationController
       {
         lng: track.longitude,
         lat: track.latitude,
-        infoWindow: render_to_string(partial: "/shared/infoWindow-tracks", locals: { track: track })
-        # image_url: helpers.asset_url('<%= cl_image_path track.photo %>')
+        infoWindow: render_to_string(partial: "/shared/infoWindow-tracks", locals: { track: track }),
+        image_url: helpers.asset_url('https://res.cloudinary.com/dm25xqrrj/image/upload/v1551938861/Logos/Tourio-white.png')
       }
     end
 

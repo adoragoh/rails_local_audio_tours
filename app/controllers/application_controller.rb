@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
   include Pundit
 
@@ -22,7 +22,10 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     sign_in_url = new_user_session_url
-    if request.referer == sign_in_url
+
+    if request.referer == new_user_registration_url
+      tours_path
+    elsif request.referer == sign_in_url
       tours_path || super
     else
       stored_location_for(resource) || request.referer || root_path
@@ -35,6 +38,7 @@ class ApplicationController < ActionController::Base
 
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :about])
+
   end
 end
 

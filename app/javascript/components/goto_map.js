@@ -20,6 +20,7 @@ const initGotoMap = () => {
       center: [ markers[0].lng, markers[0].lat],
       zoom: 12
     });
+
     markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // <-- add this
     new mapboxgl.Marker()
@@ -27,6 +28,24 @@ const initGotoMap = () => {
       .setPopup(popup) // <-- add this
       .addTo(map);
     });
+
+    // //Winson: Just added custom marker
+    // markers.forEach((marker) => {
+    //   // Create a HTML element for your custom marker
+    //   const element = document.createElement('div');
+    //   element.className = 'marker';
+    //   element.style.backgroundImage = `url('${marker.image_url}')`;
+    //   element.style.backgroundSize = 'contain';
+    //   element.style.width = '25px';
+    //   element.style.height = '25px';
+
+    //   // Pass the element as an argument to the new marker
+    //   new mapboxgl.Marker(element)
+    //     .setLngLat([marker.lng, marker.lat])
+    //     .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+    //     .setHTML(marker.infoWindow.content))
+    //     .addTo(map);
+    // });
 
 
     // goto page routing to waypoint
@@ -75,7 +94,7 @@ const initGotoMap = () => {
     //
 
     fitMapToMarkers(map, markers);
-    addMarkersToMap(map, markers);
+    // addMarkersToMap(map, markers);
   }
 
 };
