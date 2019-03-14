@@ -1,8 +1,8 @@
 <div class="tour-description">
   <div class="row tour-description__meta">
-    <div class="col"><i class="fas fa-map-marker-alt">&nbsp;</i><%= @tour.start_location.capitalize %></div>
-    <div class="col"><i class="fas fa-clock">&nbsp;</i><%= rand(1..3) %> hours</div>
-    <div class="col"><i class="fas fa-flag">&nbsp;</i><%= @tour.language %></div>
+    <div class="col tour-description-icons"><i class="fas fa-map-marker-alt">&nbsp;</i><%= @tour.start_location.capitalize %></div>
+    <div class="col tour-description-icons"><i class="fas fa-clock">&nbsp;</i><%= rand(1..3) %> hours</div>
+    <div class="col tour-description-icons"><i class="fas fa-flag">&nbsp;</i><%=@tour.language%></div>
   </div>
   <p class="tour-description-body"><%= @tour.description %></p>
 

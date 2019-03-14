@@ -38,9 +38,11 @@ const initZomato = () => {
             <div class="col-12">
               <div class="card-product">
                 <img src="${restaurant.restaurant.featured_image}">
+
                 <div class="card-product-infos">
-                  <h2>${restaurant.restaurant.name}</h2>
-                  <p style="color:darkgreen"> ${priceRangeMarkup}</p>
+                  <div class=card-product-info-title>
+                    <h2>${restaurant.restaurant.name}</h2>
+                  </div>
                   <p>${restaurant.restaurant.cuisines}</p>
                   <p>Zomato Rating: <strong> ${restaurant.restaurant.user_rating.aggregate_rating} / 5</strong></p>
                 </div>

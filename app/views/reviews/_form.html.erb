@@ -1,5 +1,5 @@
 
 <%= simple_form_for([ tour, review ], remote: true) do |form| %>
   <%= form.input :content, as: :text %>
-  <%= form.button :submit , class: "btn btn-primary" %>
+  <%= form.submit :submit , class: "btn btn-primary" %>
 <% end %>

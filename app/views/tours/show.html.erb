@@ -39,7 +39,7 @@
 <hr>
 
 <div class="row show-max-width">
-  <% @tour.tracks.each do |track| %>
+  <% @tour.tracks[0,3].each do |track| %>
     <div class="col scrollmenu">
       <img src="<%= cl_image_path track.photo %>" alt="" class='main-image'>
     </div>

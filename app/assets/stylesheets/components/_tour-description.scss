@@ -5,6 +5,8 @@
 
   &__meta {
     margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
   }
 }
 
@@ -26,3 +28,6 @@
   margin-bottom:0px;
 }
 
+.tour-description-icons {
+  font-size: 12px;
+}
