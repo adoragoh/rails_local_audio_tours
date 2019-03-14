@@ -3,7 +3,7 @@
     <div class="col-xs-3"></div>
     <div class="col-xs-12 col-sm-6 sol-lg4">
 
-      <h2>Step 1/3: Create a tour</h2>
+      <h2>Create a tour</h2>
 
       <%= simple_form_for(@tour) do |f| %>
       <%= f.error_notification %>
@@ -21,6 +21,7 @@
           <%#= p.input :photo_cache, as: :hidden %>
         <%# end %>
       </div>
+      <br>
       <%= f.button :submit, "Next step: Upload tour photos >", class: 'btn-primary'%>
 <!--       </div> -->
    <!--  <div class="modal-footer"> -->
