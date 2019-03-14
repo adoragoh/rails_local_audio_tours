@@ -100,6 +100,11 @@ class ToursController < ApplicationController
     authorize @tours
   end
 
+  def filter
+    @tours = policy_scope(Tour)
+    @filtered_tours = @tours.where(category: params[:query])
+  end
+
   private
 
   def search

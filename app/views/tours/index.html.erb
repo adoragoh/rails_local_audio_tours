@@ -21,17 +21,25 @@
         <h5>Audio tours near you</h5>
         <!-- <h3>Audio tours near you</h3> -->
         <div class="category-tags">
-  <% Tour::Categories.each do |category| %>
-  <%= link_to category.upcase, tours_path(query: category), class: "btn-ghost" %>
-  <%end %>
-</div>
-
-        <%= render 'shared/card' %>
+          <% categories = [ "History", "Food", "Adventure", "Supernatural", "Sightseeing", "Romance", "Adrenaline", "Crime" ] %>
+          <% categories.each do |category| %>
+            <%= link_to category, filter_tours_path(query: category), class: 'btn btn-ghost-category', remote: true %>
+            <!-- <a><%#= link_to category.upcase, tours_path(query: category) %></a> -->
+          <% end %>
+        </div>
+        <div id="category-display">
+          <div id="category-display-cards">
+            <% @tours.each do |tour| %>
+              <%= render 'shared/card_v2', tour: tour %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <div role="tabpanel" class="map-card tab-pane active" role="tabpanel" id="2">
+
+  <div role="tabpanel" class="map-card tab-pane" role="tabpanel" id="2">
       <%= render 'shared/map' %>
   </div>
 
