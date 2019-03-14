@@ -90,7 +90,6 @@ const initGotoMap = () => {
 
       userLocationControl.on('error', function(error) {
         // alert(error.message);
-        addRouteToMap(defaultLat, defaultLon);
       });
     //
 
