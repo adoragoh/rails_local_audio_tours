@@ -27,7 +27,63 @@ users_array = [
   last_name: 'vassilou',
   about: "I love to travel to eat.",
   password: "123456"
-  }
+  },
+  {
+  email: "dale@tourio.com",
+  first_name: 'dale',
+  last_name: 'hindle',
+  about: "Ask me anything about Instagram, or Canada.",
+  password: "123456"
+  },
+  {
+  email: "ben@tourio.com",
+  first_name: 'ben',
+  last_name: 'linder',
+  about: "Surf's Up!",
+  password: "123456"
+  },
+  {
+  email: "ben@tourio.com",
+  first_name: 'ben',
+  last_name: 'linder',
+  about: "Surf's Up!",
+  password: "123456"
+  },
+  {
+  email: "damon@tourio.com",
+  first_name: 'damon',
+  last_name: 'damon',
+  about: "Surf's Up! Yeah boyye!",
+  password: "123456"
+  },
+  {
+  email: "chris@tourio.com",
+  first_name: 'chris',
+  last_name: 'ward',
+  about: "Yeah, I know.",
+  password: "123456"
+  },
+  {
+  email: "rutger@tourio.com",
+  first_name: 'rutger',
+  last_name: 'swirski',
+  about: "I like to fish.",
+  password: "123456"
+  },
+  {
+  email: "daniel@tourio.com",
+  first_name: 'daniel',
+  last_name: 'daniel',
+  about: "Cool.",
+  password: "123456"
+  },
+  {
+  email: "paal@tourio.com",
+  first_name: 'paal',
+  last_name: 'paal',
+  about: "Everything's good.",
+  password: "123456"
+  },
 ]
 
 
@@ -38,13 +94,16 @@ User.create!(users_array)
 users = User.all
 users[0].remote_photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJjr1h7ibl8wNFU_rZgPLxHv0yXwriJVoIAGIsLjabc2TXgfnj-Q"
 users[0].save
-users[1].remote_photo_url = "https://images-na.ssl-images-amazon.com/images/I/91BLCCISDTL._SY355_.jpg"
+users[1].remote_photo_url = "https://www.girlgeekupnorth.co.uk/wp-content/uploads/2016/12/Princess-Leia-1.jpg"
 users[1].save
 users[2].remote_photo_url = "https://s.yimg.com/ny/api/res/1.2/T7ka83cKaoCASsJRbZQmpw--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/http://media.zenfs.com/en/homerun/feed_manager_auto_publish_494/905f723f3db3e3767cfc0bb5e13bf8f8"
 users[2].save
 
-puts "3 users added to your database!"
 
+
+
+
+puts "3 users added to your database!"
 puts "Adding 5 epic tours to the database."
 
 
@@ -54,32 +113,7 @@ tours_array = [
   start_location: "Melbourne",
   description: "A local's audio guide to the must visit places in Melbourne - suitable for first time explorers and those looking to delve a little deeper to explore the city's rich character. From history and architecture to contemporary laneway culture, sport or street art – we have your interests covered. This audio tour is a new and personalized way to really experience the city.",
   user: User.last,
-  category: "Adventure", #TODO: Create a dropdown of categories to choose from (mayben will need new table? But don't worry about it yet)
-  language: "English"
-  },
-
-  {
-  title: "1900s history booze cruise",
-  start_location: "Docklands",
-  description: "Super awesome booze cruise with lots of chicks. In this audio tour, we will explore new bars in the historic sites of Melbourne. Bring along your friends and your booze appetite. We will live it up like its 1989!",
-  user: User.last,
-  category: "Boozy", #TODO: Create a dropdown of categories to choose from (mayben will need new table? But don't worry about it yet)
-  language: "English"
-  },
-  {
-  title: "Ride across the Nullabor Desert",
-  start_location: "Alice Springs",
-  description: "Follow our awesome audio driving tour across the Nullabor Desert and understand the interesting sights and places of interest in the desert that you pass by ",
-  user: User.last,
-  category: "Adventure",
-  language: "English"
-  },
-  {
-  title: "1800s Sydney Underbelly",
-  start_location: "Sydney",
-  description: "Take an audio tour trip back in time to 1816, the year where the Italian Mafia ruled the streets of Sydney.",
-  user: User.last,
-  category: "Boozy",
+  category: "Sightseeing", #TODO: Create a dropdown of categories to choose from (mayben will need new table? But don't worry about it yet)
   language: "English"
   },
   {
@@ -91,35 +125,11 @@ tours_array = [
   language: "English"
   },
   {
-  title: "Gold diggers fantasy tour",
-  start_location: "Ballarat",
-  description: "Explore Ballarat through the lens of a local gold digger.",
-  user: User.last,
-  category: "History",
-  language: "English"
-  },
-  {
-  title: "Foodies galore",
-  start_location: "Queensland",
-  description: "Find the best places to eat in Queensland and discover an appetite inside of you you never knew.",
-  user: User.first,
-  category: "Food",
-  language: "English"
-  },
-  {
-  title: "Cycling with the kangaroos and wilderbeasts",
+  title: "Cycling Sydney",
   start_location: "Perth",
   description: "Go on mountain bike trail through the parks of Perth to discover the habitat of kangaroos and wilderbeasts.",
   user: User.first,
-  category: "Adventure",
-  language: "English"
-  },
-  {
-  title: "Live it up with the crocodiles",
-  start_location: "Darwin",
-  description: "Do a walking audio tour through the infamous billabongs of Darwin. Not for the faint hearted!",
-  user: User.first,
-  category: "Adventure",
+  category: "Sightseeing",
   language: "English"
   },
   {
@@ -127,40 +137,16 @@ tours_array = [
   start_location: "Bangkok",
   description: "Jump on a tuk tuk and follow our audio tour through the famous busy streets of Bangkok.",
   user: User.first,
-  category: "Sightseeing",
-  language: "English"
-  },
-  {
-  title: "Walkabout in Phi Phi",
-  start_location: "Phi Phi Island",
-  description: "Have a personalised audio tour of Phi Phi island and experience the island the way locals do.",
-  user: User.first,
   category: "Adventure",
   language: "English"
   },
   {
-  title: "Life as a viking",
-  start_location: "Edinburgh",
-  description: "Walk through the cobbled streets of Edinburgh in a kilt and taste the exciting life of a viking in the 1800s.",
-  user: User.first,
-  category: "History",
-  language: "English"
-  },
-  {
-  title: "See Everest",
-  start_location: "Nepal",
-  description: "Follow our audio tour to the peak of the highest mountain on earth.",
+  title: "Je t'aime Hanoi!",
+  start_location: "Hanoi",
+  description: "A historical take on the beautiful city of Hanoi, from a frenchman's perspective.",
   user: User.first,
   category: "Adventure",
-  language: "English"
-  },
-  {
-  title: "MCG tours",
-  start_location: "Melbourne Cricket Grounds",
-  description: "Have a free walking audio tour around one of the most important sporting grounds in Australian history.",
-  user: User.first,
-  category: "Sightseeing",
-  language: "English"
+  language: "French"
   },
   {
   title: "Penang Foodies Tour",
@@ -171,17 +157,9 @@ tours_array = [
   language: "English"
   },
   {
-  title: "Sand dune ATV",
-  start_location: "Perth",
-  description: "Jump on a quad bike and experience what its like to live in the sand dunes and experience the different attractions.",
-  user: User.first,
-  category: "Adventure",
-  language: "English"
-  },
-  {
   title: "Hidden Melbourne cafes",
   start_location: "Melbourne",
-  description: "Follow our audio tour where we will show you how to find the hidden cafe gems in Melbourne city.",
+  description: "Go on an audio tour where we will show you how to find the hidden cafe gems in Melbourne city.",
   user: User.first,
   category: "Food",
   language: "English"
@@ -191,7 +169,8 @@ tours_array = [
 Tour.create!(tours_array)
 
 
-# TODO: add photos to seeds
+
+# TODO: add photos to seeds ---->> Adjust this to use the first track picture in the tracks list
 
 tours = Tour.all
 
@@ -200,40 +179,12 @@ tours.each do |tour|
   photo.remote_photo_url = "https://source.unsplash.com/1600x900/?#{tour.title}"
   photo.tour = tour
   photo.save
-  # p.remote_photo_url = "https://source.unsplash.com/1600x900/?#{tour.title}"
-  # p.save
-  # tour.photo = p
-  # tour.save
 end
 
 
 
 puts "Many awesome tours added to your database!"
 
-# tracks_array = [
-#   {
-#     title: "Melbourne City",
-#     location: "Federation square",
-#     tour: Tour.first
-#   },
-#   {
-#     title: "S",
-#     location: "Docklands",
-#     tour: Tour.first
-#   },
-#   {
-#     title: "Eureka Skydeck",
-#     location: "Eureka Skydeck",
-#     tour: Tour.first
-#   }
-# ]
-
-
-# puts "Adding 3 audio tracks to our first tour..."
-
-# Track.create!(tracks_array)
-
-# tracks = Track.all
 
 
 track_titles = ['Melbourne',
@@ -258,6 +209,15 @@ track_urls = ['https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sam
   'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016860/Sample%20audio%20tracks/Flinders_lane_take_1.3gp',
   'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/Melbourne_gaol.3gp'
 ]
+
+photo_urls = ['https://source.unsplash.com/1600x900/?#{track.title}',
+  'https://source.unsplash.com/1600x900/?#{track.title}',
+  'https://source.unsplash.com/1600x900/?#{track.title}',
+  'https://source.unsplash.com/1600x900/?#{track.title}',
+  'https://source.unsplash.com/1600x900/?#{track.title}',
+  'https://source.unsplash.com/1600x900/?#{track.title}'
+]
+
 
 tours.each do |tour|
   counter = 0

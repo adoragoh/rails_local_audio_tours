@@ -14,7 +14,7 @@
       <% next_track_id = tour_track_ids[next_track_index] %>
       <% next_track = @tour.tracks.find(next_track_id) %>
       <br><br>
-      <%= link_to "Next track", track_goto_path(@tour, next_track), class: "btn-gradient" %>
+      <%= link_to "Next location", track_goto_path(@tour, next_track), class: "btn-gradient" %>
       <%= render 'shared/nearby_restaurant' %>
     <% else %>
       <div class="completed-info">
