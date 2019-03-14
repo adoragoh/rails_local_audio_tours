@@ -1,5 +1,9 @@
 <div class="form-container">
-  <h1>My tours: </h1>
+  <h2>My tours</h2>
+
+  <% if @tours.nil? %>
+    <p>You have not created any tours yet.</p>
+  <% end %>
 
   <% @tours.each do |tour| %>
   <div class="card mb-3 card-all audio-tour-card">
@@ -14,7 +18,4 @@
     <%end%>
   </div>
   <%end%>
-  <% if @tours!=true %>
-    <p>You have not created any tours yet.</p>
-  <% end %>
 </div>
