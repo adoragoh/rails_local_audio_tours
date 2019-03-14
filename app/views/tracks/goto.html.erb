@@ -12,12 +12,13 @@
 <!-- <button type="button" class="btn btn-success btn-lg btn-block" style="height: 10vh;"> <%= link_to "PLAY TRACK", tour_track_path(@tour, @track) %></button> -->
 <div>
   <div class="tour-header">
-    <p>Enroute to: <strong><%= @track.title  %></strong></p>
+    <h5>Enroute to:  <strong><%= @track.title.upcase  %></strong></h5>
   </div>
   <div>
     <%= link_to(tour_track_path(@tour, @track)) do %>
       <button type="button" class="btn btn-gradient-goto btn-lg btn-block" id="goto-button">
-      <h4>PLAY TRACK</h4></button>
+        <h4>I'M HERE</h4>
+      </button>
     <%end%>
   </div>
 </div>
