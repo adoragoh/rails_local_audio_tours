@@ -1,5 +1,5 @@
 class ToursController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show, :user]
+  skip_before_action :authenticate_user!, only: [:index, :show, :user, :filter]
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
   before_action :set_tracks, only: :show
 

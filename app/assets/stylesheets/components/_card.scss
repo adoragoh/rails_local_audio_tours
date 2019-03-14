@@ -21,7 +21,8 @@
   z-index: 1;
 }
 
-.full-link:hover {
+.full-link:focus,
+.full-link:active {
   background-color: rgba(0,0,0,0.2);
 }
 
