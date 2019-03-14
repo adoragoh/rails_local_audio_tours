@@ -4,7 +4,8 @@ class ReviewsController < ApplicationController
 
   def create
     if request.referer.include? "tracks"
-      @track = Track.find(params[:track_id])
+      id = @tour.track_ids.last
+      @track = Track.find(id)
     end
     @review = Review.new(review_params)
     @review.tour = @tour
