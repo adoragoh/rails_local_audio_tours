@@ -1,11 +1,28 @@
-<h1>Tour guide: 😎 <%= @tour.user.email %> [should be first + last name]</h1>
-<br>
-<h3>See all <%= @tour.user.email %>'s [should be first name] tours:</h3>
-
-<% @tour.user.tours.each do |tour| %>
-  <p><%= link_to tour.title, tour_path(tour) %></p>
-<% end %>
-
-<br>
-<!-- TODO: Should also include reviews this tour creator has gotten in the past
- -->
+<div class="tab-content">
+  <div role="tabpanel" class="list-cards tab-pane active" id="1">
+    <div style="margin-top: 80px;">
+      <div class="index-content text-left-profile">
+        <h2><img src="<%= cl_image_path @tour.user.photo  %>" alt="" class='profile-pic'><%= @tour.user.first_name.capitalize %> <%= @tour.user.last_name.capitalize %></h2>
+        <br>
+        <h5 class="text-muted rating-profile">4.8 ⭐</h5>
+      </div>
+      <div class="index-content text-left-profile">
+        <h5>About <%= @tour.user.first_name.capitalize %>:</h5>
+        <p><%= @tour.user.about %></p>
+        <br>
+        <h3 class='text-left-profile'><%= @tour.user.first_name.capitalize %>'s tours:</h3>
+        <% @tours = @tour.user.tours %>
+        <% @tours.each do |tour| %>
+          <%= render 'shared/card_v2', tour: tour %>
+        <% end %>
+        <br>
+        <h3><%= @tour.user.first_name.capitalize %>'s reviews:</h3>
+        <% @reviews = @tour.user.reviews %>
+        <br>
+        <% @reviews.each do |review| %>
+          <p><%= review.content %> - <%= link_to review.tour.title, tour_path(@tour), class: 'text-muted italic-profile' %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
