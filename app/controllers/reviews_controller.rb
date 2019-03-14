@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
     authorize @review
     respond_to do |format|
       if @review.save
-        format.html { redirect_to tour_path(@tour) }
+        format.html { redirect_to tours_path }
         format.js
       else
         format.html { render 'tracks/show' }
