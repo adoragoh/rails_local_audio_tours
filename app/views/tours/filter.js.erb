@@ -1,0 +1,22 @@
+function updateTours() {
+  const toursHTML =
+    `<% @filtered_tours.each do |tour| %>
+      <%= render 'shared/card_v2', tour: tour %>
+    <% end %>`;
+  const currentToursList = document.getElementById('category-display-cards');
+  currentToursList.innerHTML = toursHTML;
+
+  const buttons = document.querySelectorAll(".category-tags a");
+
+  buttons.forEach(button => {
+    button.addEventListener('click', (event) => {
+      buttons.forEach(button => {
+        button.classList.remove('highlighted');
+      });
+      button.classList.add('highlighted');
+    });
+  })
+
+};
+
+updateTours();

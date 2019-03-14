@@ -39,7 +39,7 @@ class TourPolicy < ApplicationPolicy
     true
   end
 
-  def show_categories?
+  def filter?
     true
   end
 

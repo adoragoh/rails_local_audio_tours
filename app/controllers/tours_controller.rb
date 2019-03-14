@@ -100,9 +100,9 @@ class ToursController < ApplicationController
     authorize @tours
   end
 
-  def show_categories
-    @tours = Tour.where(category: category)
-    authorize @tours
+  def filter
+    @tours = policy_scope(Tour)
+    @filtered_tours = @tours.where(category: params[:query])
   end
 
   private
