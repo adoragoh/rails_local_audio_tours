@@ -238,7 +238,7 @@ puts "Many awesome tours added to your database!"
 
 track_titles = ['Melbourne',
   'Federation square',
-  'State Library Victoria',
+  'Melbourne State Library',
   'Melbourne Central',
   'Flinders Lane',
   'Melbourne Gaol'
@@ -246,7 +246,7 @@ track_titles = ['Melbourne',
 
 track_locations = ['Melbourne',
   'Federation square',
-  'State Library Victoria',
+  'Melbourne State Library',
   'Melbourne Central',
   'Flinders Lane',
   'Melbourne Gaol']
