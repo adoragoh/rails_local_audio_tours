@@ -85,11 +85,12 @@ const initGotoMap = () => {
         addRouteToMap(userLocation.coords.latitude, userLocation.coords.longitude);
       });
 
+      const defaultLat = 37.8238
+      const defaultLon = 144.9913
+
       userLocationControl.on('error', function(error) {
-        alert(error.message);
-        // const defaultLat = 37.8238
-        // const defaultLon = 144.9913
-        // addRouteToMap(defaultLat, defaultLon);
+        // alert(error.message);
+        addRouteToMap(defaultLat, defaultLon);
       });
     //
 
