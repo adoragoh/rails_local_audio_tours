@@ -3,14 +3,23 @@ class ReviewsController < ApplicationController
   before_action :set_tour, only: [:new, :create]
 
   def create
+    if request.referer.include? "tracks"
+      @track = Track.find(params[:track_id])
+    end
     @review = Review.new(review_params)
     @review.tour = @tour
     @review.user = current_user
-    @review.save
     authorize @review
-    if request.referer.include? "tracks"
-      redirect_to tour_path(@tour)
+    respond_to do |format|
+      if @review.save
+        format.html { redirect_to tour_path(@tour) }
+        format.js
+      else
+        format.html { render 'tracks/show' }
+        format.js
+      end
     end
+
   end
 
   private
