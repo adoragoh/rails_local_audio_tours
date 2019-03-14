@@ -1,11 +1,7 @@
 <div class="track-location-list">
-  <h5 class="visited_places_heading">Visited Places</h5>
+  <h5 class="visited_places_heading">Spots we visit</h5>
   <% tracks = @tour.tracks %>
   <% tracks.each do |track| %>
-  <ul>
-    <li>
-      <p class="track-title"><%= track.title %></p>
-    </li>
-  </ul>
+      <p class="track-title" style="margin-bottom: 1px;">  <i style="color: #ff525e;" class="fas fa-map-marker-alt"></i>    <%= track.title %></p>
   <% end %>
 </div>

@@ -13,7 +13,6 @@
   border: 1px solid #4A4A4A;
   padding: 8px 24px;
   margin: 3px;
-  border-radius: 50px;
   font-weight: lighter;
   opacity: 0.6;
   transition: opacity 0.3s ease;
@@ -21,6 +20,7 @@
 
 .highlighted {
   background-color: #ff525e;
+  opacity: 1;
 }
 
 
