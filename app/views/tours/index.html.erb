@@ -20,15 +20,11 @@
         <h1 style="color:rgba(255,255,255,0.6)">Tourio</h1>
         <h5>Audio tours near you</h5>
         <!-- <h3>Audio tours near you</h3> -->
-        <hr>
-        <hr>
-        <hr>
         <div class="category-tags">
   <% Tour::Categories.each do |category| %>
   <%= link_to category.upcase, tours_path(query: category), class: "btn-ghost" %>
   <%end %>
 </div>
->>>>>>> master
 
         <%= render 'shared/card' %>
       </div>
