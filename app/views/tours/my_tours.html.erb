@@ -7,8 +7,8 @@
     <div class="audio-tour-card__tape-overlay">
       <h3 class="card-title audio-tour-card__title audio-tour-card__tape-overlay-item"><%= tour.title %></h3>
       <div class="audio-tour-card__tape-overlay-item audio-tour-card__description"><%= tour.start_location %> <small class="text-muted"> - <%= tour.category %></small></div>
-      <div class="audio-tour-card__tape-overlay-item audio-tour-card__edit"><%= link_to "Edit tour", new_tour_track_path(tour) %></small></div>
     </div>
+      <div class=""><%= link_to "Edit tour", new_tour_track_path(tour), class: "edit-button" %></small></div>
     <%= link_to(tour_path(tour)) do   %>
       <span class="full-link"></span>
     <%end%>
