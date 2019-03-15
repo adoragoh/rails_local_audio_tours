@@ -22,19 +22,11 @@ class ToursController < ApplicationController
       }
     end
 
-    # @all_tours.each do |tour|
-    #   if !@categories.include?(tour.category)
-    #     @categories << tour.category
-    #   end
-    # end
-
   end
 
   def show
+
     @review = Review.new
-
-
-
     # @tours = Tour.where.not(latitude: nil, longitude: nil)
 
     @markers = @tracks.map do |track|
@@ -45,20 +37,6 @@ class ToursController < ApplicationController
         image_url: helpers.asset_url('https://res.cloudinary.com/dm25xqrrj/image/upload/v1551938861/Logos/Tourio-white.png')
       }
     end
-
-
-    # @booking = Booking.new
-
-    # if current_user != nil
-    #   @booked = current_user.booked_tours.include?(@tour)
-    # end
-
-    # if @booked
-    #   @booking = current_user.bookings.where(tour_id: params[:id]).first
-    # end
-
-    # authorize @favourite
-
   end
 
   def new
@@ -120,7 +98,7 @@ class ToursController < ApplicationController
   end
 
   def set_tracks
-    @tracks = @tour.tracks
+    @tracks = @tour.tracks.order(id: :asc)
     authorize @tracks
   end
 
