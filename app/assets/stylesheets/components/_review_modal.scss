@@ -1,8 +1,10 @@
-.review-modal {
-  background-color: grey!important;
+
+.modal-header{
+  margin: 0 auto;
+  font-color: rgb(50,50,50);
+
 }
 
-.completed-info{
-  margin: 0 auto;
-
+.modal-content {
+  opacity: 0.85;
 }

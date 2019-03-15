@@ -85,6 +85,7 @@ const initGotoMap = () => {
         addRouteToMap(userLocation.coords.latitude, userLocation.coords.longitude);
       });
 
+
       userLocationControl.on('error', function(error) {
         const inspire9Lat = -37.8238;
         const inspire9Lon = 144.9913;
