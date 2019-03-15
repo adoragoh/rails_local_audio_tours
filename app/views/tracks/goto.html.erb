@@ -12,7 +12,7 @@
 <!-- <button type="button" class="btn btn-success btn-lg btn-block" style="height: 10vh;"> <%= link_to "PLAY TRACK", tour_track_path(@tour, @track) %></button> -->
 <div>
   <div class="tour-header">
-    <h5>Enroute to:  <strong><%= @track.title.upcase  %></strong></h5>
+    <h6>Enroute to:  <strong><%= @track.title.upcase  %></strong></h6>
   </div>
   <div>
     <%= link_to(tour_track_path(@tour, @track)) do %>

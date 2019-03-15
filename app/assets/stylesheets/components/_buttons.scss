@@ -47,7 +47,8 @@
   margin-bottom: 0px;
 }
 
-.btn-ghost:hover {
+.btn-ghost:focus,
+.btn-ghost:active {
   opacity: 1;
 }
 
@@ -62,7 +63,8 @@
   transition: background 0.3s ease;
 }
 
-.btn-flat:hover {
+.btn-flat:focus,
+.btn-flat:active {
   background: #1BCB7F;
   color: white;
 }
@@ -86,7 +88,8 @@
   box-shadow: 2px 2px 2px rgba(0,0,0,0.5)
 }
 
-.btn-gradient:hover {
+.btn-gradient:focus,
+.btn-gradient:active {
   background: black;
   color: white;
 }
@@ -96,6 +99,11 @@
   bottom: 0;
   height: 10vh;
   z-index: 5;
+
+  &:focus,
+  &:active {
+    opacity: 0.8;
+  }
 }
 
 
@@ -167,6 +175,7 @@
   z-index:999;
 }
 
-.edit-button:hover {
+.edit-button:active,
+.edit-button:focus {
   opacity: 1;
 }
