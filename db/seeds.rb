@@ -153,8 +153,43 @@ tours_array = [
   title: "A Melbourne Love Affair",
   start_location: "Lygon St, Carlton",
   description: "Tall, dark and full bodied, it was love at first whiff. Find out why Starbucks never stood a chance as we dissect Melbournes love of the espresso machine and explore some of this cities hidden gems.  Dont forget to bring an appetite, and at least $4.50",
-  user: User.all[2],
+  user: User.all[1],
   category: "Romance",
+  language: "English"
+  },
+  {
+  title: "Ghost Tour",
+  start_location: "Coburg",
+  description: "Shiver me timbers! Are you ready for fright night!  I know the best haunted places in melbourne... boo! gotchya!",
+  user: User.all[2],
+  category: "Supernatural",
+  language: "English"
+  },
+
+  {
+  title: "Richmond Locals",
+  start_location: "Richmond",
+  description: "Grab a seat in my fully sick souped up VL commodore, we will cruise down to Chapel St and show off to all the ladies.  Maybe later we can go do some burnouts at Bell Street Maccas",
+  user: User.all[1],
+  category: "Adrenaline",
+  language: "English"
+  },
+
+  {
+  title: "Divebombs at Plenty Gorge",
+  start_location: "Plenty Gorge",
+  description: "Let me show you one of Melbournes best kept secrets.  Its a bit of a trek from the city, but I promise you its worth it.  Bring your bathers, get ready to get close and personal with some kangaroos, but don't worry; I'm not a serial killer!",
+  user: User.all[2],
+  category: "Adventure",
+  language: "English"
+  },
+
+  {
+  title: "Trigger-Happy Melbourne",
+  start_location: "Hoddle Street",
+  description: "Walk in the footsteps of notorious criminals as we take you on this tour of Melbourne's seedy underbelly.",
+  user: User.all[2],
+  category: "Crime",
   language: "English"
   }
 ]
@@ -214,9 +249,6 @@ Tour.create!(tours_array)
 
 
 
-# TODO: add photos to seeds ---->> Adjust this to use the first track picture in the tracks list
-
-
 
 
 tours = Tour.all
@@ -264,7 +296,7 @@ tour_hash = {
   "Willy Beach (Williamstown)"],
     track_locations: ["St Kilda Beach, Melbourne",
   'Brighton Beach, Melbourne',
-  'Coogee Beach, Arden St., Sydney, New South Wales 2034, Australia'
+  'Willy Beach (Williamstown)'
   ],
     track_urls: [
       'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/Preview_take_6.3gp',
@@ -352,16 +384,63 @@ tour_hash = {
       'Richmond'
     ],
     track_urls: [
-      'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/Preview_take_6.3gp',
-      'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016860/Sample%20audio%20tracks/Federation_square_take_1.3gp',
-      'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/State_library_victoria_take_1.3gp'
+      'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552623284/Coffee_preview.3gp',
+      'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552623285/Coffee_track_one.3gp',
+      'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552623285/Coffee_track_2.3gp'
     ],
     photo_urls: [
       'https://static1.squarespace.com/static/5b61499d2714e5487b4a04ee/5b67a77870a6adef3b1bf085/5b68f0af0e2e729ed665f9f3/1533604021172/FITZROY+SWIMMING+POOL+%283%29.jpg?format=2500w',
-      'https://images.unsplash.com/photo-1494234529886-a695930724b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+      'https://media.timeout.com/images/104706932/1372/772/image.jpg',
       'https://rvamag.com/wp-content/uploads/2018/10/IMG_3269-1024x768.jpg'
     ]
-  }
+  },
+
+    "Ghost Tour" => {track_titles: ['Coburg','Pentridge','Footscray'],
+      track_locations: ["Coburg", "Spooktown", "Boo Gotcha!"],
+      track_urls: ['https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/Preview_take_6.3gp',
+      'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016860/Sample%20audio%20tracks/Federation_square_take_1.3gp',
+      'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/State_library_victoria_take_1.3gp'],
+      photo_urls: ['https://images.unsplash.com/photo-1509557965875-b88c97052f0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
+      'https://images.unsplash.com/photo-1509411273045-2920cee823be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1225&q=80',
+      'https://images.unsplash.com/photo-1481018085669-2bc6e4f00eed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80'
+    ]},
+
+
+
+    "Richmond Locals" => {track_titles: ["Chapel Street", "Lygon Street", "Bell Street Maccas"],
+    track_locations: ["Chapel Street", "Lygon Street", "Bell Street Maccas"],
+    track_urls: ['https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/Preview_take_6.3gp',
+      'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016860/Sample%20audio%20tracks/Federation_square_take_1.3gp',
+      'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/State_library_victoria_take_1.3gp',
+     ],
+    photo_urls: ['https://images.unsplash.com/photo-1524069498954-2904a43d203f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1494&q=80',
+      'https://images.unsplash.com/photo-1509557965875-b88c97052f0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
+      'https://images.unsplash.com/photo-1509411273045-2920cee823be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1225&q=80'
+    ]},
+
+
+
+    "Divebombs at Plenty Gorge" => {
+    track_titles: ['Yellow Gum Park','The Gorge', 'Divebombs'],
+    track_locations: ['Yello Gum Park', 'The Gorge', 'Divebombs'],
+    track_urls: ['https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/Preview_take_6.3gp',
+      'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016860/Sample%20audio%20tracks/Federation_square_take_1.3gp',
+      'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/State_library_victoria_take_1.3gp',
+     ],
+      photo_urls: ['https://images.unsplash.com/photo-1526515579900-98518e7862cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1341&q=80',
+        'https://4.bp.blogspot.com/-2Zd8mhdgDgg/WxILJmZ9UQI/AAAAAAAAUTk/6hjnbpQ-ATEOC70roRx2u3CLJg-VnxbIgCLcBGAs/s640/DSC_0054.JPG',
+      'https://1.bp.blogspot.com/-Mu8h4D3cPk8/WxIKsaazYTI/AAAAAAAAUS0/SwLp8_YYlpkpGMnde-hlMeBKUF574KakACLcBGAs/s640/DSC_0003.JPG'
+    ]},
+
+    "Trigger-Happy Melbourne" => { track_titles: ["Hoddle Street", "King Street", "Century Building"],
+    track_locations: ["Hoddle Street", "King Street", "Century Building"],
+    track_urls: ['https://res.cloudinary.com/dm25xqrrj/video/upload/v1552623285/Crims.3gp',
+    'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016860/Sample%20audio%20tracks/Federation_square_take_1.3gp',
+    'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/State_library_victoria_take_1.3gp'],
+    photo_urls: ['https://cdn.newsapi.com.au/image/v1/f17ff4cf317a5be3787ab7b611c406d9?width=1024',
+    'https://shawglobalnews.files.wordpress.com/2018/12/King-Street-West-shooting.jpg?quality=70&strip=all&w=720&h=379&crop=1',
+    'http://www.thecollectormm.com.au/private/CollinsCentral2.jpg'
+    ]}
 }
 
 
@@ -402,18 +481,32 @@ end
 tours_lat_lng_hash = {
   "Instagram Influencers Walk" =>  [-45.909490, 170.503767],
    "Melbourne Foodies Tour (Not Just Coffee)" => [-37.807579, 144.956787],
-   "How I Met My Sheila" => [-37.800770, 144.967210]
-
+   "How I Met My Sheila" => [-37.800770, 144.967210],
+   "Memory Lane" =>  [-45.909490, 170.503767],
+   "Mystery of the Missing Mace" => [-37.811047, 144.973816],
+   "A Melbourne Love Affair" => [-37.784336, 144.969742],
+   "Ghost Tour" =>  [-37.737125, 144.967753],
+   "Richmond Locals" => [-37.853890, 144.992713],
+   "Divebombs at Plenty Gorge" => [-37.669173, 145.092478],
+   "Trigger-Happy Melbourne" => [-37.802710, 144.992420]
 }
 
 tracks_lat_lng_hash = {
-  "Instagram Influencers Walk" => [[-45.909489, 170.503769], [-37.917596, 144.986545], [-37.863983, 144.894501]],
+  "Instagram Influencers Walk" => [[-37.866595, 144.972847], [-37.917596, 144.986545], [-37.863983, 144.894501]],
   'Melbourne Foodies Tour (Not Just Coffee)' => [[-37.819642, 144.957436], [-37.807579, 144.956787], [-37.801167, 144.968491]],
-  "How I Met My Sheila" => [[-37.800770, 144.967210], [-37.812783, 144.963222], [-37.811340, 144.937220]]
+  "How I Met My Sheila" => [[-37.800770, 144.967210], [-37.812783, 144.963222], [-37.811340, 144.937220]],
+  "Memory Lane" => [[-37.813629, 144.963058], [-37.594290, 144.729110], [-37.580900, 144.104730]],
+  "Mystery of the Missing Mace" => [[-37.811047, 144.973816], [-37.810054, 144.976234], [-37.580900, 144.104730]],
+  "A Melbourne Love Affair" => [[-37.784336, 144.969742], [-37.796949, 144.979508], [-37.825148, 144.994412]],
+  "Ghost Tour" => [[-37.737125, 144.967753], [-37.594290, 144.729110], [-37.580900, 144.104730]],
+  "Richmond Locals" => [[-37.853890, 144.992713], [-37.810054, 144.976234], [-37.825148, 144.994412]],
+  "Divebombs at Plenty Gorge" => [[-37.669173, 145.092478], [-37.670243, 145.088390], [-37.669114, 145.085729]],
+  "Trigger-Happy Melbourne" => [[-37.802710, 144.992420], [-37.816460, 144.955710], [-37.600550, 144.897380]]
 }
 
 tours_lat_lng_hash.keys.each do |tour_title|
   t = Tour.find_by(title: tour_title)
+  # print t.title
   t.latitude = tours_lat_lng_hash[tour_title][0]
   t.longitude = tours_lat_lng_hash[tour_title][1]
   counter = 0
