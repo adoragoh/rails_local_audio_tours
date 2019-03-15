@@ -1,73 +1,65 @@
+
 tours_array = [
   {
-  title: "Memory Lane",
-  start_location: "Flinders Street, Melbourne",
-  description: "From Batman to bushfires, lets go on a trip down memory lane, or AC/DC lane to find out what shaped Marvelous Melbourne into the hipster capital of Australia.  So grab your latte, hop on your fixie, and prepare to be, like, totally stoked man.",
-  user: User.last,
-  category: "History",
-  language: "English"
-  },
-  {
-  title: "Mystery of the Missing Mace",
-  start_location: "Parliament House of Victoria",
-  description: "In 1891, Melbourne’s sewers caught fire, the city flooded, a pair of legs turned up in the street, and a plague of locusts arrived. In the midst of all this, a precious medieval weapon was stolen from Victorian Parliament, sparking one of the greatest unsolved mysteries in Australian history.  With a $50,000 reward still up for grabs, come with me on this wild ride through Marvelous Melbourne's sordid past and lets try and solve the mystery of the missing mace.",
-  user: User.last,
-  category: "Crime",
-  language: "English"
-  },
-  {
-  title: "A Melbourne Love Affair",
-  start_location: "Lygon St, Carlton",
-  description: "Tall, dark and full bodied, it was love at first whiff. Find out why Starbucks never stood a chance as we dissect Melbournes love of the espresso machine and explore some of this cities hidden gems.  Dont forget to bring an appetite, and at least $4.50",
-  user: User.last,
-  category: "Romance",
-  language: "English"
+  title: "Melbourne Foodies Tour (Not Just Coffee)",
+  start_location: "Queen Victoria Market, Melbourne",
+  description: "On this walking tour, we'll take you to a bunch of local favourite food stalls, off the tourist-track. Get a glimpse of where Melburnians go when they want a tasty and affordable bite to eat."
+  user: User.all[1],
+  category: "Food",
+  language: "English",
+  latitude: -37.807579,
+  longitude: 144.956787
   }]
 
 
-tour_hash = { "Memory Lane" => {track_titles: ['Melbourne',
-  'Melbourne State Library',
-  'Melbourne Central'],
-   track_locations: ['Melbourne',
-  'Old Melbourne Gaol',
-  'Melbourne Central'],
-  track_urls: ['https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/Preview_take_6.3gp',
-  'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016860/Sample%20audio%20tracks/Federation_square_take_1.3gp',
-  'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/State_library_victoria_take_1.3gp'],
-  photo_urls: ['https://images.unsplash.com/photo-1514395462725-fb4566210144?ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80',
-  'https://images.unsplash.com/photo-1542940018-8768f81865f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
-  'https://images.unsplash.com/photo-1487653557405-97ba52327f93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80'
-]},
-{ "Mystery of the Missing Mace"=> {track_titles: ['Parliament House of Victoria',
-  'St Patricks Cathedral'
-   ],
-track_locations: ['Melbourne',
-  'St Patricks Cathedral',
-],
-audio_urls: ['https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/Preview_take_6.3gp',
-  'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016860/Sample%20audio%20tracks/Federation_square_take_1.3gp',
-  'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/State_library_victoria_take_1.3gp',
- ],
-photo_urls: ['https://junkee.com/wp-content/uploads/2018/04/mace-feature-3.png',
-  'https://junkee.com/wp-content/uploads/2018/04/mace_wide_2.png'
-]},
+track_titles = ["Gami Fried Chicken",
+  "Queen Victoria Market",
+  "D.O.C. Pizzeria"]
 
+track_locations = ["Gami Chicken and Beer, Lonsdale Street, Melbourne",
+  'Queen Victoria Market, Melbourne, Australia',
+  'DOC Pizzeria, Lygon Street, Carlton']
 
+track_locations_latlng = [[-37.819642, 144.957436], [-37.807579, 144.956787], [-37.801167, 144.968491]]
 
-{ "Memory Lane" => {
-track_titles: ['Carlton',
-  'Fitzroy',
-  'Richmond'
-   ],
-track_locations: ['Carlton',
-  'Fitzroy',
-  'Richmond'
-],
-audio_urls: ['https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/Preview_take_6.3gp',
+track_urls = ['https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/Preview_take_6.3gp',
   'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016860/Sample%20audio%20tracks/Federation_square_take_1.3gp',
-  'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/State_library_victoria_take_1.3gp',
- ],
-  photo_urls: ['https://static1.squarespace.com/static/5b61499d2714e5487b4a04ee/5b67a77870a6adef3b1bf085/5b68f0af0e2e729ed665f9f3/1533604021172/FITZROY+SWIMMING+POOL+%283%29.jpg?format=2500w',
-  'https://images.unsplash.com/photo-1494234529886-a695930724b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-  'https://rvamag.com/wp-content/uploads/2018/10/IMG_3269-1024x768.jpg'
-]}
+  'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/State_library_victoria_take_1.3gp'
+]
+
+photo_urls = ['https://images.unsplash.com/photo-1549759594-0d842f402b4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+  'https://images.unsplash.com/photo-1514513255262-76c2200e709e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+  'https://images.unsplash.com/photo-1534649643822-e7431de08af6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
+]
+
+tours_array = [
+  {
+  title: "How I Met My Sheila",
+  start_location: "Carlton Gardens, Melbourne",
+  description: "Melbourne has some great spots to woo a woman. The moody weather and the city's quirky personality sets the scene for you to make a great impression. Come with us and discover some of Melbourne's most romantic spots."
+  user: User.all[1],
+  category: "Romance",
+  language: "English",
+  latitude: -37.800770,
+  longitude: 144.967210
+  }]
+
+track_titles = ["Carlton Gardens",
+  "Rooftop Bar, Curtin House",
+  "Melbourne Star Observation Wheel"]
+
+track_locations = ["Carlton Gardens, Melbourne",
+  'Rooftop Bar, Curtin House, Melbourne',
+  'Melbourne Star Observation Wheel, Docklands, Melbourne']
+
+track_locations_latlng = [[-37.800770, 144.967210], [-37.812783, 144.963222], [-37.811340, 144.937220]]
+
+track_urls = ['https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/Preview_take_6.3gp',
+  'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016860/Sample%20audio%20tracks/Federation_square_take_1.3gp',
+  'https://res.cloudinary.com/dm25xqrrj/video/upload/v1552016859/Sample%20audio%20tracks/State_library_victoria_take_1.3gp'
+]
+
+photo_urls = ['https://www.landscapeconference.com/wp-content/uploads/2017/08/Royal-Exhibition-Buildings-Carlton.jpg',
+  'https://media.timeout.com/images/104097310/630/472/image.jpg',
+  'https://www.visitmelbourne.com/-/media/atdw/melbourne/things-to-do/family/original__9522056_ci26__jy_0578_pr_wf0u348_2048x1152.jpg?ts=20190213360304'
+]
