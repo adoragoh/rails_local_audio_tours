@@ -10,7 +10,7 @@ users_array = [
   {
   email: "winson@tourio.com",
   first_name: 'winson',
-  last_name: 'winson',
+  last_name: 'tan',
   about: "Experienced traveller and blogger who loves eating destinations.",
   password: "123456"
   },
@@ -45,7 +45,7 @@ users_array = [
   {
   email: "damon@tourio.com",
   first_name: 'damon',
-  last_name: 'damon',
+  last_name: 'cool',
   about: "Surf's Up! Yeah boyye!",
   password: "123456"
   },
@@ -66,14 +66,14 @@ users_array = [
   {
   email: "daniel@tourio.com",
   first_name: 'daniel',
-  last_name: 'daniel',
+  last_name: 'gordon',
   about: "Cool.",
   password: "123456"
   },
   {
   email: "paal@tourio.com",
   first_name: 'paal',
-  last_name: 'paal',
+  last_name: 'chill',
   about: "Everything's good.",
   password: "123456"
   }
@@ -83,14 +83,15 @@ users_array = [
 User.create!(users_array)
 
 
-
-users = User.all
-users[0].remote_photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJjr1h7ibl8wNFU_rZgPLxHv0yXwriJVoIAGIsLjabc2TXgfnj-Q"
-users[0].save
-users[1].remote_photo_url = "https://www.girlgeekupnorth.co.uk/wp-content/uploads/2016/12/Princess-Leia-1.jpg"
-users[1].save
-users[2].remote_photo_url = "https://s.yimg.com/ny/api/res/1.2/T7ka83cKaoCASsJRbZQmpw--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/http://media.zenfs.com/en/homerun/feed_manager_auto_publish_494/905f723f3db3e3767cfc0bb5e13bf8f8"
-users[2].save
+win = User.find_by(first_name: 'winson')
+win.remote_photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJjr1h7ibl8wNFU_rZgPLxHv0yXwriJVoIAGIsLjabc2TXgfnj-Q"
+win.save
+adora = User.find_by(first_name: 'adora')
+adora.remote_photo_url = "https://www.girlgeekupnorth.co.uk/wp-content/uploads/2016/12/Princess-Leia-1.jpg"
+adora.save
+alex = User.find_by(first_name: 'alex')
+alex.remote_photo_url = "https://s.yimg.com/ny/api/res/1.2/T7ka83cKaoCASsJRbZQmpw--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/http://media.zenfs.com/en/homerun/feed_manager_auto_publish_494/905f723f3db3e3767cfc0bb5e13bf8f8"
+alex.save
 
 
 
@@ -105,7 +106,7 @@ tours_array = [
   title: "Classic Melbourne",
   start_location: "Melbourne",
   description: "A local's audio guide to the must visit places in Melbourne - suitable for first time explorers and those looking to delve a little deeper to explore the city's rich character. From history and architecture to contemporary laneway culture, sport or street art – we have your interests covered. This audio tour is a new and personalized way to really experience the city.",
-  user: User.first,
+  user: win,
   category: "Sightseeing", #TODO: Create a dropdown of categories to choose from (mayben will need new table? But don't worry about it yet)
   language: "English"
   },
@@ -113,7 +114,7 @@ tours_array = [
   title: "Instagram Influencers Walk",
   start_location: "St Kilda Beach, Melbourne",
   description: "See and be seen at some of the most Insta-worthy spots on the Melbourne coast. If your goal is to make all your followers jealous, then you've come to the right place. We'll make sure that you've got the most envy-inducing photos amongst your group of friends.",
-  user: User.all[1],
+  user: adora,
   category: "Sightseeing",
   language: "English"
   },
@@ -121,7 +122,7 @@ tours_array = [
   title: "Melbourne Foodies Tour (Not Just Coffee)",
   start_location: "Queen Victoria Market, Melbourne",
   description: "On this walking tour, we'll take you to a bunch of local favourite food stalls, off the tourist-track. Get a glimpse of where Melburnians go when they want a tasty and affordable bite to eat.",
-  user: User.all[1],
+  user: adora,
   category: "Food",
   language: "English",
   },
@@ -129,7 +130,7 @@ tours_array = [
   title: "How I Met My Sheila",
   start_location: "Carlton Gardens, Melbourne",
   description: "Melbourne has some great spots to woo a woman. The moody weather and the city's quirky personality sets the scene for you to make a great impression. Come with us and discover some of Melbourne's most romantic spots.",
-  user: User.all[1],
+  user: alex,
   category: "Romance",
   language: "English"
   },
@@ -137,7 +138,7 @@ tours_array = [
   title: "Memory Lane",
   start_location: "Flinders Street,  Melbourne",
   description: "From Batman to bushfires, lets go on a trip down memory lane, or AC/DC lane to find out what shaped Marvelous Melbourne into the hipster capital of Australia.  So grab your latte, hop on your fixie, and prepare to be, like, totally stoked man.",
-  user: User.all[2],
+  user: alex,
   category: "History",
   language: "English"
   },
@@ -145,7 +146,7 @@ tours_array = [
   title: "Mystery of the Missing Mace",
   start_location: "Parliament House of Victoria",
   description: "In 1891, Melbourne’s sewers caught fire, the city flooded, a pair of legs turned up in the street, and a plague of locusts arrived. In the midst of all this, a precious medieval weapon was stolen from Victorian Parliament, sparking one of the greatest unsolved mysteries in Australian history.  With a $50,000 reward still up for grabs, come with me on this wild ride through Marvelous Melbourne's sordid past and lets try and solve the mystery of the missing mace.",
-  user: User.all[2],
+  user: adora,
   category: "Crime",
   language: "English"
   },
@@ -153,7 +154,7 @@ tours_array = [
   title: "A Melbourne Love Affair",
   start_location: "Lygon St, Carlton",
   description: "Tall, dark and full bodied, it was love at first whiff. Find out why Starbucks never stood a chance as we dissect Melbournes love of the espresso machine and explore some of this cities hidden gems.  Dont forget to bring an appetite, and at least $4.50",
-  user: User.all[1],
+  user: win,
   category: "Romance",
   language: "English"
   },
@@ -161,7 +162,7 @@ tours_array = [
   title: "Ghost Tour",
   start_location: "Coburg",
   description: "Shiver me timbers! Are you ready for fright night!  I know the best haunted places in melbourne... boo! gotchya!",
-  user: User.all[2],
+  user: alex,
   category: "Supernatural",
   language: "English"
   },
@@ -170,7 +171,7 @@ tours_array = [
   title: "Richmond Locals",
   start_location: "Richmond",
   description: "Grab a seat in my fully sick souped up VL commodore, we will cruise down to Chapel St and show off to all the ladies.  Maybe later we can go do some burnouts at Bell Street Maccas",
-  user: User.all[1],
+  user: adora,
   category: "Adrenaline",
   language: "English"
   },
@@ -179,16 +180,15 @@ tours_array = [
   title: "Divebombs at Plenty Gorge",
   start_location: "Plenty Gorge",
   description: "Let me show you one of Melbournes best kept secrets.  Its a bit of a trek from the city, but I promise you its worth it.  Bring your bathers, get ready to get close and personal with some kangaroos, but don't worry; I'm not a serial killer!",
-  user: User.all[2],
+  user: win,
   category: "Adventure",
   language: "English"
   },
-
   {
   title: "Trigger-Happy Melbourne",
   start_location: "Hoddle Street",
   description: "Walk in the footsteps of notorious criminals as we take you on this tour of Melbourne's seedy underbelly.",
-  user: User.all[2],
+  user: alex,
   category: "Crime",
   language: "English"
   }
