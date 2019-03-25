@@ -29,11 +29,15 @@
             <!-- <a><%#= link_to category.upcase, tours_path(query: category) %></a> -->
           <% end %>
         </div>
-        <div id="category-display">
-          <div id="category-display-cards">
-            <% @tours.each do |tour| %>
-              <%= render 'shared/card_v2', tour: tour %>
-            <% end %>
+        <div class="container">
+          <div id="category-display">
+            <div id="category-display-cards" class="cards">
+              <% @tours.each do |tour| %>
+              <!-- <div class="col-12 col-lg-4">> -->
+                <%= render 'shared/card_v2', tour: tour %>
+              <!-- </div> -->
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
