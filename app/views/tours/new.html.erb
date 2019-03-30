@@ -16,35 +16,8 @@
         <%= f.input :category, collection: [ "History", "Food", "Adventure", "Supernatural", "Sightseeing", "Romance", "Adrenaline" ] %>
         <%= f.input :language %>
         <%= f.input :duration %>
-        <%#= f.simple_fields_for :photos, Photo.new do |p| %>
-          <%#= p.input :photo, input_html: { multiple: true }, name: "tour[images_attributes][][photo]"%>
-          <%#= p.input :photo_cache, as: :hidden %>
-        <%# end %>
+
       </div>
       <br>
       <%= f.button :submit, "Next step: Upload tour photos >", class: 'btn-primary'%>
-<!--       </div> -->
-   <!--  <div class="modal-footer"> -->
-      <!-- <div class="form-actions"> -->
-   <!--    </div> -->
       <% end %>
-
-      <!-- Add form for uploading photos -->
-
-
-      <!-- Add form for uploading audio tracks -->
-
-<!-- create_table "tours", force: :cascade do |t|
-    t.string "title"
-    t.string "start_location"
-    t.text "description"
-    t.bigint "user_id"
-    t.integer "duration"
-    t.string "category"
-    t.string "language"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.float "latitude"
-    t.float "longitude"
-    t.index ["user_id"], name: "index_tours_on_user_id"
-  end -->
