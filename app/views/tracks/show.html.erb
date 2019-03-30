@@ -5,7 +5,7 @@
   <div class="container">
     <h1><strong><%= @track.title %></strong></h1>
     <hr>
-    <%= render 'shared/audio_player_tracks' %>
+    <%= render 'audio_player_tracks' %>
     <!-- Script below to check whether its the last track to show the appropriate button-->
     <% tour_track_ids = @tour.tracks.ids %>
     <% track_id =  @track.id %>
@@ -15,7 +15,7 @@
       <% next_track = @tour.tracks.find(next_track_id) %>
       <br><br>
       <%= link_to "Next location", track_goto_path(@tour, next_track), class: "btn-gradient" %>
-      <%= render 'shared/nearby_restaurant' %>
+      <%= render 'nearby_restaurant' %>
     <% else %>
       <div class="completed-info">
         <br>
@@ -23,7 +23,7 @@
         <%= render 'shared/review_modal' %>
       <% end %>
 
-      <%= render 'shared/nearby_restaurant' %>
+      <%= render 'nearby_restaurant' %>
       </div>
 
   </div>
