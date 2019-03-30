@@ -31,7 +31,13 @@
         </div>
         <div class="container">
           <div id="category-display">
-            <div id="category-display-cards" class="cards">
+            <!-- TODO: Need to fix this -->
+            <div id="category-display-cards" class="d-lg-none d-xl-block">
+              <% @tours.each do |tour| %>
+                <%= render 'shared/card_v2', tour: tour %>
+              <% end %>
+            </div>
+            <div id="category-display-cards" class="cards d-none d-sm-block">
               <% @tours.each do |tour| %>
               <!-- <div class="col-12 col-lg-4">> -->
                 <%= render 'shared/card_v2', tour: tour %>
