@@ -16,13 +16,13 @@
       </div>
       <div class= "d-none d-sm-block">
         <br><br>
-        <%= render 'shared/visited_places' %>
+        <%= render 'visited_places' %>
       </div>
     </div>
     <div class="col-12 col-md-6 col-lg-6">
       <div class="show-player">
         <h3 class="show-player__label">Preview Tour</h3>
-        <%= render 'shared/audio_player' %>
+        <%= render 'audio_player' %>
       </div>
 
       <div class="show-details-top">
@@ -45,7 +45,7 @@
             <% end %>
           <% end %>
       </div>
-      <%= render 'shared/tour_description' %>
+      <%= render 'tour_description' %>
       <%= link_to "START TOUR >", track_goto_path(params[:id], @tracks[1]), class: "btn btn-gradient floating-pill-btn" %>
       <hr>
 
@@ -66,7 +66,7 @@
 
   <hr>
   <div class= "d-xl-none d-lg-none">
-    <%= render 'shared/visited_places' %>
+    <%= render 'visited_places' %>
   </div>
   <hr>
   <%= render 'shared/showmap' %>
