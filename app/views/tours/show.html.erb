@@ -1,56 +1,77 @@
-<div class="main-show-container">
-      <div class="audio-tour-show-card">
-        <img class="card-img-top" id="image-top" src="<%= cl_image_path @tour.photos[0].photo %>"  alt="Card image cap">
-        <div class="audio-tour-show-card__tape-overlay show-page-title">
-          <h3 class="card-title audio-tour-show-card__title audio-tour-show-card__tape-overlay-item"><%= @tour.title %></h3>
-        </div>
-      <!-- <img src="<%#= cl_image_path @tour.photos[0].photo %>" alt="" class='main-image'> -->
+<div class="container">
+  <div class="d-none d-sm-block">
+    <br><br><br>
   </div>
-</div>
 
-
-<div class="show-player">
-  <h3 class="show-player__label">Preview Tour</h3>
-  <%= render 'audio_player' %>
-</div>
-
-<div class="show-details-top">
-  <p><small class="text-muted"><%= @tour.category.capitalize %></small></p>
-    <!-- If statement for whether current tour has already been favourited -->
-      <% if current_user != nil %>
-
-          <% if current_user.favourites.where(tour_id: @tour).first == nil %>
-          <div id="favourite-button-div">
-            <%= render 'favourites/add_button', tour: @tour %>
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-6">
+      <div class="main-show-container">
+        <div class="audio-tour-show-card">
+          <img class="card-img-top" id="image-top" src="<%= cl_image_path @tour.photos[0].photo %>"  alt="Card image cap">
+          <div class="audio-tour-show-card__tape-overlay show-page-title">
+            <h3 class="card-title audio-tour-show-card__title audio-tour-show-card__tape-overlay-item"><%= @tour.title %></h3>
           </div>
-          <% else %>
-          <div>
-            <%= render 'favourites/delete_button', tour: @tour %>
-          </div>
-          <% end %>
-      <% else %>
-        <%= link_to tour_favourites_path(params[:id]), method: :post, class: "unfavourited", id: "favourited-button" do %>
-        <i class="fas fa-star"></i>
-        <% end %>
-      <% end %>
-</div>
-
-<%= render 'tour_description' %>
-<hr>
-
-<div class="row show-max-width">
-  <% @tour.tracks.last(2).each do |track| %>
-    <div class="col scrollmenu">
-      <img src="<%= cl_image_path track.photo, width: 280, height: 150, crop: :fill %>" alt="" class='main-image'>
+          <!-- <img src="<%#= cl_image_path @tour.photos[0].photo %>" alt="" class='main-image'> -->
+        </div>
+      </div>
+      <div class= "d-none d-sm-block">
+        <br><br>
+        <%= render 'shared/visited_places' %>
+      </div>
     </div>
-<% end %>
+    <div class="col-12 col-md-6 col-lg-6">
+      <div class="show-player">
+        <h3 class="show-player__label">Preview Tour</h3>
+        <%= render 'shared/audio_player' %>
+      </div>
 
+      <div class="show-details-top">
+        <p><small class="text-muted"><%= @tour.category.capitalize %></small></p>
+          <!-- If statement for whether current tour has already been favourited -->
+          <% if current_user != nil %>
+
+              <% if current_user.favourites.where(tour_id: @tour).first == nil %>
+              <div id="favourite-button-div">
+                <%= render 'favourites/add_button', tour: @tour %>
+              </div>
+              <% else %>
+              <div>
+                <%= render 'favourites/delete_button', tour: @tour %>
+              </div>
+              <% end %>
+          <% else %>
+            <%= link_to tour_favourites_path(params[:id]), method: :post, class: "unfavourited", id: "favourited-button" do %>
+            <i class="fas fa-star"></i>
+            <% end %>
+          <% end %>
+      </div>
+      <%= render 'shared/tour_description' %>
+      <%= link_to "START TOUR >", track_goto_path(params[:id], @tracks[1]), class: "btn btn-gradient floating-pill-btn" %>
+      <hr>
+
+    </div>
+  </div>
+
+
+
+  <div class="show-track-pics d-lg-none d-xl-block">
+    <div class="row">
+      <% @tour.tracks.last(2).each do |track| %>
+        <div class="col scrollmenu">
+          <img src="<%= cl_image_path track.photo, width: 280, height: 150, crop: :fill %>" alt="" class='main-image'>
+        </div>
+    <% end %>
+    </div>
+  </div>
+
+  <hr>
+  <div class= "d-xl-none d-lg-none">
+    <%= render 'shared/visited_places' %>
+  </div>
+  <hr>
+  <%= render 'shared/showmap' %>
+  <hr>
+  <%= render 'shared/review_box' %>
+  <div style="margin-bottom: 200px;"></div>
+  <hr>
 </div>
-<hr>
-<%= render 'visited_places' %>
-<hr>
-<%= render 'shared/showmap' %>
-<hr>
-<%= render 'shared/review_box' %>
-<div style="margin-bottom: 200px;"></div>
-<hr>

@@ -26,11 +26,14 @@
             <!-- <a><%#= link_to category.upcase, tours_path(query: category) %></a> -->
           <% end %>
         </div>
-        <div id="category-display">
-          <div id="category-display-cards">
-            <% @tours.each do |tour| %>
-              <%= render 'shared/card_v2', tour: tour %>
-            <% end %>
+        <div class="container">
+          <div id="category-display">
+            <!-- TODO: Need to fix this -->
+            <div id="category-display-cards" class="d-lg-none d-xl-block">
+              <% @tours.each do |tour| %>
+                <%= render 'shared/card_v2', tour: tour %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
